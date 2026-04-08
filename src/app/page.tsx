@@ -1,23 +1,22 @@
-'use client'
+import { Flame } from "lucide-react";
+import { Explore } from "./Explore/Explore";
+import { videoService } from "@/services/video.services";
+import { VideoItem } from "@/ui/video-item/VideoItem";
 
-import { useQuery } from '@tanstack/react-query'
-import { Divide, Flame } from 'lucide-react'
+export const revalidate = 100
+export const dynamic = 'force-static'
 
-import { VideoItem } from '@/ui/video-item/VideoItem'
-
-import { videoService } from '@/services/video.services'
-
-export default function Home() {
-	const { data, isLoading } = useQuery({
-		queryKey: ['explore'],
-		queryFn: () => videoService.getExploreVideos()
-	})
+export default async function Home() {
+	const data = await videoService.getTrendingVideos()
+	const trendingVideos = data.data
 	return (
-		<div className='grid grid-cols-5 gap-5'>
-			{isLoading
-				? 'Loading...'
-				: data?.data.length &&
-					data.data.map(video => (
+		
+		<>
+		<section>
+			 <h2>Trending</h2>
+        	<div className='grid grid-cols-5 gap-5 '>
+			{trendingVideos &&
+					trendingVideos.map(video => (
 						<VideoItem
 							key={video.id}
 							video={video}
@@ -25,5 +24,11 @@ export default function Home() {
 						/>
 					))}
 		</div>
+		</section>
+
+		<section>
+			<Explore/>
+		</section>
+		</>
 	)
 }

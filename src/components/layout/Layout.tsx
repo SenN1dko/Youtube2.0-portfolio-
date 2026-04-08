@@ -23,6 +23,5 @@ export function Layout({ children }: PropsWithChildren<unknown>) {
 			<Sidebar toggleSidebar={toggleSidebar} />
 			<Content>{children}</Content>
 		</main>
-		//9 33
 	)
 }

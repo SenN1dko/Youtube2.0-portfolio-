@@ -631,6 +631,113 @@
 			}
 		}
 	],
+	"trendingVideos":[
+			{
+			"id": 1,
+			"title": "I Built a House Out of Lego",
+			"slug": "built-lego-house",
+			"thumbnailUrl": "https://picsum.photos/seed/beast1/800/450",
+			"description": "MrBeast is an American YouTuber, businessman, and philanthropist. He is known for his expensive stunts and challenges.",
+			"videoFileName": "video-1.mp4",
+			"viewsCount": 1540200,
+			"isPublic": true,
+			"createdAt": "2024-03-01T12:00:00Z",
+			"chanel": {
+				"id": 1,
+				"title": "MrBeast",
+				"slug": "mrbeast",
+				"description": "Philanthropist and creator of crazy challenges.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=mrbeast",
+				"bannerUrl": "https://picsum.photos/seed/banner1/1200/300",
+				"createdAt": "2012-02-20T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 2,
+			"title": "iPhone 15 Pro Max vs Samsung S24 Ultra",
+			"slug": "iphone-vs-samsung",
+			"thumbnailUrl": "https://picsum.photos/seed/tech1/800/450",
+			"description": "Detailed comparison of the two best flagship smartphones in 2024.",
+			"videoFileName": "video-2.mp4",
+			"viewsCount": 450000,
+			"isPublic": true,
+			"createdAt": "2024-03-05T10:00:00Z",
+			"chanel": {
+				"id": 2,
+				"title": "TechReview",
+				"slug": "tech-review",
+				"description": "Best gadgets and tech news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=tech",
+				"bannerUrl": "https://picsum.photos/seed/btech/1200/300",
+				"createdAt": "2015-06-10T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 3,
+			"title": "10 Minutes Morning Yoga",
+			"slug": "morning-yoga",
+			"thumbnailUrl": "https://picsum.photos/seed/yoga/800/450",
+			"description": "Start your day with this quick and effective yoga flow.",
+			"videoFileName": "video-3.mp4",
+			"viewsCount": 120000,
+			"isPublic": true,
+			"createdAt": "2024-03-06T07:00:00Z",
+			"chanel": {
+				"id": 3,
+				"title": "HealthLife",
+				"slug": "health-life",
+				"description": "Yoga, meditation and healthy food.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=health",
+				"bannerUrl": "https://picsum.photos/seed/byoga/1200/300",
+				"createdAt": "2019-01-20T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 4,
+			"title": "Elden Ring: Shadow of the Erdtree Trailer",
+			"slug": "elden-ring-dlc",
+			"thumbnailUrl": "https://picsum.photos/seed/game1/800/450",
+			"description": "The official trailer for the highly anticipated DLC.",
+			"videoFileName": "video-4.mp4",
+			"viewsCount": 8900000,
+			"isPublic": true,
+			"createdAt": "2024-03-07T18:00:00Z",
+			"chanel": {
+				"id": 4,
+				"title": "Bandai Namco",
+				"slug": "bandai",
+				"description": "Official gaming news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=bandai",
+				"bannerUrl": "https://picsum.photos/seed/bgaming/1200/300",
+				"createdAt": "2010-01-01T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 5,
+			"title": "React Server Components Explained",
+			"slug": "react-rsc",
+			"thumbnailUrl": "https://picsum.photos/seed/code2/800/450",
+			"description": "Deep dive into RSC and why you should care.",
+			"videoFileName": "video-5.mp4",
+			"viewsCount": 42000,
+			"isPublic": true,
+			"createdAt": "2024-03-08T15:00:00Z",
+			"chanel": {
+				"id": 5,
+				"title": "CodeDaily",
+				"slug": "code-daily",
+				"description": "JS, React and NextJS tutorials.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=code",
+				"bannerUrl": "https://picsum.photos/seed/bcode/1200/300",
+				"createdAt": "2021-05-12T00:00:00Z",
+				"isVerified": false
+			}
+		}
+	],
 	"Users": [
 		{ "id": 1, "name": "Amir" },
 		{ "id": 1, "name": "ALice" }

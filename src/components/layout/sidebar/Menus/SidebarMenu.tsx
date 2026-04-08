@@ -1,9 +1,6 @@
-import { Divide } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-import path from 'path'
 import { match } from 'path-to-regexp'
 
-import { SIDEBAR_DATA } from '../Sidebar.data'
 import type { ISidebarItem } from '../Sidebar.types'
 
 import { MenuItem } from './MenuItem'

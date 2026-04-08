@@ -1,4 +1,3 @@
-import { SubItem } from './SubItem'
 
 export function SidebarSubscription() {
 	return (

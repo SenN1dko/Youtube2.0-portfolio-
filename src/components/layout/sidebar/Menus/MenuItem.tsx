@@ -1,5 +1,4 @@
 import cn from 'clsx'
-import { Divide } from 'lucide-react'
 import Link from 'next/link'
 
 import type { ISidebarItem } from '../Sidebar.types'
