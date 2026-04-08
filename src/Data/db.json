@@ -1,0 +1,638 @@
+{
+	"video": [
+		{
+			"id": 1,
+			"title": "I Built a House Out of Lego",
+			"slug": "built-lego-house",
+			"thumbnailUrl": "https://picsum.photos/seed/beast1/800/450",
+			"description": "MrBeast is an American YouTuber, businessman, and philanthropist. He is known for his expensive stunts and challenges.",
+			"videoFileName": "video-1.mp4",
+			"viewsCount": 1540200,
+			"isPublic": true,
+			"createdAt": "2024-03-01T12:00:00Z",
+			"chanel": {
+				"id": 1,
+				"title": "MrBeast",
+				"slug": "mrbeast",
+				"description": "Philanthropist and creator of crazy challenges.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=mrbeast",
+				"bannerUrl": "https://picsum.photos/seed/banner1/1200/300",
+				"createdAt": "2012-02-20T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 2,
+			"title": "iPhone 15 Pro Max vs Samsung S24 Ultra",
+			"slug": "iphone-vs-samsung",
+			"thumbnailUrl": "https://picsum.photos/seed/tech1/800/450",
+			"description": "Detailed comparison of the two best flagship smartphones in 2024.",
+			"videoFileName": "video-2.mp4",
+			"viewsCount": 450000,
+			"isPublic": true,
+			"createdAt": "2024-03-05T10:00:00Z",
+			"chanel": {
+				"id": 2,
+				"title": "TechReview",
+				"slug": "tech-review",
+				"description": "Best gadgets and tech news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=tech",
+				"bannerUrl": "https://picsum.photos/seed/btech/1200/300",
+				"createdAt": "2015-06-10T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 3,
+			"title": "10 Minutes Morning Yoga",
+			"slug": "morning-yoga",
+			"thumbnailUrl": "https://picsum.photos/seed/yoga/800/450",
+			"description": "Start your day with this quick and effective yoga flow.",
+			"videoFileName": "video-3.mp4",
+			"viewsCount": 120000,
+			"isPublic": true,
+			"createdAt": "2024-03-06T07:00:00Z",
+			"chanel": {
+				"id": 3,
+				"title": "HealthLife",
+				"slug": "health-life",
+				"description": "Yoga, meditation and healthy food.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=health",
+				"bannerUrl": "https://picsum.photos/seed/byoga/1200/300",
+				"createdAt": "2019-01-20T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 4,
+			"title": "Elden Ring: Shadow of the Erdtree Trailer",
+			"slug": "elden-ring-dlc",
+			"thumbnailUrl": "https://picsum.photos/seed/game1/800/450",
+			"description": "The official trailer for the highly anticipated DLC.",
+			"videoFileName": "video-4.mp4",
+			"viewsCount": 8900000,
+			"isPublic": true,
+			"createdAt": "2024-03-07T18:00:00Z",
+			"chanel": {
+				"id": 4,
+				"title": "Bandai Namco",
+				"slug": "bandai",
+				"description": "Official gaming news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=bandai",
+				"bannerUrl": "https://picsum.photos/seed/bgaming/1200/300",
+				"createdAt": "2010-01-01T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 5,
+			"title": "React Server Components Explained",
+			"slug": "react-rsc",
+			"thumbnailUrl": "https://picsum.photos/seed/code2/800/450",
+			"description": "Deep dive into RSC and why you should care.",
+			"videoFileName": "video-5.mp4",
+			"viewsCount": 42000,
+			"isPublic": true,
+			"createdAt": "2024-03-08T15:00:00Z",
+			"chanel": {
+				"id": 5,
+				"title": "CodeDaily",
+				"slug": "code-daily",
+				"description": "JS, React and NextJS tutorials.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=code",
+				"bannerUrl": "https://picsum.photos/seed/bcode/1200/300",
+				"createdAt": "2021-05-12T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 6,
+			"title": "How to Make the Perfect Carbonara",
+			"slug": "perfect-carbonara",
+			"thumbnailUrl": "https://picsum.photos/seed/food1/800/450",
+			"description": "Authentic Italian recipe with only 4 ingredients.",
+			"videoFileName": "video-6.mp4",
+			"viewsCount": 2300000,
+			"isPublic": true,
+			"createdAt": "2024-03-09T11:00:00Z",
+			"chanel": {
+				"id": 6,
+				"title": "ChefGordon",
+				"slug": "gordon",
+				"description": "Cooking like a pro.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=chef",
+				"bannerUrl": "https://picsum.photos/seed/bfood/1200/300",
+				"createdAt": "2014-08-30T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 7,
+			"title": "Exploring Tokyo's Hidden Streets",
+			"slug": "tokyo-streets",
+			"thumbnailUrl": "https://picsum.photos/seed/travel2/800/450",
+			"description": "Walking through the neon lights of Shinjuku and beyond.",
+			"videoFileName": "video-7.mp4",
+			"viewsCount": 540000,
+			"isPublic": true,
+			"createdAt": "2024-03-10T20:00:00Z",
+			"chanel": {
+				"id": 7,
+				"title": "NomadVlog",
+				"slug": "nomad",
+				"description": "Travel the world on a budget.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=nomad",
+				"bannerUrl": "https://picsum.photos/seed/btravel/1200/300",
+				"createdAt": "2017-02-14T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 8,
+			"title": "Lofi Hip Hop Mix - Study/Sleep",
+			"slug": "lofi-mix",
+			"thumbnailUrl": "https://picsum.photos/seed/music1/800/450",
+			"description": "Beats to relax/study to.",
+			"videoFileName": "video-8.mp4",
+			"viewsCount": 15000000,
+			"isPublic": true,
+			"createdAt": "2024-01-01T00:00:00Z",
+			"chanel": {
+				"id": 8,
+				"title": "LofiGirl",
+				"slug": "lofigirl",
+				"description": "The best beats for everyone.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=lofi",
+				"bannerUrl": "https://picsum.photos/seed/blofi/1200/300",
+				"createdAt": "2013-03-03T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 9,
+			"title": "SpaceX Starship Flight 3 Highlight",
+			"slug": "spacex-starship",
+			"thumbnailUrl": "https://picsum.photos/seed/space1/800/450",
+			"description": "Watch the most powerful rocket ever built take flight.",
+			"videoFileName": "video-9.mp4",
+			"viewsCount": 7500000,
+			"isPublic": true,
+			"createdAt": "2024-03-14T14:00:00Z",
+			"chanel": {
+				"id": 9,
+				"title": "SpaceX",
+				"slug": "spacex",
+				"description": "Making humanity multi-planetary.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=spacex",
+				"bannerUrl": "https://picsum.photos/seed/bspace/1200/300",
+				"createdAt": "2002-05-06T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 10,
+			"title": "Minecraft but everything is LAVA",
+			"slug": "mc-lava",
+			"thumbnailUrl": "https://picsum.photos/seed/mc1/800/450",
+			"description": "Can I survive 100 days when the ground is lava?",
+			"videoFileName": "video-10.mp4",
+			"viewsCount": 3200000,
+			"isPublic": true,
+			"createdAt": "2024-03-15T16:00:00Z",
+			"chanel": {
+				"id": 10,
+				"title": "GamerX",
+				"slug": "gamerx",
+				"description": "Daily Minecraft challenges.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=gamerx",
+				"bannerUrl": "https://picsum.photos/seed/bgamer/1200/300",
+				"createdAt": "2016-11-22T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 11,
+			"title": "Tesla Bot Gen 2 Reveal",
+			"slug": "tesla-bot",
+			"thumbnailUrl": "https://picsum.photos/seed/ai1/800/450",
+			"description": "The future of humanoid robots is here.",
+			"videoFileName": "video-11.mp4",
+			"viewsCount": 2100000,
+			"isPublic": true,
+			"createdAt": "2024-03-16T09:00:00Z",
+			"chanel": {
+				"id": 11,
+				"title": "FutureTech",
+				"slug": "future",
+				"description": "AI and Robotics news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=future",
+				"bannerUrl": "https://picsum.photos/seed/bfuture/1200/300",
+				"createdAt": "2020-04-01T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 12,
+			"title": "Full House Tour - Minimalist Style",
+			"slug": "house-tour",
+			"thumbnailUrl": "https://picsum.photos/seed/design1/800/450",
+			"description": "Living with only what is necessary.",
+			"videoFileName": "video-12.mp4",
+			"viewsCount": 850000,
+			"isPublic": true,
+			"createdAt": "2024-03-17T12:00:00Z",
+			"chanel": {
+				"id": 12,
+				"title": "MinimalistHome",
+				"slug": "minimal",
+				"description": "Interior design and simple living.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=mini",
+				"bannerUrl": "https://picsum.photos/seed/bmini/1200/300",
+				"createdAt": "2018-09-05T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 13,
+			"title": "Building a $5000 Gaming PC",
+			"slug": "pc-build",
+			"thumbnailUrl": "https://picsum.photos/seed/pc1/800/450",
+			"description": "RTX 4090, i9-14900K and a lot of RGB.",
+			"videoFileName": "video-13.mp4",
+			"viewsCount": 670000,
+			"isPublic": true,
+			"createdAt": "2024-03-18T17:00:00Z",
+			"chanel": {
+				"id": 13,
+				"title": "HardwareHub",
+				"slug": "hardware",
+				"description": "PC building tutorials.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=hw",
+				"bannerUrl": "https://picsum.photos/seed/bhw/1200/300",
+				"createdAt": "2012-12-12T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 14,
+			"title": "Why I Quit My Job at Google",
+			"slug": "quit-google",
+			"thumbnailUrl": "https://picsum.photos/seed/life1/800/450",
+			"description": "The truth about working in Big Tech.",
+			"videoFileName": "video-14.mp4",
+			"viewsCount": 1100000,
+			"isPublic": true,
+			"createdAt": "2024-03-19T10:00:00Z",
+			"chanel": {
+				"id": 14,
+				"title": "DevStories",
+				"slug": "devstory",
+				"description": "Careers in tech.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=story",
+				"bannerUrl": "https://picsum.photos/seed/bstory/1200/300",
+				"createdAt": "2022-02-02T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 15,
+			"title": "Learning Guitar in 30 Days",
+			"slug": "guitar-30-days",
+			"thumbnailUrl": "https://picsum.photos/seed/music2/800/450",
+			"description": "Can a complete beginner learn guitar in one month?",
+			"videoFileName": "video-15.mp4",
+			"viewsCount": 430000,
+			"isPublic": true,
+			"createdAt": "2024-03-20T08:00:00Z",
+			"chanel": {
+				"id": 15,
+				"title": "SkillUp",
+				"slug": "skillup",
+				"description": "Learning new things every day.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=skill",
+				"bannerUrl": "https://picsum.photos/seed/bskill/1200/300",
+				"createdAt": "2020-05-15T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 16,
+			"title": "Fastest Way to Learn Python in 2024",
+			"slug": "learn-python",
+			"thumbnailUrl": "https://picsum.photos/seed/py1/800/450",
+			"description": "Stop wasting time and start coding now.",
+			"videoFileName": "video-16.mp4",
+			"viewsCount": 890000,
+			"isPublic": true,
+			"createdAt": "2024-03-21T11:00:00Z",
+			"chanel": {
+				"id": 5,
+				"title": "CodeDaily",
+				"slug": "code-daily",
+				"description": "JS, React and NextJS tutorials.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=code",
+				"bannerUrl": "https://picsum.photos/seed/bcode/1200/300",
+				"createdAt": "2021-05-12T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 17,
+			"title": "Morning Routine of a Productive CEO",
+			"slug": "ceo-routine",
+			"thumbnailUrl": "https://picsum.photos/seed/ceo/800/450",
+			"description": "Wake up at 5 AM and crush your goals.",
+			"videoFileName": "video-17.mp4",
+			"viewsCount": 2500000,
+			"isPublic": true,
+			"createdAt": "2024-03-22T06:00:00Z",
+			"chanel": {
+				"id": 17,
+				"title": "BusinessInsider",
+				"slug": "business",
+				"description": "Success stories and tips.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=biz",
+				"bannerUrl": "https://picsum.photos/seed/bbiz/1200/300",
+				"createdAt": "2010-06-01T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 18,
+			"title": "Grand Theft Auto VI Trailer #2 Leak?",
+			"slug": "gta-6-leak",
+			"thumbnailUrl": "https://picsum.photos/seed/gta6/800/450",
+			"description": "Is this the first real look at GTA 6 gameplay?",
+			"videoFileName": "video-18.mp4",
+			"viewsCount": 12000000,
+			"isPublic": true,
+			"createdAt": "2024-03-23T19:00:00Z",
+			"chanel": {
+				"id": 18,
+				"title": "GamingNews",
+				"slug": "gnews",
+				"description": "All your gaming leaks in one place.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=gnews",
+				"bannerUrl": "https://picsum.photos/seed/bgnews/1200/300",
+				"createdAt": "2015-02-10T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 19,
+			"title": "Best Street Food in Bangkok",
+			"slug": "bangkok-food",
+			"thumbnailUrl": "https://picsum.photos/seed/thai/800/450",
+			"description": "We tried everything for under $20.",
+			"videoFileName": "video-19.mp4",
+			"viewsCount": 920000,
+			"isPublic": true,
+			"createdAt": "2024-03-24T13:00:00Z",
+			"chanel": {
+				"id": 7,
+				"title": "NomadVlog",
+				"slug": "nomad",
+				"description": "Travel the world on a budget.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=nomad",
+				"bannerUrl": "https://picsum.photos/seed/btravel/1200/300",
+				"createdAt": "2017-02-14T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 20,
+			"title": "How to Draw Realistic Eyes",
+			"slug": "draw-eyes",
+			"thumbnailUrl": "https://picsum.photos/seed/art1/800/450",
+			"description": "Simple step-by-step tutorial for beginners.",
+			"videoFileName": "video-20.mp4",
+			"viewsCount": 340000,
+			"isPublic": true,
+			"createdAt": "2024-03-25T15:00:00Z",
+			"chanel": {
+				"id": 20,
+				"title": "ArtMastery",
+				"slug": "art",
+				"description": "Learn to draw and paint.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=art",
+				"bannerUrl": "https://picsum.photos/seed/bart/1200/300",
+				"createdAt": "2016-04-20T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 21,
+			"title": "Top 5 AI Tools for Developers",
+			"slug": "ai-tools",
+			"thumbnailUrl": "https://picsum.photos/seed/ai2/800/450",
+			"description": "Beyond ChatGPT: tools that will change your workflow.",
+			"videoFileName": "video-21.mp4",
+			"viewsCount": 150000,
+			"isPublic": true,
+			"createdAt": "2024-03-26T09:00:00Z",
+			"chanel": {
+				"id": 11,
+				"title": "FutureTech",
+				"slug": "future",
+				"description": "AI and Robotics news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=future",
+				"bannerUrl": "https://picsum.photos/seed/bfuture/1200/300",
+				"createdAt": "2020-04-01T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 22,
+			"title": "World's Most Dangerous Road",
+			"slug": "dangerous-road",
+			"thumbnailUrl": "https://picsum.photos/seed/road1/800/450",
+			"description": "Driving through the mountains of Bolivia.",
+			"videoFileName": "video-22.mp4",
+			"viewsCount": 4200000,
+			"isPublic": true,
+			"createdAt": "2024-03-27T16:00:00Z",
+			"chanel": {
+				"id": 22,
+				"title": "AdventureUncut",
+				"slug": "adventure",
+				"description": "Raw adventure videos.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=adv",
+				"bannerUrl": "https://picsum.photos/seed/badv/1200/300",
+				"createdAt": "2014-11-11T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 23,
+			"title": "React Native vs Flutter in 2024",
+			"slug": "mobile-war",
+			"thumbnailUrl": "https://picsum.photos/seed/mobile1/800/450",
+			"description": "Which framework should you choose for your next app?",
+			"videoFileName": "video-23.mp4",
+			"viewsCount": 78000,
+			"isPublic": true,
+			"createdAt": "2024-03-28T14:00:00Z",
+			"chanel": {
+				"id": 5,
+				"title": "CodeDaily",
+				"slug": "code-daily",
+				"description": "JS, React and NextJS tutorials.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=code",
+				"bannerUrl": "https://picsum.photos/seed/bcode/1200/300",
+				"createdAt": "2021-05-12T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 24,
+			"title": "How I Organize My Life with Notion",
+			"slug": "notion-tips",
+			"thumbnailUrl": "https://picsum.photos/seed/notion/800/450",
+			"description": "My full setup for productivity and planning.",
+			"videoFileName": "video-24.mp4",
+			"viewsCount": 210000,
+			"isPublic": true,
+			"createdAt": "2024-03-29T10:00:00Z",
+			"chanel": {
+				"id": 12,
+				"title": "MinimalistHome",
+				"slug": "minimal",
+				"description": "Interior design and simple living.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=mini",
+				"bannerUrl": "https://picsum.photos/seed/bmini/1200/300",
+				"createdAt": "2018-09-05T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 25,
+			"title": "Exploring an Abandoned $10M Mansion",
+			"slug": "abandoned-mansion",
+			"thumbnailUrl": "https://picsum.photos/seed/urbex/800/450",
+			"description": "You won't believe what we found inside.",
+			"videoFileName": "video-25.mp4",
+			"viewsCount": 5600000,
+			"isPublic": true,
+			"createdAt": "2024-03-30T21:00:00Z",
+			"chanel": {
+				"id": 22,
+				"title": "AdventureUncut",
+				"slug": "adventure",
+				"description": "Raw adventure videos.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=adv",
+				"bannerUrl": "https://picsum.photos/seed/badv/1200/300",
+				"createdAt": "2014-11-11T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 26,
+			"title": "The Science of Coffee",
+			"slug": "coffee-science",
+			"thumbnailUrl": "https://picsum.photos/seed/coffee/800/450",
+			"description": "Why caffeine makes you feel amazing (and then crash).",
+			"videoFileName": "video-26.mp4",
+			"viewsCount": 890000,
+			"isPublic": true,
+			"createdAt": "2024-03-31T09:00:00Z",
+			"chanel": {
+				"id": 26,
+				"title": "VeritasiumStyle",
+				"slug": "veritas",
+				"description": "Science and philosophy.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=veritas",
+				"bannerUrl": "https://picsum.photos/seed/bveritas/1200/300",
+				"createdAt": "2011-07-07T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 27,
+			"title": "Cyberpunk 2077: Phantom Liberty Final Review",
+			"slug": "cyberpunk-review",
+			"thumbnailUrl": "https://picsum.photos/seed/cyber/800/450",
+			"description": "The redemption arc is finally complete.",
+			"videoFileName": "video-27.mp4",
+			"viewsCount": 1300000,
+			"isPublic": true,
+			"createdAt": "2024-04-01T15:00:00Z",
+			"chanel": {
+				"id": 2,
+				"title": "TechReview",
+				"slug": "tech-review",
+				"description": "Best gadgets and tech news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=tech",
+				"bannerUrl": "https://picsum.photos/seed/btech/1200/300",
+				"createdAt": "2015-06-10T00:00:00Z",
+				"isVerified": true
+			}
+		},
+		{
+			"id": 28,
+			"title": "1 Hour Workout No Equipment",
+			"slug": "home-workout",
+			"thumbnailUrl": "https://picsum.photos/seed/gym/800/450",
+			"description": "Full body burn you can do anywhere.",
+			"videoFileName": "video-28.mp4",
+			"viewsCount": 2400000,
+			"isPublic": true,
+			"createdAt": "2024-04-02T07:00:00Z",
+			"chanel": {
+				"id": 3,
+				"title": "HealthLife",
+				"slug": "health-life",
+				"description": "Yoga, meditation and healthy food.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=health",
+				"bannerUrl": "https://picsum.photos/seed/byoga/1200/300",
+				"createdAt": "2019-01-20T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 29,
+			"title": "React Query vs SWR: Which is better?",
+			"slug": "fetch-libs",
+			"thumbnailUrl": "https://picsum.photos/seed/code3/800/450",
+			"description": "Comparing the two most popular data fetching libraries.",
+			"videoFileName": "video-29.mp4",
+			"viewsCount": 35000,
+			"isPublic": true,
+			"createdAt": "2024-04-03T11:00:00Z",
+			"chanel": {
+				"id": 5,
+				"title": "CodeDaily",
+				"slug": "code-daily",
+				"description": "JS, React and NextJS tutorials.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=code",
+				"bannerUrl": "https://picsum.photos/seed/bcode/1200/300",
+				"createdAt": "2021-05-12T00:00:00Z",
+				"isVerified": false
+			}
+		},
+		{
+			"id": 30,
+			"title": "Tesla Model 3 Highland - 6 Month Review",
+			"slug": "tesla-review",
+			"thumbnailUrl": "https://picsum.photos/seed/tesla/800/450",
+			"description": "Is it still the best electric car for the money?",
+			"videoFileName": "video-30.mp4",
+			"viewsCount": 1100000,
+			"isPublic": true,
+			"createdAt": "2024-04-04T13:00:00Z",
+			"chanel": {
+				"id": 2,
+				"title": "TechReview",
+				"slug": "tech-review",
+				"description": "Best gadgets and tech news.",
+				"avatarUrl": "https://i.pravatar.cc/150?u=tech",
+				"bannerUrl": "https://picsum.photos/seed/btech/1200/300",
+				"createdAt": "2015-06-10T00:00:00Z",
+				"isVerified": true
+			}
+		}
+	],
+	"Users": [
+		{ "id": 1, "name": "Amir" },
+		{ "id": 1, "name": "ALice" }
+	]
+}
