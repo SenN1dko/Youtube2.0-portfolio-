@@ -4,6 +4,9 @@ import { useQuery } from '@tanstack/react-query'
 import { VideoItem } from '@/ui/video-item/VideoItem'
 
 import { videoService } from '@/services/video.services'
+import { Heading } from '@/ui/Heading'
+import { Compass } from 'lucide-react'
+import  { SkeletonLoading } from '@/ui/SkeletonLoading'
 
 
 export function Explore() {
@@ -12,10 +15,10 @@ export function Explore() {
 		queryFn: () => videoService.getExploreVideos()
 	})
     return <section>
-        <h2>Explore</h2>
+        <Heading Icon={Compass}>Explore</Heading>
         	<div className='grid grid-cols-5 gap-5 grid-rows-auto'>
 			{isLoading
-				? 'Loading...'
+				? <SkeletonLoading count={5}  className='h-36'/>
 				: data?.data.length &&
 					data.data.map(video => (
 						<VideoItem
