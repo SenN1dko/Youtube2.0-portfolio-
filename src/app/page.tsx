@@ -1,6 +1,7 @@
+
 import { Flame } from "lucide-react";
 import { Heading } from "@/ui/Heading";
-import { Explore } from "./Explore/Explore";
+import { Explore } from "./(public)/Explore/Explore";
 import { videoService } from "@/services/video.services";
 import { VideoItem } from "@/ui/video-item/VideoItem";
 
@@ -13,7 +14,7 @@ export default async function Home() {
 	return (
 		
 		<>
-		<section>
+		<section className='mb-10'>
 			 <Heading Icon={Flame}>Trending</Heading>
         	<div className='grid grid-cols-5 gap-5 '>
 			{trendingVideos &&
@@ -33,3 +34,4 @@ export default async function Home() {
 		</>
 	)
 }
+//16 21:00
