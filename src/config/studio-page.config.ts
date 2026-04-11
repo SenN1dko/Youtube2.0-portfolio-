@@ -1,8 +1,8 @@
 class StudioPage {
 	HOME = '/studio'
-	UPLOAD_VIDEO = '{this.HOME}/upload'
+	UPLOAD_VIDEO = `${this.HOME}/upload`
 
-	SETTINGS = '{this.HOME}/settings'
+	SETTINGS = `${this.HOME}/settings`
 
 	EDIT_VIDEO(path: string) {
 		return `/edit/v/${path}`

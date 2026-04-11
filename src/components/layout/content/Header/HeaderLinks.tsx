@@ -11,7 +11,7 @@ export function HeaderLinks() {
             <LayoutGrid size={20}/>
         </Link>
         <Link href={STUDIO_PAGE.HOME }className="transition-opacity hover:opacity-100 opacity-75">
-            <Bell size={20} />
+            <Bell size={20}  /> 
         </Link>
 
     </div>
