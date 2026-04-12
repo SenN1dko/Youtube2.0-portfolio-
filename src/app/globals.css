@@ -13,3 +13,8 @@ html,
 body {
 	@apply text-white bg-bg text-base;
 }
+@layer utilities{
+	.grid-6{
+		@apply grid grid-cols-5 gap-5
+	}
+}

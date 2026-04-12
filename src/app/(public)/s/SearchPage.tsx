@@ -19,16 +19,18 @@ export function SearchPage() {
     
     return <>
      <Heading isH1 Icon={Search}>Searched by: {searchTerm}</Heading>
-        	<div className='grid grid-cols-5 gap-5 grid-rows-auto'>
+        	<div className='grid-6'>
 			{isLoading
 				? <SkeletonLoading count={5}  className='h-36'/>
-				: data?.data.length &&
+				: data?.data.length ?
 					data.data.map(video => (
 						<VideoItem
 							key={video.id}
 							video={video}
 						/>
-					))} 
+					)):
+					<p>videos not found!</p>
+					} 
 		</div>
     </>
 }

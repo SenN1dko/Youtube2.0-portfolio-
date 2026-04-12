@@ -16,7 +16,7 @@ export default async function Home() {
 		<>
 		<section className='mb-10'>
 			 <Heading Icon={Flame}>Trending</Heading>
-        	<div className='grid grid-cols-5 gap-5 '>
+        	<div className='grid-6'>
 			{trendingVideos &&
 					trendingVideos.map(video => (
 						<VideoItem
