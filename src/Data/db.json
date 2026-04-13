@@ -737,9 +737,5 @@
 				"isVerified": false
 			}
 		}
-	],
-	"Users": [
-		{ "id": 1, "name": "Amir" },
-		{ "id": 2, "name": "ALice" }
 	]
 }

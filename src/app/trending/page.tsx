@@ -1,8 +1,10 @@
-import { videoService } from '@/services/video.services'
+import { Flame } from 'lucide-react'
+import type { Metadata } from 'next'
+
 import { Heading } from '@/ui/Heading'
 import { VideoItem } from '@/ui/video-item/VideoItem'
-import { Divide, Flame } from 'lucide-react'
-import type { Metadata } from 'next'
+
+import { videoService } from '@/services/video.services'
 
 export const metadata: Metadata = {
 	title: 'Trending',
@@ -16,19 +18,24 @@ export default async function TrendingPage() {
 	const data = await videoService.getTrendingVideos()
 	const trendingVideos = data.data
 
-	return <>
+	return (
+		<>
 			<section className='mb-10'>
-			 <Heading Icon={Flame}>Trending</Heading>
-        	<div className='grid-6'>
-			{trendingVideos ?
-					trendingVideos.map(video => (
-						<VideoItem
-							key={video.id}
-							video={video}
-							Icon={Flame}
-						/>
-					)):<p>Trends are temporary unavailable</p>}
-		</div>
-		</section>
-	</>
+				<Heading Icon={Flame}>Trending</Heading>
+				<div className='grid-6'>
+					{trendingVideos ? (
+						trendingVideos.map(video => (
+							<VideoItem
+								key={video.id}
+								video={video}
+								Icon={Flame}
+							/>
+						))
+					) : (
+						<p>Trends are temporary unavailable</p>
+					)}
+				</div>
+			</section>
+		</>
+	)
 }

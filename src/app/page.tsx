@@ -14,11 +14,14 @@ export default async function Home() {
 	return (
 		
 		<>
+		<section>
+		{!!trendingVideos.length && (
+
 		<section className='mb-10'>
 			 <Heading Icon={Flame}>Trending</Heading>
         	<div className='grid-6'>
-			{trendingVideos &&
-					trendingVideos.map(video => (
+			
+					{trendingVideos.map(video => (
 						<VideoItem
 							key={video.id}
 							video={video}
@@ -27,11 +30,11 @@ export default async function Home() {
 					))}
 		</div>
 		</section>
-
-		<section>
+		)
+	}
+		
 			<Explore/>
 		</section>
 		</>
 	)
 }
-//16 21:00
