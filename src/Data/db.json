@@ -737,5 +737,93 @@
 				"isVerified": false
 			}
 		}
+	],
+	"videoGames": [
+		
+  {
+    "id": 101,
+    "title": "Elden Ring: Shadow of the Erdtree - Official Gameplay Reveal",
+    "slug": "elden-ring-shadow-erdtree",
+    "thumbnailUrl": "https://picsum.photos/seed/elden/800/450",
+    "description": "The Shadow of the Erdtree expansion features an all-new story set in the Land of Shadow, a place obscured by the Erdtree.",
+    "videoFileName": "gaming-1.mp4",
+    "viewsCount": 8900500,
+    "isPublic": true,
+    "createdAt": "2024-04-10T15:00:00Z",
+    "chanel": {
+      "id": 10,
+      "title": "Bandai Namco",
+      "slug": "bandai-namco",
+      "description": "Official channel for Bandai Namco Entertainment.",
+      "avatarUrl": "https://i.pravatar.cc/150?u=bandai",
+      "bannerUrl": "https://picsum.photos/seed/bandai-banner/1200/300",
+      "createdAt": "2010-05-20T00:00:00Z",
+      "isVerified": true
+    }
+  },
+  {
+    "id": 102,
+    "title": "Cyberpunk 2077 - Why you should play it in 2026",
+    "slug": "cyberpunk-2026-review",
+    "thumbnailUrl": "https://picsum.photos/seed/cyber/800/450",
+    "description": "Exploring the Night City after all the major updates and the Phantom Liberty expansion.",
+    "videoFileName": "gaming-2.mp4",
+    "viewsCount": 450200,
+    "isPublic": true,
+    "createdAt": "2026-01-15T12:00:00Z",
+    "chanel": {
+      "id": 11,
+      "title": "IGN",
+      "slug": "ign",
+      "description": "The latest game reviews, trailers, and walkthroughs.",
+      "avatarUrl": "https://i.pravatar.cc/150?u=ign",
+      "bannerUrl": "https://picsum.photos/seed/ign-banner/1200/300",
+      "createdAt": "2006-09-18T00:00:00Z",
+      "isVerified": true
+    }
+  },
+  {
+    "id": 103,
+    "title": "Minecraft: 100 Days in a Hardcore Desert World",
+    "slug": "minecraft-100-days-desert",
+    "thumbnailUrl": "https://picsum.photos/seed/mc/800/450",
+    "description": "Can I survive 100 days when there is no water and only sand? Let's find out!",
+    "videoFileName": "gaming-3.mp4",
+    "viewsCount": 12500000,
+    "isPublic": true,
+    "createdAt": "2024-03-25T09:30:00Z",
+    "chanel": {
+      "id": 12,
+      "title": "DreamerGames",
+      "slug": "dreamer-games",
+      "description": "High-quality Minecraft challenges and tutorials.",
+      "avatarUrl": "https://i.pravatar.cc/150?u=dreamer",
+      "bannerUrl": "https://picsum.photos/seed/dreamer-banner/1200/300",
+      "createdAt": "2018-11-02T00:00:00Z",
+      "isVerified": false
+    }
+  },
+  {
+    "id": 104,
+    "title": "GTA VI - Vice City Map Leak Analysis",
+    "slug": "gta-6-map-leak",
+    "thumbnailUrl": "https://picsum.photos/seed/gta6/800/450",
+    "description": "Detailed breakdown of the leaked map footage and what it means for the final game.",
+    "videoFileName": "gaming-4.mp4",
+    "viewsCount": 2340000,
+    "isPublic": true,
+    "createdAt": "2024-04-12T18:45:00Z",
+    "chanel": {
+      "id": 13,
+      "title": "Rockstar News",
+      "slug": "rockstar-news",
+      "description": "Everything you need to know about Rockstar Games.",
+      "avatarUrl": "https://i.pravatar.cc/150?u=rockstar",
+      "bannerUrl": "https://picsum.photos/seed/rs-banner/1200/300",
+      "createdAt": "2015-02-14T00:00:00Z",
+      "isVerified": false
+    }
+  }
+
 	]
 }
