@@ -1,35 +1,31 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm, type SubmitHandler } from 'react-hook-form'
+import ReCAPTCHA from 'react-google-recaptcha'
+import { useForm } from 'react-hook-form'
 
 import { Button } from '@/ui/button/Button'
 import { Field } from '@/ui/field/Field'
 import { Logo } from '@/ui/logo/Logo'
 
-interface IAuthForm {
-	email: string
-	password: string
-	passwordConfirmation?: string
-}
+import type { IAuthForm } from './auth-form.type'
+import styles from './captcha.module.scss'
+import { useAuthForm } from './useAuthForm'
+
 export function Auth() {
 	const [isLogin, setIsLogin] = useState(true)
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-		watch
+		watch,
+		reset
 	} = useForm<IAuthForm>({
 		mode: 'onChange'
 	})
 
-	const onSubmit: SubmitHandler<IAuthForm> = data => {
-		if (isLogin) {
-			console.log('Logging in with:', data)
-		} else {
-			console.log('Signing up with:', data)
-		}
-	}
+	const { isLoading, onSubmit, recaptchaRef } = useAuthForm(isLogin ? 'login' : 'register', reset)
+
 	return (
 		<>
 			<div className='flex items-center justify-center w-screen h-screen '>
@@ -80,8 +76,22 @@ export function Auth() {
 								placeholder='Enter password again:'
 							/>
 						)}
+
+						<ReCAPTCHA
+							size='normal'
+							sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
+							ref={recaptchaRef}
+							className={styles.recaptcha}
+							theme='light'
+						/>
+
 						<div className='text-center mt-6'>
-							<Button type='submit'>{isLogin ? 'Login' : 'Sign Up'}</Button>
+							<Button
+								type='submit'
+								isLoading={isLoading}
+							>
+								{isLogin ? 'Login' : 'Sign Up'}
+							</Button>
 						</div>
 					</form>
 				</div>
