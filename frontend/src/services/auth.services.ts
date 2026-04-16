@@ -5,7 +5,6 @@ import cookies from 'js-cookie'
 import { useAuthStore } from '@/store'
 
 
-
 export enum EnumTokens{
     ACCESS_TOKEN = 'accessToken',
     REFRESH_TOKEN = 'refreshToken'
