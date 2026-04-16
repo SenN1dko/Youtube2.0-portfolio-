@@ -2,6 +2,9 @@ import { axiosCLassic } from '@/api/axios'
 import type { IAuthData } from '@/app/auth/auth-form.type'
 import type { IUser } from '@/types/user.type'
 import cookies from 'js-cookie'
+import { useAuthStore } from '@/store'
+
+
 
 export enum EnumTokens{
     ACCESS_TOKEN = 'accessToken',
@@ -17,12 +20,9 @@ interface IAuthResponse {
 class AuthService {
     private  _AUTH = '/auth'
 
-    
-
-
     async main(type: 'login' | 'register', data:IAuthData, recaptchaToken?: string | null) {
 
-     const response = await axiosCLassic.post<IAuthResponse>(`${this._AUTH}/${type}`,{
+     const response = await axiosCLassic.post<IAuthResponse>(`${this._AUTH}/${type}`, data, {
             headers: {
                 recaptcha: recaptchaToken 
             }
@@ -52,16 +52,17 @@ class AuthService {
                 Cookie:`refreshToken=${refreshToken}`
             }
         })
-
         return response.data
     }
 
 
     async logout(){
-
+        
         const response = await axiosCLassic.post(`${this._AUTH}/logout`)
         if(response.data)this._removeFromStorage()
+        useAuthStore.getState().setUser(null)
         return response
+
     }
 
     private _saveTokenStorage(accessToken: string) {

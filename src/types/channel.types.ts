@@ -1,4 +1,4 @@
-// import type { IVideo } from './video.types'
+import type { IVideo } from './video.types'
 
 export interface IChannel {
 	id: string
@@ -9,7 +9,7 @@ export interface IChannel {
 	avatarUrl: string
 	bannerUrl: string
 	//user
-	// videos: IVideo[]
-	// subscribers: []
+	videos: IVideo[]
+	subscribers: []
 	createdAt: string
 }

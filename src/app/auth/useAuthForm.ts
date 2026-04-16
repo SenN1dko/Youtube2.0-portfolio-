@@ -8,10 +8,13 @@ import type {  SubmitHandler, UseFormReset } from "react-hook-form"
 import { PAGE } from "@/config/public-page.config"
 import axios from "axios"
 import toast from "react-hot-toast"
+import { useAuthStore } from "@/store"
 
 export function useAuthForm(type: 'login' | 'register', reset:UseFormReset<IAuthForm>) {
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
+
+  const setUser = useAuthStore(state => state.setUser)
 
   const recaptchaRef = useRef<ReCAPTCHA>(null)
 
@@ -32,8 +35,9 @@ export function useAuthForm(type: 'login' | 'register', reset:UseFormReset<IAuth
         }
       toast.promise(mutateAsync(data), {
     loading: type === 'login' ? 'Logging in...' : 'Registering...',
-    success: () => {
-          startTransition(() => {
+    success: (response) => {
+        startTransition(() => {
+          setUser(response.data.user)
         reset()
         router.push(PAGE.HOME)
       })
