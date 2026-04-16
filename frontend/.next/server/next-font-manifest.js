@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/senn1sd/MyProjets/Youtube2.0-portfolio-/frontend/src/app/layout\":[\"static/media/1755441e3a2fa970-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

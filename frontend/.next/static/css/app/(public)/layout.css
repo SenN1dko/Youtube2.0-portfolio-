@@ -1,0 +1,55 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!../node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[7].use[4]!../node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[7].use[5]!./src/components/layout/Layout.module.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Layout_hidedSidebar___hnHt > aside {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: width 0.35s ease-in-out;
+}
+.Layout_hidedSidebar___hnHt > aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.Layout_hidedSidebar___hnHt > aside nav div:first-child {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.Layout_showedSidebar__iIITV > aside {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: width 0.35s ease-in-out;
+}
+.Layout_showedSidebar__iIITV > aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.Layout_showedSidebar__iIITV > aside nav div:first-child {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.Layout_hidedSidebar___hnHt > aside {
+  width: 3.8rem;
+}
+.Layout_hidedSidebar___hnHt > aside nav div:first-child {
+  opacity: 0;
+  pointer-events: none;
+}
+.Layout_hidedSidebar___hnHt > .Layout_content__BZybW {
+  width: 100%;
+  transition: width 0.35s ease-in-out;
+}
+
+.Layout_showedSidebar__iIITV > aside {
+  width: var(--sidebar-width);
+}
+.Layout_showedSidebar__iIITV > aside nav div:first-child {
+  opacity: 1;
+}
