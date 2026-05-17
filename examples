@@ -7,65 +7,65 @@
 //   .get('password' , () => 'amirP')
 //   .get('login' , () => 'amirL')
 // ))
-.get('amir' , 'amir')
-.get('/users', async({db}) =>{
-return await db.user.findMany()
-})
+// .get('amir' , 'amir')
+// .get('/users', async({db}) =>{
+// return await db.user.findMany()
+// })
 
-.get('/user/:id', async ({ db ,status, params: { id } }, ) => {
-    const user = await db.user.findUnique({
-        where: { id }
-    })
+// .get('/user/:id', async ({ db ,status, params: { id } }, ) => {
+//     const user = await db.user.findUnique({
+//         where: { id }
+//     })
 
-    if (!user) {
-       return status(404, {
-        message:'Not found'
-       })
-    }
-    return user
-},{
-    params: t.Object({
-        id: t.String()
-    })
-})
+//     if (!user) {
+//        return status(404, {
+//         message:'Not found'
+//        })
+//     }
+//     return user
+// },{
+//     params: t.Object({
+//         id: t.String()
+//     })
+// })
 
-.post('/user/c' , async({body,db}) => {
-return db.user.create({
-    data:body
-})
-},{
-    body:t.Object({
-       email: t.String(),
-        password: t.String(), 
-        username: t.String()
-    })
-})
+// .post('/user/c' , async({body,db}) => {
+// return db.user.create({
+//     data:body
+// })
+// },{
+//     body:t.Object({
+//        email: t.String(),
+//         password: t.String(), 
+//         username: t.String()
+//     })
+// })
 
-.put('/user/d/:id' , async({body,db,params:{id}}) => {
-return db.user.update({
-    where:{id},
-    data:body
-})
-},{
-     body:t.Object({
-       email: t.Optional(t.String()),
-        password: t.Optional(t.String()),
-        username: t.Optional(t.String())
-    }),
-    params:t.Object({
-        id:t.String()
-    })
-})
+// .put('/user/d/:id' , async({body,db,params:{id}}) => {
+// return db.user.update({
+//     where:{id},
+//     data:body
+// })
+// },{
+//      body:t.Object({
+//        email: t.Optional(t.String()),
+//         password: t.Optional(t.String()),
+//         username: t.Optional(t.String())
+//     }),
+//     params:t.Object({
+//         id:t.String()
+//     })
+// })
 
-.delete('/user/del/:id' , async({params:{id},db}) =>{
-await db.user.delete({
-    where:{id}
-})
-return {
-    message:'user has deleted2'
-}
-})
-.get('/clear' , ({cookie:{name}}) => {
-name.remove()
-return 'cookie has cleared'
-})
+// .delete('/user/del/:id' , async({params:{id},db}) =>{
+// await db.user.delete({
+//     where:{id}
+// })
+// return {
+//     message:'user has deleted2'
+// }
+// })
+// .get('/clear' , ({cookie:{name}}) => {
+// name.remove()
+// return 'cookie has cleared'
+// })
