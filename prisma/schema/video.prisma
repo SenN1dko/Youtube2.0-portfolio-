@@ -1,0 +1,35 @@
+model Game {
+    id     String  @id @default(cuid())
+    name   String  @unique
+    slug   String  @unique
+    videos Video[]
+
+    @@map("Games")
+}
+
+model Video {
+    id String @id @default(cuid())
+
+    title         String
+    description   String?
+    views         Int     @default(0)
+    slug          String  @unique
+    thumbnailUrl  String
+    videoFileName String
+    isPublic      Boolean @default(true)
+
+    channel   Channel? @relation(fields: [channelId], references: [id])
+    channelId String?  @map("channel_id")
+
+    gameId String?
+    game   Game?   @relation(fields: [gameId], references: [id])
+
+    likes    Like[]
+    comments Comment[]
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    @@index([views(sort: Desc)])
+    @@map("Videos")
+}

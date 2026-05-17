@@ -1,0 +1,37 @@
+model User {
+    id String @id @default(cuid())
+
+    email    String @unique
+    password String
+
+    avatar   String?
+    username String  @unique
+
+    channels Channel[]
+    likes    Like[]
+    comments Comment[]
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    @@map("users")
+}
+
+model Channel {
+    id String @id @default(cuid())
+
+    name        String  @unique
+    description String?
+    avatar      String?
+    banner      String?
+
+    video Video[]
+
+    ownerId String @map("owner_id")
+    owner   User   @relation(fields: [ownerId], references: [id])
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    @@map("Channels")
+}
