@@ -1,15 +1,14 @@
 import { create } from 'zustand'
-import Cookies from 'js-cookie'
 import type { IUser } from '@/types/user.type'
-import { EnumTokens } from '@/services/auth.services'
+import Cookies from 'js-cookie'
+import { EnumTokens } from '@/constants/token.constants'
 interface IAuthStore {
-    user: IUser | null
-    accessToken: string | null
-    isLoggedIn: boolean
-    setUser: (user: IUser | null, accessToken: string | null) => void
-    clearUser: () => void
+	user: IUser | null
+	accessToken: string | null
+	isLoggedIn:boolean
+	setUser: (user: IUser | null , accessToken:string) => void
+	clearUser:() => void
 }
-
 export const useAuthStore = create<IAuthStore>((set) => {
     const token = Cookies.get(EnumTokens.ACCESS_TOKEN) || null
 
@@ -25,12 +24,7 @@ export const useAuthStore = create<IAuthStore>((set) => {
         }),
         
         clearUser: () => {
-            
-            set({ 
-                user: null, 
-                accessToken: null, 
-                isLoggedIn: false 
-            })
+            set({ user: null, accessToken: null, isLoggedIn: false })
         }
     }
 })

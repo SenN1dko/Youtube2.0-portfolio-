@@ -1,4 +1,5 @@
 class PublicPage {
+	AUTH = '/auth'
 	HOME = '/'
 	TRENDING = '/trending'
 	VIDEO_GAMES = '/video-games'

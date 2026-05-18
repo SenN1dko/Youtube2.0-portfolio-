@@ -1,9 +1,11 @@
 import dynamic from 'next/dynamic'
 
 import { SkeletonLoading } from '@/ui/SkeletonLoading'
+import { LogOut } from '@/ui/button/LogOut'
 
 import { FieldSection } from './FieldSection'
 import { HeaderLinks } from './HeaderLinks'
+import { useAuthStore } from '@/store'
 
 const DynamicHeaderProfile = dynamic(
 	() => import('./HeaderProfile').then(mod => mod.HeaderProfile),
@@ -11,6 +13,7 @@ const DynamicHeaderProfile = dynamic(
 )
 
 export function Header() {
+	const isLoggedIn = useAuthStore(set => set.isLoggedIn)
 	return (
 		<header className='p-5 border-b border-border'>
 			<div className='flex items-center justify-between'>
@@ -18,6 +21,11 @@ export function Header() {
 				<div className=' flex items-center gap-7'>
 					<HeaderLinks />
 					<DynamicHeaderProfile />
+					{isLoggedIn && (
+						<>
+							<LogOut />
+						</>
+					)}
 				</div>
 			</div>
 		</header>

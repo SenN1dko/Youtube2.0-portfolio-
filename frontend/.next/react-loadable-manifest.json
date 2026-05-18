@@ -1,1 +1,8 @@
-{}
+{
+  "components/layout/content/Header/Header.tsx -> ./HeaderProfile": {
+    "id": "components/layout/content/Header/Header.tsx -> ./HeaderProfile",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_layout_content_Header_HeaderProfile_tsx.js"
+    ]
+  }
+}

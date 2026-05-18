@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { useRef, useTransition } from "react"
 import type { ReCAPTCHA } from "react-google-recaptcha"
-import type { IAuthForm } from "./auth-form.type"
+import type { IAuthData, IAuthForm } from "./auth-form.type"
 import type {  SubmitHandler, UseFormReset } from "react-hook-form"
 import { PAGE } from "@/config/public-page.config"
 import axios from "axios"
@@ -18,14 +18,13 @@ export function useAuthForm(type: 'login' | 'register', reset:UseFormReset<IAuth
 
   const {mutateAsync, isPending:isAuthPending} = useMutation({
     mutationKey:[type],
-    mutationFn: (data: IAuthForm) => authservice.main(type, data, recaptchaRef.current?.getValue() || null),
-
+    mutationFn: (data: IAuthData) => authservice.main(type, data, recaptchaRef.current?.getValue() || null),
    
   }) 
 
 
 
-	const onSubmit: SubmitHandler<IAuthForm> = data => {
+	const onSubmit: SubmitHandler<IAuthData> = data => {
         const token = recaptchaRef.current?.getValue()
         if (!token) {
             toast.error('Please complete the reCAPTCHA')
@@ -42,7 +41,7 @@ export function useAuthForm(type: 'login' | 'register', reset:UseFormReset<IAuth
     },
     error: (e) => {
            if(axios.isAxiosError(e)) {
-    return e.response?.data?.message 
+           return e.response?.data?.message 
   	}}
     }
 )

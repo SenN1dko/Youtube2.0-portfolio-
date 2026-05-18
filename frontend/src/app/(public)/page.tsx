@@ -12,6 +12,7 @@ export const dynamic = 'force-static'
 export default async function Home() {
 	const data = await videoService.getTrendingVideos()
 	const trendingVideos = data.data
+
 	return (
 		<>
 			<section>
@@ -29,7 +30,6 @@ export default async function Home() {
 						</div>
 					</section>
 				)}
-
 				<Explore />
 			</section>
 		</>

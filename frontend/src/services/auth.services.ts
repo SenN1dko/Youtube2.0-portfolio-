@@ -3,15 +3,11 @@ import type { IAuthData } from '@/app/auth/auth-form.type'
 import type { IUser } from '@/types/user.type'
 import cookies from 'js-cookie'
 import { useAuthStore } from '@/store'
-
+import { EnumTokens } from '@/constants/token.constants'
 const setUser = useAuthStore.getState().setUser
 const clearUser = useAuthStore.getState().clearUser
 
 
-export enum EnumTokens{
-    ACCESS_TOKEN = 'accessToken',
-    REFRESH_TOKEN = 'refreshToken'
-}
 
 interface IAuthResponse {
     user:IUser,
@@ -26,6 +22,7 @@ class AuthService {
 
      const response = await axiosCLassic.post<IAuthResponse>(`${this._AUTH}/${type}`, data, {
             headers: {
+                
                 recaptcha: recaptchaToken 
             }
         })
@@ -43,6 +40,7 @@ class AuthService {
      const response = await axiosCLassic.post<IAuthResponse>(`${this._AUTH}/access-token`)
         if(response.data.accessToken) {
             this._saveTokenStorage(response.data.accessToken)
+            setUser(response.data.user , response.data.accessToken)
         }
 
         return response
@@ -64,7 +62,7 @@ class AuthService {
         const response = await axiosCLassic.post(`${this._AUTH}/logout`)
         if(response.data){
             this._removeFromStorage()
-            clearUser()
+        clearUser()
         }
         return response
     }

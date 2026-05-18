@@ -41,12 +41,12 @@ export function VideoItem({ video, Icon }: Props) {
 					/>
 				</Link>
 
-				<Link href={PAGE.CHANNEL(video.chanel.slug)}>
+				<Link href={PAGE.CHANNEL('asd')}>
 					<Image
-						src={video.chanel.avatarUrl}
+						src='/channel.png'
 						width={30}
 						height={30}
-						alt={video.chanel.title}
+						alt={video.channel.name}
 						className='rounded-full absolute bottom-1.5 left-1.5 '
 					/>
 				</Link>
@@ -64,7 +64,7 @@ export function VideoItem({ video, Icon }: Props) {
 							size={20}
 						/>
 					)}
-					<span className='text-gray-400 text-sm'>{transformViews(video.viewsCount)}</span>
+					<span className='text-gray-400 text-sm'>{transformViews(video.views)}</span>
 				</m.div>
 				<m.div
 					whileHover={{
@@ -96,7 +96,7 @@ export function VideoItem({ video, Icon }: Props) {
 					href={PAGE.VIDEO(video.slug)}
 					className='flex items-center gap-1'
 				>
-					<span className='text-gray-400 text-sm'>{video.chanel.title}</span>
+					<span className='text-gray-400 text-sm'>{video.channel.name}</span>
 					<span>
 						{
 							<BadgeCheck

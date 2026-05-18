@@ -1,8 +1,11 @@
 {
   "version": 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "middleware": {},
 =======
+=======
+>>>>>>> 20ea2b2d ([+]Added store for setUser and logout)
   "middleware": {
     "/": {
       "files": [
@@ -22,6 +25,7 @@
       "env": {
         "__NEXT_BUILD_ID": "development",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "XcKJVru7dBym43k7qoen9B+dVDW9IxvCRZcYvtjvlLk=",
+<<<<<<< HEAD
         "__NEXT_PREVIEW_MODE_ID": "3f2af0b75b720b45d850f366a8c71820",
         "__NEXT_PREVIEW_MODE_SIGNING_KEY": "8bdf6014dc99943fd037ff4491b019c443fcd126f24537c58c227cfc48ea7a2b",
         "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "82892fc965763419391b2fa1ca6064159f764532187950d0c32454c8bfec1089"
@@ -29,6 +33,16 @@
     }
   },
 >>>>>>> 88b3b0f0 ([+] added login and logout buttons)
+=======
+        "__NEXT_PREVIEW_MODE_ID": "8feb44591f295de4e6903a9f45463bac",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "96a1aaf4d9ac5245c57b73c5d0181d46445b39d601fed6ce9bdbfd2c7ea74508",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "6358df4d3d03933f26d5ff1bf38bd5b549f989d7dbc5ef2a56a8f2b8a2357768"
+      }
+    }
+  },
+>>>>>>> 20ea2b2d ([+]Added store for setUser and logout)
   "functions": {},
-  "sortedMiddleware": []
+  "sortedMiddleware": [
+    "/"
+  ]
 }

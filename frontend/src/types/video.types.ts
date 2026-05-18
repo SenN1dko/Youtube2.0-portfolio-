@@ -7,8 +7,8 @@ export interface IVideo {
 	description: string
 	thumbnailUrl: string
 	videoFileName: string
-	viewsCount: number
+	views: number
 	isPublic: boolean
-	chanel: IChannel
+	channel: IChannel
 	createdAt: string
 }

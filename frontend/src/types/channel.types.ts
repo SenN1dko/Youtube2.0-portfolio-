@@ -1,15 +1,16 @@
+import type { IFullUser } from './user.type'
 import type { IVideo } from './video.types'
 
 export interface IChannel {
 	id: string
-	title: string
-	slug: string
+	name: string
+	// slug: string
 	description: string
 	isVerified: boolean
-	avatarUrl: string
-	bannerUrl: string
-	//user
+	avatar: string
+	banner: string
+	owner:IFullUser
 	videos: IVideo[]
-	subscribers: []
+	// subscribers: []
 	createdAt: string
 }
