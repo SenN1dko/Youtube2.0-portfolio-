@@ -104,7 +104,6 @@
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -354,9 +353,6 @@
   .inline-flex {
     display: inline-flex;
   }
-  .h-4 {
-    height: calc(var(--spacing) * 4);
-  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -565,9 +561,6 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
-  }
-  .text-black {
-    color: var(--color-black);
   }
   .text-gray-400 {
     color: var(--color-gray-400);
