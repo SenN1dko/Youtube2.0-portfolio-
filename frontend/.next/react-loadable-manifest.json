@@ -4,5 +4,11 @@
     "files": [
       "static/chunks/_app-pages-browser_src_components_layout_content_Header_HeaderProfile_tsx.js"
     ]
+  },
+  "components/layout/sidebar/Sidebar.tsx -> @/ui/button/LogOut": {
+    "id": "components/layout/sidebar/Sidebar.tsx -> @/ui/button/LogOut",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_ui_button_LogOut_tsx.js"
+    ]
   }
 }

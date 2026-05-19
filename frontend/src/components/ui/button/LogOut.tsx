@@ -2,12 +2,17 @@ import { useMutation } from '@tanstack/react-query'
 import { LogOutIcon } from 'lucide-react'
 
 import { authservice } from '@/services/auth.services'
+import { useAuthStore } from '@/store'
 
 export function LogOut() {
+	const isLoggedIn = useAuthStore(set => set.isLoggedIn)
+
 	const { mutate, isPending } = useMutation({
 		mutationKey: ['logout'],
 		mutationFn: () => authservice.logout()
 	})
+
+	if (isLoggedIn) return null
 	return (
 		<button
 			onClick={() => mutate()}
