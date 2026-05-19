@@ -4,6 +4,9 @@ import type { IUser } from '@/types/user.type'
 import cookies from 'js-cookie'
 import { useAuthStore } from '@/store'
 
+const setUser = useAuthStore.getState().setUser
+const clearUser = useAuthStore.getState().clearUser
+
 
 export enum EnumTokens{
     ACCESS_TOKEN = 'accessToken',
@@ -28,6 +31,7 @@ class AuthService {
         })
         if(response.data.accessToken) {
             this._saveTokenStorage(response.data.accessToken)
+            setUser(response.data.user , response.data.accessToken)
         }
 
         return response
@@ -58,10 +62,11 @@ class AuthService {
     async logout(){
         
         const response = await axiosCLassic.post(`${this._AUTH}/logout`)
-        if(response.data)this._removeFromStorage()
-        useAuthStore.getState().setUser(null)
+        if(response.data){
+            this._removeFromStorage()
+            clearUser()
+        }
         return response
-
     }
 
     private _saveTokenStorage(accessToken: string) {
@@ -73,7 +78,11 @@ class AuthService {
         
  }
     private _removeFromStorage() {
-            cookies.remove(EnumTokens.ACCESS_TOKEN)
+              cookies.remove(EnumTokens.ACCESS_TOKEN, {
+            domain: 'localhost',
+            sameSite: 'strict',
+            expires: 1
+        })
 } 
  
 }

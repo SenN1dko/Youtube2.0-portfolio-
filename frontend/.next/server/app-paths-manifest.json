@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
+=======
+  "/auth/page": "app/auth/page.js",
+>>>>>>> 88b3b0f0 ([+] added login and logout buttons)
   "/(public)/page": "app/(public)/page.js"
 }

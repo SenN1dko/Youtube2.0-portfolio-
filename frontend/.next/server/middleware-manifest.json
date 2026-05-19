@@ -1,6 +1,34 @@
 {
   "version": 3,
+<<<<<<< HEAD
   "middleware": {},
+=======
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge-runtime-webpack.js",
+        "server/middleware.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^/.*$",
+          "originalSource": "/:path*"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "XcKJVru7dBym43k7qoen9B+dVDW9IxvCRZcYvtjvlLk=",
+        "__NEXT_PREVIEW_MODE_ID": "3f2af0b75b720b45d850f366a8c71820",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "8bdf6014dc99943fd037ff4491b019c443fcd126f24537c58c227cfc48ea7a2b",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "82892fc965763419391b2fa1ca6064159f764532187950d0c32454c8bfec1089"
+      }
+    }
+  },
+>>>>>>> 88b3b0f0 ([+] added login and logout buttons)
   "functions": {},
   "sortedMiddleware": []
 }
