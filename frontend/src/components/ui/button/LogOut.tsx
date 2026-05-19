@@ -12,7 +12,7 @@ export function LogOut() {
 		mutationFn: () => authservice.logout()
 	})
 
-	if (isLoggedIn) return null
+	if (!isLoggedIn) return null
 	return (
 		<button
 			onClick={() => mutate()}
