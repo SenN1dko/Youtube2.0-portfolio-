@@ -4,20 +4,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "previewModeId": "9bed916e24754fd64e9f30cbfa6e7dfc",
-    "previewModeSigningKey": "207f71ac6644ea65bb4adbfa227157e3d328543ef5efd3734935d33e4bc750c5",
-    "previewModeEncryptionKey": "94ab00b0c279e6a418b4d24b905a8adb582e4246479356eb98505781be516319"
-=======
-    "previewModeId": "3f2af0b75b720b45d850f366a8c71820",
-    "previewModeSigningKey": "8bdf6014dc99943fd037ff4491b019c443fcd126f24537c58c227cfc48ea7a2b",
-    "previewModeEncryptionKey": "82892fc965763419391b2fa1ca6064159f764532187950d0c32454c8bfec1089"
->>>>>>> 88b3b0f0 ([+] added login and logout buttons)
-=======
-    "previewModeId": "8feb44591f295de4e6903a9f45463bac",
-    "previewModeSigningKey": "96a1aaf4d9ac5245c57b73c5d0181d46445b39d601fed6ce9bdbfd2c7ea74508",
-    "previewModeEncryptionKey": "6358df4d3d03933f26d5ff1bf38bd5b549f989d7dbc5ef2a56a8f2b8a2357768"
->>>>>>> 20ea2b2d ([+]Added store for setUser and logout)
+    "previewModeId": "3171c1b2b4fb4d20952e20a8339598a3",
+    "previewModeSigningKey": "deabb762ac95afe16d65b6cc6327a67a3df8b9e29b0efbccc57898b8cfa70aae",
+    "previewModeEncryptionKey": "5eba650718bb1c78cd9d893e895b233549cbbb8003614fbbc1628e3260a2e59f"
   }
 }
