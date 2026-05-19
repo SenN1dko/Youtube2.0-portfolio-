@@ -1,18 +1,17 @@
 'use client'
 
 import cn from 'clsx'
-import { type PropsWithChildren, useState } from 'react'
+import { type PropsWithChildren } from 'react'
 
 import styles from './Layout.module.scss'
 import { Content } from './content/Content'
 import { Sidebar } from './sidebar/Sidebar'
+import { useShowedSidebarStore } from '@/store'
 
 export function Layout({ children }: PropsWithChildren<unknown>) {
-	const [isShowedSidebar, setIsShowedSidebar] = useState(true)
+	const isShowedSidebar = useShowedSidebarStore(set => set.isShowed)
+	const setIsShowedSidebar = useShowedSidebarStore(set => set.setIsShowed)
 
-	const toggleSidebar = () => {
-		setIsShowedSidebar(!isShowedSidebar)
-	}
 	return (
 		<main
 			className={cn(
@@ -20,7 +19,7 @@ export function Layout({ children }: PropsWithChildren<unknown>) {
 				isShowedSidebar ? styles.showedSidebar : styles.hidedSidebar
 			)}
 		>
-			<Sidebar toggleSidebar={toggleSidebar} />
+			<Sidebar toggleSidebar={setIsShowedSidebar} />
 			<Content>{children}</Content>
 		</main>
 	)

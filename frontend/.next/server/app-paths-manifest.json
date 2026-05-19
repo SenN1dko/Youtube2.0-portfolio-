@@ -1,4 +1,6 @@
 {
+  "/auth/page": "app/auth/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/(public)/page": "app/(public)/page.js"
+  "/(public)/page": "app/(public)/page.js",
+  "/(public)/video-games/page": "app/(public)/video-games/page.js"
 }

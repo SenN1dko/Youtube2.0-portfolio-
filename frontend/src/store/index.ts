@@ -9,6 +9,10 @@ interface IAuthStore {
 	setUser: (user: IUser | null , accessToken:string) => void
 	clearUser:() => void
 }
+interface IShowedSideBar { 
+    isShowed:boolean,
+    setIsShowed:() => void
+}
 export const useAuthStore = create<IAuthStore>((set) => {
     const token = Cookies.get(EnumTokens.ACCESS_TOKEN) || null
 
@@ -28,3 +32,10 @@ export const useAuthStore = create<IAuthStore>((set) => {
         }
     }
 })
+
+export const useShowedSidebarStore = create<IShowedSideBar>((set) => ({
+isShowed:true,
+setIsShowed:() => set((state) => ({
+  isShowed:!state.isShowed
+}))
+}))

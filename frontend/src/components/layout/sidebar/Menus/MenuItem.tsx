@@ -3,11 +3,14 @@ import Link from 'next/link'
 
 import type { ISidebarItem } from '../Sidebar.types'
 
+import { useShowedSidebarStore } from '@/store'
+
 interface Props {
 	item: ISidebarItem
 	isActive: boolean
 }
 export function MenuItem({ item, isActive }: Props) {
+	const isShowed = useShowedSidebarStore(set => set.isShowed)
 	return (
 		<li>
 			<Link
@@ -16,7 +19,9 @@ export function MenuItem({ item, isActive }: Props) {
 			>
 				<item.icon
 					className={cn(' min-w-6 transition duration-333 ease-in-out ', {
-						'group-hover:text-primary group-hover:rotate-5': !isActive
+						'group-hover:text-primary group-hover:rotate-5': !isActive,
+
+						'text-red-400 ': isActive && !isShowed
 					})}
 				/>
 				<span
