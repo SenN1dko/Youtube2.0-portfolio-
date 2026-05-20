@@ -15,12 +15,12 @@ export const authRoutes = new Elysia({prefix:'/auth'})
     name:'refreshJwt',
     secret:process.env.JWT_REFRESH_SECRET || 'secretkeyforRefreshToken-superSecret'
 }))
-.post('/login' , async({db , set, headers , accessJwt , refreshJwt , cookie:{refreshToken}}) => {
-const {recaptchaToken , body} = headers
-const {email , password} = body
+.post('/login' , async({db , set, headers , body, accessJwt , refreshJwt , cookie:{refreshToken}}) => {
+ const {email , password  } = body
+    const { recaptcha } = headers
 
 const reCAPTCHASecret = process.env.RECAPTCHA_SITE_KEY
-const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${reCAPTCHASecret}&response=${recaptchaToken}`
+const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${reCAPTCHASecret}&response=${recaptcha}`
 
 const fetchRecaptcha = await fetch(recaptchaUrl , {method:'POST'})
 const recaptchaData = await fetchRecaptcha.json() as {success:boolean}
@@ -30,7 +30,7 @@ if(!recaptchaData.success){
     return {message:"recaptcha verify is denied"}
 }
 
-const user = await db.user.findFirst({
+const user = await db.user.findUnique({
     where:{email},
     select:{
         password:true,
@@ -38,7 +38,7 @@ const user = await db.user.findFirst({
         id:true
     }
 })
-if(!user || !(Bun.password.verify(password , user.password))){
+if (!user || !(await Bun.password.verify(password, user.password))) {
     set.status = 400
     return { message: "Invalid email or password" }
 }
@@ -60,14 +60,18 @@ return {
 }
 
 }, {
-    headers:loginSchema 
+      headers:t.Object({
+        recaptcha:t.String()
+    }),
+    body: loginSchema
+
 })
-.post('/register' , async({db , headers , set , refreshJwt , accessJwt , cookie:{refreshToken}}) =>{
-    const {recaptchaToken , body} = headers
-    const {email , password} = body
+.post('/register' , async({db  , body, headers, set , refreshJwt , accessJwt , cookie:{refreshToken}}) =>{
+    const {email , password , } = body
+    const { recaptcha } = headers
 
     const reCAPTCHASecret = process.env.RECAPTCHA_SITE_KEY
-    const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${reCAPTCHASecret}&response=${recaptchaToken}`
+    const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${reCAPTCHASecret}&response=${recaptcha}`
 
     const fetchRecaptcha = await fetch(recaptchaUrl , {method:'POST'})
     const recaptchaData = await fetchRecaptcha.json() as {success:boolean}
@@ -108,7 +112,11 @@ return {
 
 }
 ,{
-    headers:loginSchema
+    headers:t.Object({
+        recaptcha:t.String()
+    }),
+    body: loginSchema
+
 }
 )
 .post('/logout' , async({cookie:{refreshToken}}) => {
