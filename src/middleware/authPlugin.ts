@@ -7,7 +7,7 @@ export const authPlugin = new Elysia()
     name:'jwt',
     secret:process.env.JWT_ACCESS_SECRET || 'secretkeyforRefreshToken-superSecret'
 }))
-.derive({as:'global'},async({headers , jwt ,set}) => {
+.derive({as:'scoped'},async({headers , jwt ,set}) => {
 const authorization = headers['authorization']
 if(!authorization && authorization?.startsWith('Bearer')){
     return {user:null}

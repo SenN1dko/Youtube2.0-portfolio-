@@ -13,7 +13,7 @@ export const videoUpload = new Elysia()
 
         await Bun.write(filePath, file)
 
-        const imageUrl = `http://localhost:3000/public/thumbnails/${fileName}`
+        const imageUrl = `http://localhost:3001/public/thumbnails/${fileName}`
 
         const updatedVideo = await db.video.update({
             where: { id: videoId },

@@ -1,7 +1,8 @@
-import {Elysia} from "elysia";
+import {Elysia, t} from "elysia";
 import "dotenv/config";
 import { authPlugin } from "../middleware/authPlugin";
 import { db } from "../db/db";
+import staticPlugin from "@elysiajs/static";
 export const userRoute = new Elysia({prefix:'/user'})
 .use(authPlugin)
 .use(db)
@@ -27,3 +28,28 @@ if(!fullUserProfile) {
 }
 return fullUserProfile
 } )
+ .use(staticPlugin({ assets: 'public', prefix: '/public' })) 
+    .post('/change-avatar' , async({ db, body }) => {
+        const { cover, channelId } = body
+
+        const fileName = `${Date.now()}-${cover.name}`
+        const filePath = `./public/avatars/${fileName}`
+
+        await Bun.write(filePath, cover)
+
+        const fileUrl = `http://localhost:3001/public/avatars/${fileName}`
+
+       const channel =  await db.channel.update({
+            where: { id: channelId },
+            data: {
+                avatar: fileUrl 
+            }
+        })
+
+                return { success: true, channel:channel  }
+    }, {
+        body: t.Object({
+            channelId: t.String(),
+            cover: t.File()
+        })
+    })
