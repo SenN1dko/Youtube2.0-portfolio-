@@ -13,6 +13,7 @@ const options:CreateAxiosDefaults = {
 }
 export const axiosCLassic = axios.create(options)
 export const instance = axios.create(options)
+
 instance.interceptors.request.use(config => {
 const accessToken = Cookies.get(EnumTokens.ACCESS_TOKEN)
 

@@ -41,6 +41,7 @@ export function useAuthForm(type: 'login' | 'register', reset:UseFormReset<IAuth
     },
     error: (e) => {
            if(axios.isAxiosError(e)) {
+          recaptchaRef.current?.reset()
            return e.response?.data?.message 
   	}}
     }

@@ -6,7 +6,7 @@ import { FieldSection } from './FieldSection'
 import { HeaderLinks } from './HeaderLinks'
 
 const DynamicHeaderProfile = dynamic(
-	() => import('./HeaderProfile').then(mod => mod.HeaderProfile),
+	() => import('./profile/HeaderProfile').then(mod => mod.HeaderProfile),
 	{ ssr: false, loading: () => <SkeletonLoading className='w-10 rounded-md mb-0' /> }
 )
 
