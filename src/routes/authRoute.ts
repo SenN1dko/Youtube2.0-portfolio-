@@ -9,7 +9,7 @@ export const authRoutes = new Elysia({prefix:'/auth'})
 .use(jwt({
     name: 'accessJwt',
     secret: process.env.JWT_ACCESS_SECRET || 'secretkeyforAccessToken-superSecret',
-    exp:'15m'
+    exp:'1h'
 }))
 .use(jwt({
     name:'refreshJwt',
