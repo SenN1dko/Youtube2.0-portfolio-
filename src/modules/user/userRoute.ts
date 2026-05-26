@@ -1,7 +1,7 @@
 import {Elysia, t} from "elysia";
 import "dotenv/config";
-import { authPlugin } from "../middleware/authPlugin";
-import { db } from "../db/db";
+import { authPlugin } from "../../middleware/authPlugin";
+import { db } from "../../db/db";
 import staticPlugin from "@elysiajs/static";
 export const userRoute = new Elysia({prefix:'/user'})
 .use(authPlugin)

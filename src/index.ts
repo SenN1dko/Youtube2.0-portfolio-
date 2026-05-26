@@ -1,9 +1,9 @@
 import { Elysia ,t} from "elysia";
-import { videoRoutes } from "./routes/videoRoute";
-import { videoUpload } from "./routes/videoUpdateRoute";
-import { authRoutes } from "./routes/authRoute";
+import { authRoutes } from "./modules/auth/authRoute";
 import cors from "@elysiajs/cors";
-import { userRoute } from "./routes/userRoute";
+import { userRoute } from "./modules/user/userRoute";
+import { videoUpload } from "./modules/video/videoUpdateRoute";
+import { videoRoutes } from "./modules/video/videoRoute";
 const app = new Elysia()
 .use(cors({
         origin: ['http://localhost:3000', 'http://localhost:3001'], 

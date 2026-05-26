@@ -1,8 +1,8 @@
 import {Elysia , t} from "elysia";
 import jwt from "@elysiajs/jwt";
 import "dotenv/config";
-import { db } from "../db/db";
-import { loginSchema } from "../schema/loginSchema";
+import { db } from "../../db/db";
+import { loginSchema } from "../../schema/loginSchema";
 
 export const authRoutes = new Elysia({prefix:'/auth'})
 .use(db)

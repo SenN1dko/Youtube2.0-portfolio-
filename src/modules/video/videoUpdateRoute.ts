@@ -1,6 +1,6 @@
 import { Elysia, t } from 'elysia'
 import { staticPlugin } from '@elysiajs/static' 
-import { db } from '../db/db'
+import { db } from '../../db/db'
 export const videoUpload = new Elysia()
 .use(db)
     .use(staticPlugin({ assets: 'public', prefix: '/public' })) 
