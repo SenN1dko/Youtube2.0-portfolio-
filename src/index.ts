@@ -4,7 +4,7 @@ import cors from "@elysiajs/cors";
 import { userRoute } from "./modules/user/userRoute";
 import { videoUpload } from "./modules/video/videoUpdateRoute";
 import { videoRoutes } from "./modules/video/videoRoute";
-import { resendVerifyEmail } from "./modules/auth/emailVerify /verifyEmailRoute";
+import { resendVerifyEmail } from "./modules/auth/routes/emailVerify /verifyEmailRoute";
 const app = new Elysia()
 .use(cors({
         origin: ['http://localhost:3000', 'http://localhost:3001'], 

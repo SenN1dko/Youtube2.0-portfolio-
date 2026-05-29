@@ -1,4 +1,4 @@
-import { transporter } from "./emailTransporter";
+import { transporter } from "./routes/emailVerify /emailTransporter"
 
 
 export const AuthService = {

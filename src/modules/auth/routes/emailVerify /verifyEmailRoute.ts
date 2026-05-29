@@ -1,6 +1,6 @@
 import {Elysia , t} from "elysia"
-import { AuthService } from "../auth.services"
-import { db } from "../../../db/db"
+import { AuthService } from "../../auth.services"
+import { db } from "../../../../db/db"
 export const resendVerifyEmail = new Elysia()
 .use(db)
 .post('/resend-verification', async ({ body, db, set }) => {
