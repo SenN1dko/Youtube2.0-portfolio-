@@ -2,7 +2,7 @@ import { Elysia } from "elysia";
 import { authBase } from "./authConfig/auth.config";
 import "dotenv/config";
 import { db } from "../../db/db";
-import { getNewTokenRoute } from "./getNewTokenRoute";
+import { getNewTokenRoute } from "./routes/getNewTokenRoute";
 import { loginRoute } from "./routes/loginRoute";
 import { registerRoute } from "./routes/registerRoute";
 
