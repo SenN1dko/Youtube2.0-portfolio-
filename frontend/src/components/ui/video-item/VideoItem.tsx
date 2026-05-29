@@ -43,7 +43,7 @@ export function VideoItem({ video, Icon }: Props) {
 
 				<Link href={PAGE.CHANNEL('asd')}>
 					<Image
-						src='/channel.png'
+						src={video.channel.avatar || '/Avatar.png'}
 						width={30}
 						height={30}
 						alt={video.channel.name}

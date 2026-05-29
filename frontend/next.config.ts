@@ -6,19 +6,13 @@ const nextConfig: NextConfig = {
 	poweredByHeader: false,
 	images: {
     remotePatterns: [
-      {
-        protocol: 'http', // ⚠️ Обрати внимание: для localhost обычно используется http, а не https
-        hostname: 'localhost', // Разрешаем картинки с локального сервера
-        port: '3000', // Указываем порт, на котором запущен твой бэкенд Elysia
-        pathname: '/public/**', // Разрешаем доступ ко всем файлам внутри папки public бэкенда
-      },
-      {
-        protocol: 'https',
-        hostname: 'gaming-cdn.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '3001', // Порт твоего бэкенда
+                pathname: '/**', // 🌟 РАЗРЕШАЕТ ВСЁ: /avatars, /thumbnails, /banners и т.д.
+            },
+        ],
   },
 	async rewrites() {
 		return [
