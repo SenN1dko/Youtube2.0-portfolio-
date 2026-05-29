@@ -7,7 +7,6 @@ export const userRoute = new Elysia({prefix:'/user'})
 .use(authPlugin)
 .use(db)
 .get('/profile' , async({user , db , set}) =>{
-    console.log(user)
 if(!user){
     set.status = 401
     return{

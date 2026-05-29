@@ -1,5 +1,6 @@
 import Elysia from "elysia";
-import { db } from "../db/db";
+import { db } from "../../db/db";
+
 export const videoRoutes = new Elysia({prefix:'/video'})
 .use(db)
 .get('/:q' , async({db , params:{q}}) =>{

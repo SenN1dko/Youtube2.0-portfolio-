@@ -4,6 +4,7 @@ import cors from "@elysiajs/cors";
 import { userRoute } from "./modules/user/userRoute";
 import { videoUpload } from "./modules/video/videoUpdateRoute";
 import { videoRoutes } from "./modules/video/videoRoute";
+import { resendVerifyEmail } from "./modules/auth/emailVerify /verifyEmailRoute";
 const app = new Elysia()
 .use(cors({
         origin: ['http://localhost:3000', 'http://localhost:3001'], 
@@ -14,6 +15,7 @@ const app = new Elysia()
 .use(videoUpload)
 .use(authRoutes)
 .use(userRoute)
+.use(resendVerifyEmail)
 .listen(3001, () =>{
     console.log(`The server is running on 3001 port`)
 })

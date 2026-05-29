@@ -7,10 +7,10 @@ model User {
     avatar   String?
     username String? @unique
 
-    channels           Channel[]
-    likes              Like[]
-    comments           Comment[]
-    verificationTokens VerificationToken[]
+    channels          Channel[]
+    likes             Like[]
+    comments          Comment[]
+    verificationToken String?   @unique @map("verification_token")
 
     createdAt DateTime @default(now()) @map("created_at")
     updatedAt DateTime @updatedAt @map("updated_at")
@@ -35,17 +35,4 @@ model Channel {
     updatedAt DateTime @updatedAt @map("updated_at")
 
     @@map("Channels")
-}
-
-model VerificationToken {
-    id String @id @default(cuid())
-
-    token  String @unique
-    userId String @map("user_id")
-    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-    createdAt DateTime @default(now()) @map("created_at")
-    updatedAt DateTime @updatedAt @map("updated_at")
-
-    @@map("VerificationTokens")
 }
