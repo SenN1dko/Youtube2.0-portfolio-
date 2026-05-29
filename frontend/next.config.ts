@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
                 port: '3001', // Порт твоего бэкенда
                 pathname: '/**', // 🌟 РАЗРЕШАЕТ ВСЁ: /avatars, /thumbnails, /banners и т.д.
             },
+			{
+				protocol: 'https',
+				hostname: 'api.dicebear.com',
+				port: '',
+				pathname: '/7.x/bottts/svg', 
+			},
         ],
   },
 	async rewrites() {

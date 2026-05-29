@@ -1,12 +1,12 @@
 import { create } from 'zustand'
-import type { IUser } from '@/types/user.type'
+import type { IFullUser } from '@/types/user.type'
 import Cookies from 'js-cookie'
 import { EnumTokens } from '@/constants/token.constants'
 interface IAuthStore {
-	user: IUser | null
+	user: IFullUser | null
 	accessToken: string | null
 	isLoggedIn:boolean
-	setUser: (user: IUser | null , accessToken:string) => void
+	setUser: (user: IFullUser | null , accessToken?:string) => void
 	clearUser:() => void
 }
 interface IShowedSideBar { 
@@ -21,12 +21,15 @@ export const useAuthStore = create<IAuthStore>((set) => {
         accessToken: token,
         isLoggedIn: !!token, 
 
-        setUser: (user, accessToken) => set({ 
-            user, 
-            accessToken, 
-            isLoggedIn: !!accessToken 
-        }),
-        
+        setUser: (user, accessToken) => set((state) => {
+    const currentToken = accessToken !== undefined ? accessToken : state.accessToken
+    console.log(user)
+    return { 
+        user, 
+        accessToken: currentToken, 
+        isLoggedIn: !!currentToken 
+    }
+}),
         clearUser: () => {
             set({ user: null, accessToken: null, isLoggedIn: false })
         }

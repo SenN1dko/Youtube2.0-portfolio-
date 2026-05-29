@@ -10,6 +10,7 @@ import { useProfile } from '@/hooks/useProfile'
 export function HeaderAvatar() {
 	const { isLoading, profile } = useProfile()
 	if (isLoading) return <SkeletonLoading className='w-10 rounded-md mb-0' />
+	console.log('profile', profile)
 	return (
 		<>
 			<Link
@@ -18,9 +19,10 @@ export function HeaderAvatar() {
 			>
 				<Image
 					alt='Profile'
-					src={profile?.channel?.avatar || '/Avatar.png'}
+					src={profile?.channels?.[0]?.avatar || '/Avatar.png'}
 					width={40}
 					height={40}
+					unoptimized
 					className='rounded-lg '
 				/>
 			</Link>

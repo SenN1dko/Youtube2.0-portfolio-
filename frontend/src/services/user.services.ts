@@ -5,7 +5,7 @@ import {  instance } from '@/api/axios'
 class UserService {
     private _USERS = '/user'
     async getProfile() {
-        const response = await  instance.get<IFullUser[]>(`${this._USERS}/profile`)
+        const response = await  instance.get<IFullUser>(`${this._USERS}/profile`)
     return response
     }
 
