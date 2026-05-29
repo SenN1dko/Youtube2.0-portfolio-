@@ -11,6 +11,12 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
+    "/auth/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/auth/page.css",
+      "static/chunks/app/auth/page.js"
+    ],
     "/(public)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -27,11 +33,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(public)/verify-email/page.js"
     ],
-    "/auth/page": [
+    "/(public)/trending/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/auth/page.css",
-      "static/chunks/app/auth/page.js"
+      "static/chunks/app/(public)/trending/page.js"
     ]
   }
 }

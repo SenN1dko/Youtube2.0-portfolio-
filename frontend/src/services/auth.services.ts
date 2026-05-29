@@ -61,8 +61,7 @@ class AuthService {
         
         const response = await axiosCLassic.post(`${this._AUTH}/logout`)
         if(response.data){
-            this._removeFromStorage()
-        clearUser()
+            this.removeFromStorage()
         }
         return response
     }
@@ -75,12 +74,14 @@ class AuthService {
         })
         
  }
-    private _removeFromStorage() {
+    removeFromStorage() {
               cookies.remove(EnumTokens.ACCESS_TOKEN, {
             domain: 'localhost',
             sameSite: 'strict',
             expires: 1
         })
+        clearUser()
+
 } 
  
 }

@@ -3,6 +3,8 @@ import { EnumTokens } from "@/constants/token.constants";
 import type { CreateAxiosDefaults } from "axios";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { errorCatch } from "./api.helper";
+import { authservice } from "@/services/auth.services";
 
 const options:CreateAxiosDefaults = {
     baseURL:API_URL,
@@ -22,3 +24,22 @@ if(config.headers && accessToken){
 }
 return config 
 })
+
+instance.interceptors.response.use(response => response , async error =>{
+    const originalRequest = error.config
+
+    if(error.response.status === 401 || errorCatch(error) === 'You are not authorized' || errorCatch(error) === 'jwt expired'
+    && !originalRequest._retry && originalRequest){
+        originalRequest._retry = true
+        try{
+            await authservice.getNewToken()
+            return instance.request(originalRequest)
+        }catch(error){
+            if(errorCatch(error) === 'Refresh token is missing'){
+                authservice.removeFromStorage()
+                }      
+            }
+        }
+    throw error 
+    }
+)
