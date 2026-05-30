@@ -23,17 +23,17 @@ export function HeaderProfile() {
 	console.log(profile)
 	return isLoggedIn ? (
 		<>
-			<HeaderAvatar />
-			{profile?.verificationToken ? (
-				<button
-					onClick={() => handleResend()}
-					className='text-xs text-red-500 hover:underline'
-				>
-					Not Verified (Resend)
-				</button>
-			) : (
-				<span className='text-xs text-green-500'>Verified</span>
-			)}
+			<div className='relative'>
+				<HeaderAvatar />
+				{profile?.verificationToken && (
+					<button
+						onClick={() => handleResend()}
+						className='absolute -left-4 font-semibold -bottom-3.5 hover:bg-red-400 cursor-pointer bg-primary p-0.5  rounded text-xs w-max'
+					>
+						Not Verified
+					</button>
+				)}
+			</div>
 		</>
 	) : (
 		<>

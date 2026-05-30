@@ -37,6 +37,7 @@ instance.interceptors.response.use(response => response , async error =>{
         }catch(error){
             if(errorCatch(error) === 'Refresh token is missing'){
                 authservice.removeFromStorage()
+                throw error
                 }      
             }
         }

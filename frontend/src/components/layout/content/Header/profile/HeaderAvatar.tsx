@@ -23,7 +23,7 @@ export function HeaderAvatar() {
 					width={40}
 					height={40}
 					unoptimized
-					className='rounded-lg '
+					className='rounded-lg  '
 				/>
 			</Link>
 		</>
