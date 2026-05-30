@@ -1,12 +1,17 @@
 
 import type { IFullUser } from '@/types/user.type'
 import {  instance } from '@/api/axios'
+import type { ISettings } from '@/types/settings.type'
 
 class UserService {
     private _USERS = '/user'
-    async getProfile() {
-        const response = await  instance.get<IFullUser>(`${this._USERS}/profile`)
-    return response
+     getProfile() {
+        return  instance.get<IFullUser>(`${this._USERS}/profile`)
+          
+    }
+
+    updateProfile(data:ISettings){
+        return instance.put<boolean>(`${this._USERS}/profile`, data)
     }
 
 }

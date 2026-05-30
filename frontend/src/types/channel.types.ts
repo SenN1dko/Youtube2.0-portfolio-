@@ -4,7 +4,7 @@ import type { IVideo } from './video.types'
 export interface IChannel {
 	id: string
 	name: string
-	// slug: string
+	slug: string
 	description: string
 	isVerified: boolean
 	avatar: string
