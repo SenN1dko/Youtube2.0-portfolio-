@@ -1,17 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import {PAGE} from '@/config//public-page.config'
-import { EnumTokens } from "@/constants/token.constants";
-export function middleware(request:NextRequest){
-    const token = request.cookies.get(EnumTokens.ACCESS_TOKEN)
-    // const isStudioPage = request.nextUrl.pathname.startsWith('/studio')
-    // const isUploadPage = request.nextUrl.pathname.startsWith('/upload')
-    const isAuthPage = request.nextUrl.pathname.startsWith('/auth')
-
-    if(isAuthPage && token){
-        return NextResponse.redirect(new URL(PAGE.HOME , request.url))
+import { STUDIO_PAGE } from "./config/studio-page.config";
+import { protectStudio } from "./server-actions/middlewares/protect-studio-middleware";
+import { PAGE } from "./config/public-page.config";
+import { protectLoginPages } from "./server-actions/middlewares/protect-login-middleware";
+export function middleware(request:NextRequest , response:NextResponse){
+    const url = new URL(request.url)
+    const pathname = url.pathname
+    if(pathname.includes(STUDIO_PAGE.HOME)){
+        return protectStudio(request)
     }
-    return NextResponse.next()
+    if(pathname.includes(PAGE.AUTH)){
+        return protectLoginPages(request)
+}
 }
 export const config = {
-    matcher:['/studio/:path*' ,'/upload/:path*' , '/auth/:path*' ]
+    matcher:['/studio/:path*'  , '/auth/:path*' ]
 }
