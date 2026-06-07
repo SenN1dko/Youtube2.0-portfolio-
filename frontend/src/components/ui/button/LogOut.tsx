@@ -1,15 +1,25 @@
 import { useMutation } from '@tanstack/react-query'
 import { LogOutIcon } from 'lucide-react'
+import { usePathname, useRouter } from 'next/navigation'
+
+import { PAGE } from '@/config/public-page.config'
+import { STUDIO_PAGE } from '@/config/studio-page.config'
 
 import { authservice } from '@/services/auth.services'
 import { useAuthStore } from '@/store'
 
 export function LogOut() {
 	const isLoggedIn = useAuthStore(set => set.isLoggedIn)
-
+	const router = useRouter()
+	const pathname = usePathname()
 	const { mutate, isPending } = useMutation({
 		mutationKey: ['logout'],
-		mutationFn: () => authservice.logout()
+		mutationFn: () => authservice.logout(),
+		onSuccess: () => {
+			if (pathname.includes(STUDIO_PAGE.HOME) || pathname.includes(STUDIO_PAGE.SETTINGS)) {
+				router.push(PAGE.HOME)
+			}
+		}
 	})
 
 	if (!isLoggedIn) return null
