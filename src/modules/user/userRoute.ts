@@ -15,7 +15,10 @@ if(!user){
 }
 const fullUserProfile = db.user.findUnique({
     where:{id:user.id},
-    include:{
+    select:{
+        id:true,
+        username:true,
+        email:true, 
         channels:true
     }
 })
