@@ -38,12 +38,19 @@ export const userRoute = new Elysia({prefix:'/user'})
         }
 
         const { email, password, username, channel } = body
+       let hashedPassword: string | undefined = undefined
+        if (password) {
+            hashedPassword = await Bun.password.hash(password, {
+                algorithm: 'bcrypt',
+                cost: 10
+            })
+        }
         try {
                 await db.user.update({    
             where: { id: user.id },
             data: {
                 ...(email && { email }),
-                ...(password && { password }),
+                ...(hashedPassword && { password: hashedPassword }),
                 ...(username && { username }),
                 ...(channel && {
                     channel: {
