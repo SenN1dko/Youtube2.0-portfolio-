@@ -1,8 +1,11 @@
 'use client'
 
+import { Controller } from 'react-hook-form'
+
 import { Button } from '@/ui/button/Button'
 import { Field } from '@/ui/field/Field'
 import { Textarea } from '@/ui/field/Textarea'
+import { UploadField } from '@/ui/upload-field/UploadField'
 
 import { useSettings } from '@/hooks/useSettings'
 
@@ -11,7 +14,8 @@ export function SettingsForm() {
 		formObject: {
 			formState: { errors },
 			register,
-			handleSubmit
+			handleSubmit,
+			control
 		},
 		onSubmit,
 		isProfileLoading
@@ -60,7 +64,35 @@ export function SettingsForm() {
 							placeholder='Enter a description:'
 						/>
 					</div>
-					<div></div>
+					<div>
+						<Controller
+							control={control}
+							name='channel.avatar'
+							render={({ field: { onChange, value }, fieldState: { error } }) => (
+								<UploadField
+									error={error}
+									label='Avatar:'
+									value={value}
+									folder='avatars'
+									onChange={onChange}
+								/>
+							)}
+						/>
+						<Controller
+							control={control}
+							name='channel.banner'
+							render={({ field: { onChange, value }, fieldState: { error } }) => (
+								<UploadField
+									error={error}
+									label='Banner:'
+									value={value}
+									folder='banners'
+									aspectRatio='16:9'
+									onChange={onChange}
+								/>
+							)}
+						/>
+					</div>
 				</div>
 				<div className='text-center mt-6'>
 					<Button type='submit'>Update</Button>

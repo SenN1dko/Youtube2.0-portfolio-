@@ -39,10 +39,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/studio/settings/page.js"
     ],
-    "/studio/page": [
+    "/(public)/s/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/studio/page.js"
+      "static/chunks/app/(public)/s/page.js"
     ]
   }
 }

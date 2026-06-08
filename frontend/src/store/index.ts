@@ -23,7 +23,6 @@ export const useAuthStore = create<IAuthStore>((set) => {
 
         setUser: (user, accessToken) => set((state) => {
     const currentToken = accessToken !== undefined ? accessToken : state.accessToken
-    console.log(user)
     return { 
         user, 
         accessToken: currentToken, 
