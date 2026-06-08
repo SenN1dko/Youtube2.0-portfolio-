@@ -51,14 +51,7 @@ const user = await db.user.create({
         email:email,
         password: hashPassword,
         verificationToken: token,
-        channels:{
-            create:{
-                avatar:defaultAvatar,
-                name:`${email.split('@')[0]}'s channel`
-            }
-        }
-    }
-})
+}})
 
 await AuthService.sendVerificationEmail( user.email , user.verificationToken)
 
