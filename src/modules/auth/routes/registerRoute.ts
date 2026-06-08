@@ -41,16 +41,23 @@ if (existingUser) {
     }
 }
 
-            
-const defaultAvatar = `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(email)}`
+const emailPrefix = email.split('@')[0]
 const user = await db.user.create({
     include:{
-        channels:true
+        channel:true
     },
     data:{
         email:email,
         password: hashPassword,
         verificationToken: token,
+        channel: {
+            create: {
+                name: `${emailPrefix}'s channel`,
+                slug: emailPrefix,
+                avatar: "",
+                banner: ""
+            }
+        }
 }})
 
 await AuthService.sendVerificationEmail( user.email , user.verificationToken)

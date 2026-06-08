@@ -7,7 +7,7 @@ model User {
     avatar   String?
     username String? @unique
 
-    channels          Channel[]
+    channel           Channel?
     likes             Like[]
     comments          Comment[]
     verificationToken String?   @unique @map("verification_token")
@@ -25,10 +25,10 @@ model Channel {
     description String?
     avatar      String?
     banner      String?
+    slug        String?
+    video       Video[]
 
-    video Video[]
-
-    ownerId String @map("owner_id")
+    ownerId String @unique @map("owner_id")
     owner   User   @relation(fields: [ownerId], references: [id])
 
     createdAt DateTime @default(now()) @map("created_at")

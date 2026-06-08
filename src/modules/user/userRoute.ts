@@ -2,56 +2,79 @@ import {Elysia, t} from "elysia";
 import "dotenv/config";
 import { authPlugin } from "../../middleware/authPlugin";
 import { db } from "../../db/db";
-import staticPlugin from "@elysiajs/static";
 export const userRoute = new Elysia({prefix:'/user'})
 .use(authPlugin)
 .use(db)
-.get('/profile' , async({user , db , set}) =>{
-if(!user){
-    set.status = 401
-    return{
-        message:'You are not authorized'
-    }
-}
-const fullUserProfile = db.user.findUnique({
-    where:{id:user.id},
-    select:{
-        id:true,
-        username:true,
-        email:true, 
-        channels:true
-    }
-})
-if(!fullUserProfile) {
-    set.status = 404
-    return {
-        message:'User not found'
-    }
-}
-return fullUserProfile
-} )
- .use(staticPlugin({ assets: 'public', prefix: '/public' })) 
-    .post('/change-avatar' , async({ db, body }) => {
-        const { cover, channelId } = body
+.get('/profile', async ({ user, db, set }) => {
+        if (!user) {
+            set.status = 401
+            return { message: 'You are not authorized' }
+        }
 
-        const fileName = `${Date.now()}-${cover.name}`
-        const filePath = `./public/avatars/${fileName}`
-
-        await Bun.write(filePath, cover)
-
-        const fileUrl = `http://localhost:3001/public/avatars/${fileName}`
-
-       const channel =  await db.channel.update({
-            where: { id: channelId },
-            data: {
-                avatar: fileUrl 
+        const fullUserProfile = await db.user.findUnique({
+            where: { id: user.id }, 
+            select: {
+                id: true,
+                username: true,
+                email: true,
+                channel: true,
+                verificationToken:true
             }
         })
 
-                return { success: true, channel:channel  }
+        if (!fullUserProfile) {
+            set.status = 404
+            return { message: 'User not found' }
+        }
+
+   
+        return fullUserProfile 
+    })
+
+.put('/profile', async ({ user, db, set, body }) => {
+        if (!user) {
+            set.status = 401
+            return { message: 'You are not authorized' }
+        }
+
+        const { email, password, username, channel } = body
+        try {
+                await db.user.update({    
+            where: { id: user.id },
+            data: {
+                ...(email && { email }),
+                ...(password && { password }),
+                ...(username && { username }),
+                ...(channel && {
+                    channel: {
+                        update: {
+                            ...(typeof channel.avatar === 'string' && { avatar: channel.avatar }),
+                            ...(typeof channel.banner === 'string' && { banner: channel.banner }),
+                            ...(channel.slug && { slug: channel.slug }),
+                            ...(channel.description && { description: channel.description })
+                        }
+                    }
+                })
+            }
+        })
+            return true
+        } catch (error) {
+            set.status = 500
+            return false
+        }
     }, {
         body: t.Object({
-            channelId: t.String(),
-            cover: t.File()
+            email: t.Optional(t.String()),
+            password:t.Optional(t.String()),
+            username:t.Optional(t.String()),
+               channel: t.Optional(
+                  t.Object({
+                   avatar: t.Optional(t.Nullable(t.String())),
+                   banner: t.Optional(t.Nullable(t.String())),
+                   slug:t.Optional(t.String()),
+                   description:t.Optional(t.String()),
+                })
+            )
         })
     })
+ 
