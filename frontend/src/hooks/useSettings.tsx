@@ -11,7 +11,7 @@ export function useSettings() {
 		mode: 'onChange'
 	})
 
-	const { profile, isSuccess, isLoading } = useProfile()
+	const { profile, isSuccess, isLoading, refetch } = useProfile()
 
 	useEffect(() => {
 		if (!isSuccess) return
@@ -20,7 +20,10 @@ export function useSettings() {
 
 	const { mutate, isPending } = useMutation({
 		mutationKey: ['settings'],
-		mutationFn: (data: ISettings) => userService.updateProfile(data)
+		mutationFn: (data: ISettings) => userService.updateProfile(data),
+		onSuccess() {
+			refetch()
+		}
 	})
 
 	const onSubmit: SubmitHandler<ISettings> = data => {

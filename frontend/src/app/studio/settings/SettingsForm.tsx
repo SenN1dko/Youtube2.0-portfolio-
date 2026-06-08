@@ -38,7 +38,7 @@ export function SettingsForm() {
 						<Field
 							label='Password'
 							type='password'
-							registration={register('password', { required: 'Password is required' })}
+							registration={register('password')}
 							error={errors.password?.message}
 							placeholder='Enter a password:'
 						/>
@@ -75,6 +75,7 @@ export function SettingsForm() {
 									value={value}
 									folder='avatars'
 									onChange={onChange}
+									className='mb-8'
 								/>
 							)}
 						/>

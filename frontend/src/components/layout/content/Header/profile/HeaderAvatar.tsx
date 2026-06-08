@@ -18,7 +18,7 @@ export function HeaderAvatar() {
 			>
 				<Image
 					alt='Profile'
-					src={profile?.channels?.[0]?.avatar || '/Avatar.png'}
+					src={profile?.channel?.avatar || '/Avatar.png'}
 					width={40}
 					height={40}
 					unoptimized

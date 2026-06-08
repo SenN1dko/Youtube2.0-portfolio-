@@ -9,7 +9,7 @@ export interface IUser {
 }
 
 export interface IFullUser extends IUser {
-channels?:IChannel[],
+channel?:IChannel,
 // subscriptions?: IChannel[]
 // watchHistory: IWatchHistory[]  
 verificationToken?: string

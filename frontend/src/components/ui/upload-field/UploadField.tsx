@@ -1,3 +1,4 @@
+import { UploadCloud } from 'lucide-react'
 import Image from 'next/image'
 import { useId } from 'react'
 import type { FieldError } from 'react-hook-form'
@@ -40,12 +41,19 @@ export function UploadField({
 			>
 				{label}
 			</label>
+			<label
+				htmlFor={inputId}
+				className='flex items-center px-4 py-2 bg-transparent border border-primary text-primary hover:text-white rounded-lg shadow-md cursors-pointer hover:bg-red-500 w-max  transition-colors duration-300 ease-in-out '
+			>
+				<UploadCloud className='mr-2' />
+				Upload
+			</label>
 			<input
 				type='file'
 				id={inputId}
 				accept='image/*'
 				onChange={uploadFile}
-				className='block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer focus:outline-none'
+				className='hidden'
 			/>
 			{error && <span className='text-red-500 text-xs'>{error.message}</span>}
 			{isImage && (

@@ -20,6 +20,7 @@ export function HeaderProfile() {
 			console.error('Error resending verification email:', error)
 		}
 	}
+	console.log(profile)
 	return isLoggedIn ? (
 		<>
 			<div className='relative'>
