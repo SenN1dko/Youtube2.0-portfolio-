@@ -11,16 +11,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/studio/layout": [
+    "/(public)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/studio/layout.css",
-      "static/chunks/app/studio/layout.js"
+      "static/css/app/(public)/layout.css",
+      "static/chunks/app/(public)/layout.js"
     ],
-    "/studio/settings/page": [
+    "/(public)/c/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/studio/settings/page.js"
+      "static/chunks/app/(public)/c/[slug]/page.js"
+    ],
+    "/(public)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(public)/page.js"
     ],
     "/auth/page": [
       "static/chunks/webpack.js",
@@ -28,16 +33,10 @@
       "static/css/app/auth/page.css",
       "static/chunks/app/auth/page.js"
     ],
-    "/(public)/layout": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(public)/layout.css",
-      "static/chunks/app/(public)/layout.js"
-    ],
-    "/(public)/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

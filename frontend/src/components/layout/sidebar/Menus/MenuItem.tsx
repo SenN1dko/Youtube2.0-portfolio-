@@ -1,8 +1,13 @@
 import cn from 'clsx'
 import Link from 'next/link'
 
+import { PAGE } from '@/config/public-page.config'
+
+import { useProfile } from '@/hooks/useProfile'
+
 import type { ISidebarItem } from '../Sidebar.types'
 
+import { useAuthStore } from '@/store'
 import { useShowedSidebarStore } from '@/store'
 
 interface Props {
@@ -10,11 +15,16 @@ interface Props {
 	isActive: boolean
 }
 export function MenuItem({ item, isActive }: Props) {
+	const { profile } = useProfile()
 	const isShowed = useShowedSidebarStore(set => set.isShowed)
+	const isLoggedIn = useAuthStore(state => state.isLoggedIn)
+
+	const myChannelLink =
+		profile?.channel?.slug && isLoggedIn ? PAGE.CHANNEL(profile?.channel?.slug) : PAGE.MY_CHANNEL
 	return (
 		<li>
 			<Link
-				href={item.link}
+				href={item.link === PAGE.MY_CHANNEL ? myChannelLink : item.link}
 				className='group flex items-center gap-5 py-2'
 			>
 				<item.icon
@@ -30,7 +40,7 @@ export function MenuItem({ item, isActive }: Props) {
 					{item.label}
 				</span>
 			</Link>
-			{item.isBottomBorder && <span className='h-[1px] bg-border block my-5 w-full' />}
+			{item.isBottomBorder && <span className='h-px bg-border block my-5 w-full' />}
 		</li>
 	)
 }

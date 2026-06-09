@@ -6,7 +6,7 @@ import { protectLoginPages } from "./server-actions/middlewares/protect-login-mi
 export function middleware(request:NextRequest ){
     const url = new URL(request.url)
     const pathname = url.pathname
-    if(pathname.includes(STUDIO_PAGE.HOME)){
+    if(pathname.includes(STUDIO_PAGE.HOME) || pathname.includes(PAGE.MY_CHANNEL)){
         return protectStudio(request)
     }
     if(pathname.includes(PAGE.AUTH)){
@@ -14,5 +14,5 @@ export function middleware(request:NextRequest ){
 }
 }
 export const config = {
-    matcher:['/studio/:path*'  , '/auth/:path*' ]
+    matcher:['/studio/:path*'  , '/auth/:path*' , '/my-channel/:path*' ]
 }

@@ -81,7 +81,6 @@ class AuthService {
             expires: 1
         })
         clearUser()
-
 } 
  
 }
