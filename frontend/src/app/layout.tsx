@@ -3,7 +3,6 @@ import { Noto_Sans } from 'next/font/google'
 
 import { Providers } from '@/providers/Providers'
 
-// @ts-expect-error CSS import from Next.js app directory
 import './globals.css'
 
 const NotoSans = Noto_Sans({

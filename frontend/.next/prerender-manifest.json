@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "ee0ef3f044defb9fdbc0f407abfed57e",
-    "previewModeSigningKey": "680dbf467fac78a6aff35c9a7e4cd9b3482d85ea537ca46376bd342005f01163",
-    "previewModeEncryptionKey": "aa583117f97dde333f5777ab36863be720aa32f9bce5731bdc07a4d858bebe2f"
-  }
-}
+{"version":4,"routes":{"/c/asdvwqfc":{},"/c/asdasd":{},"/c/kurmangalievamir873":{}},"dynamicRoutes":{"/c/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/c/[slug]","routeRegex":"^\\/c\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"9016f9e2bb6d6c4dd72bd56fc8f5f3c2","previewModeSigningKey":"21436dbc90ecac2c1ecfb98befdb36aa653f8acde0dde284fb83e23a1fea1534","previewModeEncryptionKey":"51db2b3234ec6e7063fe2c1c6dc0fe813f5ce11ab3a952a86c2c29f7196b7611"}}

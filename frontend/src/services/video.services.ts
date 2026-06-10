@@ -7,11 +7,7 @@ class VideoService {
 
 
 	getAll(searchTerm: string | null) {
-		return axiosCLassic.get<IVideo[]>(this._VIDEOS,{
-			params: {
-				q:searchTerm
-			}
-		})
+		return axiosCLassic.get<IVideo[]>(`${this._VIDEOS}/${searchTerm}`)
 	}
 
 	getTrendingVideos() {

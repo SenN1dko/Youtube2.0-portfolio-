@@ -1,5 +1,5 @@
 import * as m from 'framer-motion/m'
-import { BadgeCheck, type LucideIcon } from 'lucide-react'
+import { type LucideIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -7,6 +7,8 @@ import { PAGE } from '@/config/public-page.config'
 
 import { transformDate } from '@/utils/transform-date'
 import { transformViews } from '@/utils/transform-views'
+
+import { VerifiedBadge } from '../VerifiedBadge'
 
 import type { IVideo } from '@/types/video.types'
 
@@ -41,7 +43,7 @@ export function VideoItem({ video, Icon }: Props) {
 					/>
 				</Link>
 
-				<Link href={PAGE.CHANNEL('asd')}>
+				<Link href={PAGE.CHANNEL(video.channel.slug)}>
 					<Image
 						src={video.channel.avatar || '/Avatar.png'}
 						width={30}
@@ -96,15 +98,8 @@ export function VideoItem({ video, Icon }: Props) {
 					href={PAGE.VIDEO(video.slug)}
 					className='flex items-center gap-1'
 				>
-					<span className='text-gray-400 text-sm'>{video.channel.owner.username}</span>
-					<span>
-						{
-							<BadgeCheck
-								className='text-green-500'
-								size={15}
-							/>
-						}
-					</span>
+					<span className='text-gray-400 text-sm'>{video.channel.slug}</span>
+					<span>{video.channel.isVerified && <VerifiedBadge />}</span>
 				</Link>
 			</div>
 		</m.div>

@@ -4,11 +4,12 @@ export interface IVideo {
 	id: string
 	title: string
 	slug: string
-	description: string
+	description?: string
 	thumbnailUrl: string
 	videoFileName: string
 	views: number
 	isPublic: boolean
 	channel: IChannel
 	createdAt: string
+	message?:string
 }

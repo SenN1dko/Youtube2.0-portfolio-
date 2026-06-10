@@ -11,10 +11,13 @@
 
 html,
 body {
-	@apply text-white bg-bg text-base;
+	color:white;
+	background-color: var(--color-bg)
 }
 @layer utilities{
 	.grid-6{
-		@apply grid grid-cols-5 gap-5
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 1.25rem; 
 	}
 }

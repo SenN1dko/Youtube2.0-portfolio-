@@ -5,7 +5,11 @@ import type { IChannel } from '@/types/channel.types'
 class ChannelService {
     private _CHANNELS = '/channels'
 
-     async bySlug(slug:string | null) {
+    async getAll(){
+        return axiosCLassic.get<IChannel[]>(this._CHANNELS)
+    }
+
+     async bySlug(slug:string) {
         return axiosCLassic.post<IChannel>(`${this._CHANNELS}/by-slug/${slug}`)
     }
 }

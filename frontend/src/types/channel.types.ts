@@ -9,7 +9,7 @@ export interface IChannel {
 	avatar: string
 	banner: string
 	owner:IFullUser
-	video: IVideo[]
-	subscribers: IUser[]
+	videos: IVideo[]
+	subscriptions: IUser[]
 	createdAt: string
 }
