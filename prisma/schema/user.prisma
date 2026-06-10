@@ -12,8 +12,9 @@ model User {
     comments          Comment[]
     verificationToken String?   @unique @map("verification_token")
 
-    createdAt DateTime @default(now()) @map("created_at")
-    updatedAt DateTime @updatedAt @map("updated_at")
+    createdAt     DateTime       @default(now()) @map("created_at")
+    updatedAt     DateTime       @updatedAt @map("updated_at")
+    subscriptions Subscription[]
 
     @@map("users")
 }
@@ -21,18 +22,33 @@ model User {
 model Channel {
     id String @id @default(cuid())
 
-    name        String  @unique
     description String?
     avatar      String?
     banner      String?
     slug        String?
-    video       Video[]
+    isVerified  Boolean? @default(false)
+
+    videos Video[]
 
     ownerId String @unique @map("owner_id")
     owner   User   @relation(fields: [ownerId], references: [id])
 
-    createdAt DateTime @default(now()) @map("created_at")
-    updatedAt DateTime @updatedAt @map("updated_at")
+    createdAt     DateTime       @default(now()) @map("created_at")
+    updatedAt     DateTime       @updatedAt @map("updated_at")
+    subscriptions Subscription[]
 
     @@map("Channels")
+}
+
+model Subscription {
+    id        String @id @default(cuid())
+    userId    String
+    channelId String
+
+    user    User    @relation(fields: [userId], references: [id])
+    channel Channel @relation(fields: [channelId], references: [id])
+
+    createdAt DateTime @default(now())
+
+    @@unique([userId, channelId])
 }

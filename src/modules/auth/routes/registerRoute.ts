@@ -52,7 +52,6 @@ const user = await db.user.create({
         verificationToken: token,
         channel: {
             create: {
-                name: `${emailPrefix}'s channel`,
                 slug: emailPrefix,
                 avatar: "",
                 banner: ""

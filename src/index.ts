@@ -7,6 +7,7 @@ import { videoRoutes } from "./modules/video/videoRoute";
 import { resendVerifyEmail } from "./modules/auth/routes/emailVerify /verifyEmailRoute";
 import staticPlugin from "@elysiajs/static";
 import { fileRoute } from "./modules/file/routes/fileRoute";
+import { ChannelRoute } from "./modules/channel /Channel.route";
 const app = new Elysia()
 .use(cors({
         origin: ['http://localhost:3000', 'http://localhost:3001'], 
@@ -23,6 +24,7 @@ const app = new Elysia()
 .use(authRoutes)
 .use(userRoute)
 .use(resendVerifyEmail)
+.use(ChannelRoute)
 .listen(3001, () =>{
     console.log(`The server is running on 3001 port`)
 })
