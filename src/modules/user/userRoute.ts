@@ -18,7 +18,12 @@ export const userRoute = new Elysia({prefix:'/user'})
                 username: true,
                 email: true,
                 channel: true,
-                verificationToken:true
+                verificationToken:true,
+                subscriptions:{
+                    include:{
+                        channel:true
+                    }
+                }
             }
         })
 
