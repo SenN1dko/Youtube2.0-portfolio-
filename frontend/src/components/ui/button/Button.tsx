@@ -3,7 +3,7 @@ import cn from 'clsx'
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode
 	isLoading?: boolean
-	variant: 'secondary' | 'primary'
+	variant?: 'secondary' | 'primary'
 }
 
 export function Button({ children, isLoading, variant = 'primary', ...props }: Props) {
