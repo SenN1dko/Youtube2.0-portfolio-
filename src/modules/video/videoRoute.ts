@@ -3,6 +3,7 @@ import { db } from "../../db/db";
 
 export const videoRoutes = new Elysia({prefix:'/video'})
 .use(db)
+
 .get('/:q' , async({set,db , params:{q}}) =>{
     try{
     const videos = await db.video.findMany({
@@ -28,8 +29,8 @@ return {
 }
 return videos
 }catch(error){
-            set.status = 500
-            return { message: 'Internal server error' }
+    set.status = 500
+    return { message: 'Internal server error' }
 }
 
 } ,{
@@ -38,7 +39,7 @@ return videos
     })
 })
 
-.get('/trendingVideos' , async({db }) =>{
+.get('/trendingVideos' , async({ db }) =>{
 return db.video.findMany({
     include:{
         channel:{

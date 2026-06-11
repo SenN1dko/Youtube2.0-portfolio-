@@ -6,36 +6,67 @@ export const userRoute = new Elysia({prefix:'/user'})
 .use(authPlugin)
 .use(db)
 .get('/profile', async ({ user, db, set }) => {
-        if (!user) {
-            set.status = 401
-            return { message: 'You are not authorized' }
-        }
+  if (!user) {
+    set.status = 401
+    return { message: 'You are not authorized' }
+  }
 
-        const fullUserProfile = await db.user.findUnique({
-            where: { id: user.id }, 
+  const profile = await db.user.findUnique({
+    where: { id: user.id },
+    select: {
+      id: true,
+      username: true,
+      email: true,
+      channel: true,
+      verificationToken: true,
+    }
+  })
+
+  const subscribedVideos = await db.video.findMany({
+    where: {
+      channel: {
+        subscriptions: {
+          some: {
+            userId: user.id
+          }
+        }
+      }
+    },
+    select: {
+      id: true,
+      title: true,
+      slug: true,
+      description: true,
+      thumbnailUrl: true,
+      videoFileName: true,
+      views: true,
+      isPublic: true,
+      createdAt: true,
+      channel: {
+        select: {
+          id: true,
+          slug: true,
+          avatar: true,
+          isVerified: true,
+          owner: {
             select: {
-                id: true,
-                username: true,
-                email: true,
-                channel: true,
-                verificationToken:true,
-                subscriptions:{
-                    include:{
-                        channel:true
-                    }
-                }
+              id: true,
+              username: true
             }
-        })
-
-        if (!fullUserProfile) {
-            set.status = 404
-            return { message: 'User not found' }
+          }
         }
+      }
+    },
+    orderBy: {
+      createdAt: 'desc'
+    }
+  })
 
-   
-        return fullUserProfile 
-    })
-
+  return {
+    ...profile,
+    subscribedVideos
+  }
+})
 .put('/profile', async ({ user, db, set, body }) => {
         if (!user) {
             set.status = 401
