@@ -1,6 +1,8 @@
 import { useMutation } from '@tanstack/react-query'
+import axios from 'axios'
 import { useEffect } from 'react'
 import { useForm, type SubmitHandler } from 'react-hook-form'
+import toast from 'react-hot-toast'
 
 import { useProfile } from './useProfile'
 import { userService } from '@/services/user.services'
@@ -18,16 +20,24 @@ export function useSettings() {
 		form.reset(profile)
 	}, [isSuccess, profile, form])
 
-	const { mutate, isPending } = useMutation({
+	const { mutateAsync, isPending } = useMutation({
 		mutationKey: ['settings'],
-		mutationFn: (data: ISettings) => userService.updateProfile(data),
-		onSuccess() {
-			refetch()
-		}
+		mutationFn: (data: ISettings) => userService.updateProfile(data)
 	})
 
 	const onSubmit: SubmitHandler<ISettings> = data => {
-		mutate(data)
+		toast.promise(mutateAsync(data), {
+			loading: isPending ? 'Loading.' : '',
+			success: () => {
+				refetch()
+				return 'profile has updated successfully'
+			},
+			error: e => {
+				if (axios.isAxiosError(e)) {
+					return e.response?.data?.message
+				}
+			}
+		})
 	}
 	return { isPending, onSubmit, formObject: form, isProfileLoading: isLoading }
 }

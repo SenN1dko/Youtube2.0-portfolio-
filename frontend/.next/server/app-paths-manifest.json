@@ -1,6 +1,7 @@
 {
   "/auth/page": "app/auth/page.js",
   "/(public)/page": "app/(public)/page.js",
-  "/studio/settings/page": "app/studio/settings/page.js",
-  "/(public)/c/[slug]/page": "app/(public)/c/[slug]/page.js"
+  "/(public)/c/[slug]/page": "app/(public)/c/[slug]/page.js",
+  "/studio/page": "app/studio/page.js",
+  "/studio/settings/page": "app/studio/settings/page.js"
 }

@@ -1,5 +1,5 @@
 
-import { axiosCLassic } from '@/api/axios'
+import { axiosCLassic, instance } from '@/api/axios'
 import type { IChannel } from '@/types/channel.types'
 
 class ChannelService {
@@ -11,6 +11,10 @@ class ChannelService {
 
      async bySlug(slug:string) {
         return axiosCLassic.post<IChannel>(`${this._CHANNELS}/by-slug/${slug}`)
+    }
+
+    async toggleSubscribe(slug:string){
+        return instance.patch(`${this._CHANNELS}/toggle-subscribe/${slug}`)
     }
 }
 

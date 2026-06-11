@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 import { Heading } from '@/ui/Heading'
 import { VerifiedBadge } from '@/ui/VerifiedBadge'
-import { Button } from '@/ui/button/Button'
 
 import { transformCount } from '@/utils/transform-count'
 
 import { ChannelVideos } from './ChannelVideos'
+import { SubButton } from './SubButton'
 import { channelService } from '@/services/channel.services'
 import type { TPageSlugProp } from '@/types/page.types'
 
@@ -48,13 +48,16 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 	return (
 		<section>
 			<div>
-				<Image
-					alt={channel.owner.username || ''}
-					src={channel.banner}
-					width={1284}
-					height={206}
-					className='rounded-3xl'
-				/>
+				<div className='w-full rounded-3xl h-62.5 overflow-hidden relative '>
+					<Image
+						alt={channel.owner.username || ''}
+						src={channel.banner}
+						layout='fill'
+						objectFit='cover'
+						quality={100}
+						priority
+					/>
+				</div>
 				<div className='flex items-start gap-5 mt-7 mb-7'>
 					<Image
 						alt={channel.slug}
@@ -62,6 +65,8 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 						width={160}
 						height={160}
 						className='rounded-xl'
+						quality={100}
+						priority
 					/>
 					<div>
 						<Heading isH1>
@@ -80,7 +85,7 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 						<article className='mb-2 max-w-xl leading-snug text-gray-400 text-sm'>
 							{channel.description}
 						</article>
-						<Button>Subscribe</Button>
+						<SubButton slug={slug} />
 					</div>
 				</div>
 			</div>

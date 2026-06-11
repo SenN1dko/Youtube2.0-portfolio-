@@ -1,9 +1,9 @@
 .recaptcha{
-    margin-bottom: 12px;
+    @apply mb-4
     filter:invert(1) grayscale(1);
     transform:scale(1.1);
 
     >div>div{
-        margin:0 auto;
+        @apply mx-auto
     }
 }

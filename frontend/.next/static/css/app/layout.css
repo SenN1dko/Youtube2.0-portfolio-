@@ -322,14 +322,8 @@
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
   }
-  .mt-8 {
-    margin-top: calc(var(--spacing) * 8);
-  }
   .mt-24 {
     margin-top: calc(var(--spacing) * 24);
-  }
-  .mt-78 {
-    margin-top: calc(var(--spacing) * 78);
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
@@ -400,6 +394,9 @@
   .h-36 {
     height: calc(var(--spacing) * 36);
   }
+  .h-62\.5 {
+    height: calc(var(--spacing) * 62.5);
+  }
   .h-px {
     height: 1px;
   }
@@ -426,6 +423,9 @@
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
+  }
+  .w-39\.5 {
+    width: calc(var(--spacing) * 39.5);
   }
   .w-60 {
     width: calc(var(--spacing) * 60);
@@ -486,9 +486,6 @@
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
-  }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -566,6 +563,9 @@
   }
   .bg-border {
     background-color: var(--color-border);
+  }
+  .bg-gray-600 {
+    background-color: var(--color-gray-600);
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -737,6 +737,13 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         color: var(--color-primary);
+      }
+    }
+  }
+  .hover\:bg-gray-500 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-500);
       }
     }
   }
