@@ -16,7 +16,11 @@ export function LogOut() {
 		mutationKey: ['logout'],
 		mutationFn: () => authservice.logout(),
 		onSuccess: () => {
-			if (pathname.includes(STUDIO_PAGE.HOME) || pathname.includes(STUDIO_PAGE.SETTINGS)) {
+			if (
+				pathname.includes(STUDIO_PAGE.HOME) ||
+				pathname.includes(STUDIO_PAGE.SETTINGS) ||
+				pathname.includes(PAGE.SUBSCRIPTION)
+			) {
 				router.push(PAGE.HOME)
 			}
 		}

@@ -21,7 +21,6 @@ export function SubscribeButton({ slug }: { slug: string }) {
 			refetch()
 		}
 	})
-	console.log(profile)
 
 	const clickHandler = () => {
 		if (profile) {
@@ -31,8 +30,8 @@ export function SubscribeButton({ slug }: { slug: string }) {
 			router.push(PAGE.AUTH)
 		}
 	}
-
-	const isSubscribed = profile?.subscriptions?.some(sub => sub.channel.slug === slug)
+	console.log('profile', profile)
+	const isSubscribed = profile?.subscribedVideos?.some(sub => sub.channel.slug === slug)
 
 	return (
 		<Button
