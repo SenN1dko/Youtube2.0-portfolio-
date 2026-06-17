@@ -32,7 +32,6 @@ export function UploadField({
 	const isWideScreen = aspectRatio === '16:9'
 	const width = isWideScreen ? 300 : 100
 	const height = isWideScreen ? 190 : 100
-	console.log('value', value)
 	return (
 		<div className={className}>
 			<label

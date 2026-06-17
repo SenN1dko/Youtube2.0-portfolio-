@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/c/a":{},"/c/asdvwqfc":{},"/c/kurmangalievamir873":{}},"dynamicRoutes":{"/c/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/c/[slug]","routeRegex":"^\\/c\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"16fad9e1c810314f0df954c207ed39fe","previewModeSigningKey":"1ae254711166fea5631e676e8f236746694c2c9309c74795be6d24ca08958a68","previewModeEncryptionKey":"16405fd7b31ba00e7806d07cadc8357824e614282c647cf9a35f6d09e7bd94e1"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "95e1ac13fda2618e1a6ebcef66273814",
+    "previewModeSigningKey": "3f8bcb4bf1cca9fb1ee08804570ea1154a4c2b2e8df272064cab6c777d8934db",
+    "previewModeEncryptionKey": "4faf5376580bd68f7f06a4a401d2eb9d8dcb1f3512ee1951286fff7d45a3aa81"
+  }
+}

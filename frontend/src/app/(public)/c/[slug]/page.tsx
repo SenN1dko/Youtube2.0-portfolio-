@@ -43,7 +43,6 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 
 	const data = await channelService.bySlug(slug)
 	const channel = data.data
-	console.log(channel)
 
 	return (
 		<section>

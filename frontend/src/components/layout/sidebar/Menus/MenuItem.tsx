@@ -26,6 +26,7 @@ export function MenuItem({ item, isActive }: Props) {
 			<Link
 				href={item.link === PAGE.MY_CHANNEL ? myChannelLink : item.link}
 				className='group flex items-center gap-5 py-2'
+				title={item.label}
 			>
 				<item.icon
 					className={cn(' min-w-6 transition duration-333 ease-in-out ', {

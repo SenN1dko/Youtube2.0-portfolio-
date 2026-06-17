@@ -30,7 +30,6 @@ export function SubscribeButton({ slug }: { slug: string }) {
 			router.push(PAGE.AUTH)
 		}
 	}
-	console.log('profile', profile)
 	const isSubscribed = profile?.subscribedVideos?.some(sub => sub.channel.slug === slug)
 
 	return (
