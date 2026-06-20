@@ -37,7 +37,7 @@ export const resendVerifyEmail = new Elysia()
 })
 .post('/verify-email', async ({ body, db, set }) => {
     const { token } = body
-
+    console.log(token)
     const user = await db.user.findUnique({
         where: { verificationToken: token },
         select: { id: true, email: true }

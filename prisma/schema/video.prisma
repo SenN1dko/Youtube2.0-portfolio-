@@ -13,7 +13,7 @@ model Video {
     title         String
     description   String?
     views         Int     @default(0)
-    slug          String  @unique
+    publicId      String  @unique @map("public_id")
     thumbnailUrl  String
     videoFileName String
     isPublic      Boolean @default(true)

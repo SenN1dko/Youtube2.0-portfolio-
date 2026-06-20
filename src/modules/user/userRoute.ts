@@ -19,6 +19,11 @@ export const userRoute = new Elysia({prefix:'/user'})
       email: true,
       channel: true,
       verificationToken: true,
+      subscriptions:{
+        select:{
+          channel:true
+        }
+      }
     }
   })
 
@@ -26,8 +31,8 @@ export const userRoute = new Elysia({prefix:'/user'})
     where: {
       channel: {
         subscriptions: {
-          some: {
-            userId: user.id
+          some:{
+            userId:user.id
           }
         }
       }
@@ -35,7 +40,7 @@ export const userRoute = new Elysia({prefix:'/user'})
     select: {
       id: true,
       title: true,
-      slug: true,
+      publicId: true,
       description: true,
       thumbnailUrl: true,
       videoFileName: true,
@@ -106,18 +111,18 @@ export const userRoute = new Elysia({prefix:'/user'})
             return false
         }
     }, {
-        body: t.Object({
-            email: t.Optional(t.String()),
-            password:t.Optional(t.String()),
-            username:t.Optional(t.String()),
-               channel: t.Optional(
-                  t.Object({
-                   avatar: t.Optional(t.Nullable(t.String())),
-                   banner: t.Optional(t.Nullable(t.String())),
-                   slug:t.Optional(t.String()),
-                   description:t.Optional(t.String()),
-                })
-            )
-        })
+    body: t.Object({
+        email: t.Optional(t.String()),
+        password: t.Optional(t.String()),
+        username: t.Optional(t.Nullable(t.String())),
+        
+        channel: t.Optional(
+            t.Object({
+                avatar: t.Optional(t.Nullable(t.String())),
+                banner: t.Optional(t.Nullable(t.String())),
+                slug: t.Optional(t.Nullable(t.String())),
+                description: t.Optional(t.Nullable(t.String())) // 🌟 Здесь тоже разрешаем null
+            })
+        )
     })
- 
+})
