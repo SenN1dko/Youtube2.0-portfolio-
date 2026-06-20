@@ -1,5 +1,7 @@
 {
-  "/studio/settings/page": "app/studio/settings/page.js",
   "/(public)/page": "app/(public)/page.js",
-  "/studio/page": "app/studio/page.js"
+  "/(public)/v/[publicId]/page": "app/(public)/v/[publicId]/page.js",
+  "/(public)/c/[slug]/page": "app/(public)/c/[slug]/page.js",
+  "/studio/settings/page": "app/studio/settings/page.js",
+  "/(public)/video-games/page": "app/(public)/video-games/page.js"
 }

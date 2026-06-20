@@ -11,17 +11,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/studio/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/studio/layout.css",
-      "static/chunks/app/studio/layout.js"
-    ],
-    "/studio/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/studio/settings/page.js"
-    ],
     "/(public)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -33,10 +22,41 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(public)/page.js"
     ],
-    "/studio/page": [
+    "/(public)/v/[publicId]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/studio/page.js"
+      "static/chunks/app/(public)/v/[publicId]/page.js"
+    ],
+    "/(public)/trending/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(public)/trending/page.js"
+    ],
+    "/(public)/c/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(public)/c/[slug]/page.js"
+    ],
+    "/studio/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/studio/layout.css",
+      "static/chunks/app/studio/layout.js"
+    ],
+    "/studio/settings/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/studio/settings/page.js"
+    ],
+    "/(public)/video-games/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(public)/video-games/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

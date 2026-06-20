@@ -24,7 +24,7 @@ export function Explore() {
 						className='h-36'
 					/>
 				) : (
-					data?.data.length &&
+					!!data?.data.length &&
 					data.data.map(video => (
 						<VideoItem
 							key={video.id}

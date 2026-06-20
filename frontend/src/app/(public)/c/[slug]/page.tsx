@@ -1,3 +1,4 @@
+import { Video } from 'lucide-react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -47,20 +48,22 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 	return (
 		<section>
 			<div>
-				<div className='w-full rounded-3xl h-62.5 overflow-hidden relative '>
-					<Image
-						alt={channel.owner.username || ''}
-						src={channel.banner}
-						layout='fill'
-						objectFit='cover'
-						quality={100}
-						priority
-					/>
-				</div>
+				{!!channel.banner && (
+					<div className='w-full rounded-3xl h-62.5 overflow-hidden relative '>
+						<Image
+							alt={channel.owner.username || ''}
+							src={channel.banner}
+							layout='fill'
+							objectFit='cover'
+							quality={100}
+							priority
+						/>
+					</div>
+				)}
 				<div className='flex items-start gap-5 mt-7 mb-7'>
 					<Image
 						alt={channel.slug}
-						src={channel.avatar}
+						src={channel.avatar || '/Avatar.png'}
 						width={160}
 						height={160}
 						className='rounded-xl'
@@ -70,7 +73,7 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 					<div>
 						<Heading isH1>
 							<span className='flex items-center gap-2'>
-								{channel.owner.username}
+								{channel.owner.username || channel.slug}
 								{channel.isVerified && <VerifiedBadge size={20} />}
 							</span>
 						</Heading>
@@ -88,7 +91,16 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 					</div>
 				</div>
 			</div>
-			{!!channel.videos.length && <ChannelVideos videos={channel.videos} />}
+			{!!channel.videos.length ? (
+				<ChannelVideos videos={channel.videos} />
+			) : (
+				<Heading
+					isH1
+					Icon={Video}
+				>
+					Video
+				</Heading>
+			)}
 		</section>
 	)
 }

@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "95e1ac13fda2618e1a6ebcef66273814",
-    "previewModeSigningKey": "3f8bcb4bf1cca9fb1ee08804570ea1154a4c2b2e8df272064cab6c777d8934db",
-    "previewModeEncryptionKey": "4faf5376580bd68f7f06a4a401d2eb9d8dcb1f3512ee1951286fff7d45a3aa81"
-  }
-}
+{"version":4,"routes":{"/v/3sfx6btsWo":{},"/c/kurmangalievamir873":{},"/v/RE609MPnhe":{},"/v/Jc8-0Or5z8":{},"/v/8juxHNqeYh":{}},"dynamicRoutes":{"/v/[publicId]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/v/[publicId]","routeRegex":"^\\/v\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/c/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/c/[slug]","routeRegex":"^\\/c\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"c9def2fd365e0051b56d7dc81773740e","previewModeSigningKey":"4a0af9f3f86e955da8198540eb9973a83dde003d39e9bf70ae9ca80d8919a8ce","previewModeEncryptionKey":"89689334ee346e55f8897e6594a1bcea6101a1febb785ed2bfae41d547a105c4"}}

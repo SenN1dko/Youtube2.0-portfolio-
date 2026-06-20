@@ -16,8 +16,8 @@ interface Props {
 	video: IVideo
 	Icon?: LucideIcon
 }
-
 export function VideoItem({ video, Icon }: Props) {
+	console.log(video)
 	return (
 		<m.div
 			initial={{ opacity: 0 }}
@@ -33,7 +33,7 @@ export function VideoItem({ video, Icon }: Props) {
 			}}
 		>
 			<div className='relative mb-1'>
-				<Link href={PAGE.VIDEO(video.slug)}>
+				<Link href={PAGE.VIDEO(video.publicId)}>
 					<Image
 						src={video.thumbnailUrl}
 						width={500}
@@ -88,20 +88,29 @@ export function VideoItem({ video, Icon }: Props) {
 			>
 				<Link
 					className='line-clamp-2 leading-snug'
-					href={PAGE.VIDEO(video.slug)}
+					href={PAGE.VIDEO(video.publicId)}
 				>
 					{video.title}
 				</Link>
 			</m.div>
-			<div>
+			<m.div
+				whileHover={{
+					scale: 1.03
+				}}
+				transition={{
+					type: 'spring',
+					stiffness: 500,
+					damping: 30
+				}}
+			>
 				<Link
-					href={PAGE.VIDEO(video.slug)}
+					href={PAGE.CHANNEL(video.channel.slug)}
 					className='flex items-center gap-1'
 				>
 					<span className='text-gray-400 text-sm'>{video.channel.slug}</span>
 					<span>{video.channel.isVerified && <VerifiedBadge />}</span>
 				</Link>
-			</div>
+			</m.div>
 		</m.div>
 	)
 }
