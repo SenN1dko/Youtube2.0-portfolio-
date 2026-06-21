@@ -1,12 +1,18 @@
 import VerifiedPageContent from './VerifyEmailContent'
-import type { TPageSlugProp } from '@/types/page.types'
 
-export default async function VerifiedPage({ params }: TPageSlugProp) {
-	const { slug } = await params
+interface TVerifyEmailPageProps {
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
+export default async function VerifiedPage({ searchParams }: TVerifyEmailPageProps) {
+	const { token } = await searchParams
+	console.log(token)
+	if (!token || typeof token !== 'string') {
+		return <div>Invalid or missing token</div>
+	}
 	return (
 		<>
-			<VerifiedPageContent token={slug} />
+			<VerifiedPageContent token={token} />
 		</>
 	)
 }

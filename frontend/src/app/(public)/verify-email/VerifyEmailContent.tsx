@@ -11,12 +11,10 @@ import { emailVerificationService } from '@/services/emailVerification.services'
 
 export default function VerifiedPageContent({ token }: { token: string }) {
 	const router = useRouter()
-
+	console.log(token)
 	const { isPending, data } = useQuery({
 		queryKey: ['verify-email', token],
-		queryFn: () => emailVerificationService.verifyEmail(token),
-		retry: false,
-		enabled: !!token
+		queryFn: () => emailVerificationService.verifyEmail(token)
 	})
 
 	useEffect(() => {

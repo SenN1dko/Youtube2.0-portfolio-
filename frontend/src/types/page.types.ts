@@ -7,3 +7,4 @@ export type TPageSlugProp = {
 }
 export type TPageIdProp = IPageProps<{id:string}> 
 export type TPagePublicIdProp = IPageProps<{publicId:string}> 
+export type TPageTokenProp = IPageProps<{token:string}> 

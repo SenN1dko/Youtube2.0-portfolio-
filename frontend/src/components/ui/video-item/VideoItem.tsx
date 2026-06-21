@@ -17,7 +17,6 @@ interface Props {
 	Icon?: LucideIcon
 }
 export function VideoItem({ video, Icon }: Props) {
-	console.log(video)
 	return (
 		<m.div
 			initial={{ opacity: 0 }}
@@ -87,7 +86,7 @@ export function VideoItem({ video, Icon }: Props) {
 				}}
 			>
 				<Link
-					className='line-clamp-2 leading-snug'
+					className='line-clamp-2 leading-snug font-bold text-lg'
 					href={PAGE.VIDEO(video.publicId)}
 				>
 					{video.title}
@@ -107,7 +106,7 @@ export function VideoItem({ video, Icon }: Props) {
 					href={PAGE.CHANNEL(video.channel.slug)}
 					className='flex items-center gap-1'
 				>
-					<span className='text-gray-400 text-sm'>{video.channel.slug}</span>
+					<span className='text-gray-400 text-sm font-semibold'>{video.channel.slug}</span>
 					<span>{video.channel.isVerified && <VerifiedBadge />}</span>
 				</Link>
 			</m.div>

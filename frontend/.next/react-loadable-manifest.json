@@ -1,10 +1,4 @@
 {
-  "app/(public)/c/[slug]/SubButton.tsx -> @/components/SubscribeButton": {
-    "id": "app/(public)/c/[slug]/SubButton.tsx -> @/components/SubscribeButton",
-    "files": [
-      "static/chunks/_app-pages-browser_src_components_SubscribeButton_tsx.js"
-    ]
-  },
   "app/(public)/v/[publicId]/SubButton.tsx -> @/components/SubscribeButton": {
     "id": "app/(public)/v/[publicId]/SubButton.tsx -> @/components/SubscribeButton",
     "files": [

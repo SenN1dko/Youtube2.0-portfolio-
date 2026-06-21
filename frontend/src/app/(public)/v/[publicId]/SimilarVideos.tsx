@@ -4,7 +4,7 @@ import type { IVideoSingleResponse } from '@/types/video.types'
 
 export function SimilarVideos({ videos }: { videos: IVideoSingleResponse['similarVideos'] }) {
 	return (
-		<div className='grid grid-cols-1'>
+		<div className='grid grid-cols-1 gap-5'>
 			{videos.map(video => (
 				<VideoItem
 					key={video.id}

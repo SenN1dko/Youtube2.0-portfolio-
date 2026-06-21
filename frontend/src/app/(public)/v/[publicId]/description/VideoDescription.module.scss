@@ -1,0 +1,26 @@
+.article {
+  line-height: 1.375; 
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.article > p {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.article > a {
+  color: rgb(96 165 250);
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+
+  transition-property: color, border-color;
+  transition-duration: 150ms;
+}
+
+.article > a:hover {
+  border-bottom-color: rgb(96 165 250);
+}

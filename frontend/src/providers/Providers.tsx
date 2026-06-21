@@ -5,7 +5,16 @@ import { LazyMotion, domAnimation } from 'framer-motion'
 import { type ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
 
-const client = new QueryClient()
+const client = new QueryClient({
+	defaultOptions: {
+		mutations: {
+			retry: 1
+		},
+		queries: {
+			retry: 1
+		}
+	}
+})
 
 export function Providers({ children }: { children: ReactNode }) {
 	return (
