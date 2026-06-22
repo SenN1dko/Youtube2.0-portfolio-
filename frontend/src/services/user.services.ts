@@ -14,6 +14,10 @@ class UserService {
         return instance.put<boolean>(`${this._USERS}/profile`, data)
     }
 
+    toggleLike(videoId:string){
+        return instance.patch(`${this._USERS}/profile/likes`, {videoId})
+    }
+
 }
 
 export const userService = new UserService()

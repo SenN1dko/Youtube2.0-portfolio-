@@ -1,3 +1,4 @@
 {
+  "/(public)/page": "app/(public)/page.js",
   "/(public)/v/[publicId]/page": "app/(public)/v/[publicId]/page.js"
 }

@@ -16,7 +16,14 @@ subscriptions?: ISubscription[]
 // watchHistory: IWatchHistory[]  
 verificationToken?: string
 } 
+export interface IVideoLikes { 
+  id:string,
+  videoId:string,
+  userId:string
+}
 
 export interface IResponseUser extends IFullUser{
+  likes:IVideoLikes[]
   subscribedVideos:IVideo[]
+
 }
