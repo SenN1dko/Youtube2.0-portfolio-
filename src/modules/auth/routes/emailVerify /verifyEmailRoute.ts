@@ -3,7 +3,7 @@ import { AuthService } from "../../auth.services"
 import { db } from "../../../../db/db"
 export const resendVerifyEmail = new Elysia()
 .use(db)
-.post('/resend-verification', async ({ body, db, set }) => {
+.post('/resend-verification', async ({ body, db, set  }) => {
     const {email} = body
 
     const user = await db.user.findUnique({

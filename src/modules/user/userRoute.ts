@@ -2,9 +2,11 @@ import {Elysia, t} from "elysia";
 import "dotenv/config";
 import { authPlugin } from "../../middleware/authPlugin";
 import { db } from "../../db/db";
+import { toggleLike } from "./routes/setLikesRoute";
 export const userRoute = new Elysia({prefix:'/user'})
 .use(authPlugin)
 .use(db)
+.use(toggleLike)
 .get('/profile', async ({ user, db, set }) => {
   if (!user) {
     set.status = 401
@@ -19,6 +21,7 @@ export const userRoute = new Elysia({prefix:'/user'})
       email: true,
       channel: true,
       verificationToken: true,
+      likes:true,
       subscriptions:{
         select:{
           channel:true
@@ -72,6 +75,7 @@ export const userRoute = new Elysia({prefix:'/user'})
     subscribedVideos
   }
 })
+
 .put('/profile', async ({ user, db, set, body }) => {
         if (!user) {
             set.status = 401

@@ -8,7 +8,9 @@ import { resendVerifyEmail } from "./modules/auth/routes/emailVerify /verifyEmai
 import staticPlugin from "@elysiajs/static";
 import { fileRoute } from "./modules/file/routes/fileRoute";
 import { ChannelRoute } from "./modules/channel /Channel.route";
+import swagger from "@elysiajs/swagger";
 const app = new Elysia()
+   .use(swagger())
 .use(cors({
         origin: ['http://localhost:3000', 'http://localhost:3001'], 
         credentials: true, 

@@ -3,8 +3,8 @@ import { db } from "../../../db/db";
 import { authPlugin } from "../../../middleware/authPlugin";
 
 export const toggleSubscribe = new Elysia()
-.use(db)
 .use(authPlugin)
+.use(db)
 .patch('/toggle-subscribe/:slug' , async({db , set ,user, params:{slug}}) => {
     if (!user || !user.id) {
             set.status = 401

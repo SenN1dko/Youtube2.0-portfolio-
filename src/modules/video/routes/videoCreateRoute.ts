@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 
 export const videoCreateRoute = new Elysia()
 .use(db)
-.post('/createVideo' , async({db , body ,set}) => {
+.post('/createVideo' , async({db , body ,set }) => {
 const {title , thumbnail , channelId} = body
 
    if (!thumbnail) {
