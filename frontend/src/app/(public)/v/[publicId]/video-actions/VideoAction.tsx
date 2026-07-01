@@ -2,7 +2,7 @@
 
 import { useMutation } from '@tanstack/react-query'
 import { Heart, ListPlus } from 'lucide-react'
-import { startTransition, useEffect, useOptimistic, useState } from 'react'
+import { startTransition, useEffect, useState } from 'react'
 
 import { useProfile } from '@/hooks/useProfile'
 

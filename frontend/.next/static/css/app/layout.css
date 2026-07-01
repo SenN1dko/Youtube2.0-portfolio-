@@ -133,6 +133,7 @@
     --radius-3xl: 1.5rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --aspect-video: 16 / 9;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -297,14 +298,26 @@
   .relative {
     position: relative;
   }
+  .-top-0\.5 {
+    top: calc(var(--spacing) * -0.5);
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
   .-bottom-3\.5 {
     bottom: calc(var(--spacing) * -3.5);
   }
   .bottom-1\.5 {
     bottom: calc(var(--spacing) * 1.5);
   }
+  .bottom-full {
+    bottom: 100%;
+  }
   .-left-4 {
     left: calc(var(--spacing) * -4);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
   }
   .left-1\.5 {
     left: calc(var(--spacing) * 1.5);
@@ -393,6 +406,12 @@
   .inline-flex {
     display: inline-flex;
   }
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -401,6 +420,9 @@
   }
   .h-62\.5 {
     height: calc(var(--spacing) * 62.5);
+  }
+  .h-full {
+    height: 100%;
   }
   .h-px {
     height: 1px;
@@ -468,9 +490,6 @@
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .grid-cols-\[2\.7fr_1fr\] {
-    grid-template-columns: 2.7fr 1fr;
-  }
   .grid-cols-\[3fr_\.8fr\] {
     grid-template-columns: 3fr .8fr;
   }
@@ -524,9 +543,6 @@
   }
   .gap-15 {
     gap: calc(var(--spacing) * 15);
-  }
-  .gap-20 {
-    gap: calc(var(--spacing) * 20);
   }
   .overflow-hidden {
     overflow: hidden;
@@ -587,6 +603,9 @@
   .bg-border {
     background-color: var(--color-border);
   }
+  .bg-gray-200 {
+    background-color: var(--color-gray-200);
+  }
   .bg-gray-600 {
     background-color: var(--color-gray-600);
   }
@@ -602,8 +621,17 @@
   .bg-transparent {
     background-color: transparent;
   }
+  .bg-white\/10 {
+    background-color: color-mix(in srgb, #fff 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    }
+  }
   .p-0\.5 {
     padding: calc(var(--spacing) * 0.5);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
@@ -801,6 +829,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-gray-200);
+      }
+    }
+  }
+  .hover\:text-primary {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-primary);
       }
     }
   }

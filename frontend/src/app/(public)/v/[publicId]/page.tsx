@@ -5,6 +5,7 @@ import { stripToHtml } from 'utils/strip-html'
 
 import { Heading } from '@/ui/Heading'
 import { VerifiedBadge } from '@/ui/VerifiedBadge'
+import { VideoPlayer } from '@/ui/video-player/VideoPlayer'
 
 import { PAGE } from '@/config/public-page.config'
 
@@ -54,8 +55,8 @@ export default async function VideoPage({ params }: TPagePublicIdProp) {
 	return (
 		<section className='grid grid-cols-[3fr_.8fr] gap-15'>
 			<div>
-				<div className='w-full rounded-3xl h-62.5 overflow-hidden relative mb-6 shadow-md '>
-					{/* VideoPlayer */}
+				<div className='w-full rounded-3xl overflow-hidden relative mb-6 shadow-md '>
+					<VideoPlayer fileName={video.videoFileName} />
 				</div>
 				<div className='flex justify-between pb-6 mb-6 border-b border-border'>
 					<div>
