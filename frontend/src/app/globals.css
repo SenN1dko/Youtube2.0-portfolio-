@@ -21,3 +21,51 @@ body {
 		gap: 1.25rem; 
 	}
 }
+
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-slider::-ms-thumb {
+  width: 11px;
+  height: 11px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.volume-slider::-moz-range-thumb:hover{
+	transition-duration: 150ms;
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+	background-color: var(--color-primary);
+}
+.volume-slider::-ms-thumb:hover{
+	transition-duration: 150ms;
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+	background-color: var(--color-primary);
+}
+
+.volume-slider::-webkit-slider-thumb:hover{
+	transition-duration: 150ms;
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+	background-color: var(--color-primary);
+}
+
+

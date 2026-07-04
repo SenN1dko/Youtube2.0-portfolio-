@@ -4,7 +4,7 @@ import type { HTMLCustomVideoElement } from '../video-player.types'
 import { getVideoInfo } from '../video.util'
 
 
-export const useProgressBar = (
+export const useVideoProgressBar = (
 	videoRef: React.RefObject<HTMLCustomVideoElement>,
 ) => {
 	const [currentTime, setCurrentTime] = useState(0)

@@ -2,11 +2,12 @@
 
 import {  useRef } from "react"
 import { type HTMLCustomVideoElement } from "../video-player.types"
-import { useTogglePlayPause } from "./useTogglePlayPause"
-import { useFullScreen,  } from "./useFullSreen"
+import { useVideoPlayPause } from "./useVideoPlayPause"
+import { useVideoFullScreen,  } from "./useVideoFullSreen"
 import { useVideoQuality } from "./useVideoQuality"
-import { useSkipTime } from "./useSkipTime"
-import { useProgressBar } from "./useProgressBar"
+import { useVideoSkipTime } from "./useVideoSkipTime"
+import { useVideoProgressBar } from "./useVideoProgressBar"
+import { useVideoVolume } from "./useVideoVolume"
 
 interface Props{
     fileName:string
@@ -20,13 +21,13 @@ export function useVideoPlayer({fileName}:Props) {
 
 
 
-const { isPlaying, togglePlayPause ,setIsPlaying } = useTogglePlayPause(videoPlayerRef)
-const { currentTime ,progress ,videoTime , setVideoTime } = useProgressBar(videoPlayerRef)
+const { isPlaying, togglePlayPause ,setIsPlaying } = useVideoPlayPause(videoPlayerRef)
+const { currentTime ,progress ,videoTime , setVideoTime } = useVideoProgressBar(videoPlayerRef)
 const { quality, changeQuality  } = useVideoQuality(videoPlayerRef, { fileName, currentTime, setIsPlaying, setVideoTime, isPlaying })
-const { skipTime  } = useSkipTime( videoPlayerRef )
-const { toggleFullScreen  } = useFullScreen( videoPlayerRef )
+const { skipTime  } = useVideoSkipTime( videoPlayerRef )
+const { toggleFullScreen  } = useVideoFullScreen( videoPlayerRef )
 
-
+const {isMuted, toggleMuted,toggleVolume,volume} = useVideoVolume(videoPlayerRef)
 
 
 
@@ -37,8 +38,12 @@ const { toggleFullScreen  } = useFullScreen( videoPlayerRef )
       progress,
       quality,
       currentTime,
+      isMuted,
+      volume
     },
     fn:{
+      toggleMuted,
+      toggleVolume,
       togglePlayPause,
       skipTime,
       toggleFullScreen,

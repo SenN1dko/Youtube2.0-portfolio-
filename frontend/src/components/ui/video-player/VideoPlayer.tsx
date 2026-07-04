@@ -1,13 +1,20 @@
 'use client'
 
-import { Maximize, Pause, Play } from 'lucide-react'
+import { Maximize, Pause, Play, RectangleHorizontal, RectangleVerticalIcon } from 'lucide-react'
 
 import { PlayerProgressbar } from './progress-bar/PlayerProgressbar'
 import { SelectQuality } from './quality/SelectQuality'
-import { useVideoPlayer } from './useVideoPlayer'
+import { useVideoPlayer } from './use-video-player/useVideoPlayer'
 import { getTime } from './video.util'
+import { VolumeControl } from './volume/VolumeControl'
 
-export function VideoPlayer({ fileName }: { fileName: string }) {
+export function VideoPlayer({
+	fileName,
+	toggleTheaterMode
+}: {
+	fileName: string
+	toggleTheaterMode: () => void
+}) {
 	const { fn, state, videoPlayerRef } = useVideoPlayer({ fileName })
 	return (
 		<>
@@ -33,14 +40,23 @@ export function VideoPlayer({ fileName }: { fileName: string }) {
 							<span>{getTime(state.videoTime)}</span>
 						</div>
 					</div>
-					<div className='flex items-center gap-5 '>
+					<div className='flex items-center gap-3 '>
+						<VolumeControl
+							isMuted={state.isMuted}
+							toggleMuted={fn.toggleMuted}
+							toggleVolume={fn.toggleVolume}
+							value={state.volume}
+						/>
 						<SelectQuality
 							currentQuality={state.quality}
 							onChange={fn.changeQuality}
 						/>
-						<VolumeControl />
+						<RectangleHorizontal
+							onClick={toggleTheaterMode}
+							className='transition-colors hover:text-primary cursor-pointer'
+						/>
 						<button
-							className='transition-colors text-primary'
+							className='transition-colors hover:text-primary cursor-pointer '
 							onClick={fn.toggleFullScreen}
 						>
 							<Maximize />

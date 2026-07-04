@@ -1,6 +1,6 @@
 import type { HTMLCustomVideoElement } from "../video-player.types"
 
-export const useSkipTime = ( videoPlayerRef: React.RefObject<HTMLCustomVideoElement> ) => {
+export const useVideoSkipTime = ( videoPlayerRef: React.RefObject<HTMLCustomVideoElement> ) => {
 
 const SKIP_TIME_SEC = 10
 

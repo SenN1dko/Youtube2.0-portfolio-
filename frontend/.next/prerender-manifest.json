@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "86097a4a8d5e017feb55ddfab015e9f4",
-    "previewModeSigningKey": "93d62b51949d081c22fae05570936bed530053bbff5cf48cc7078b7dccc6bd66",
-    "previewModeEncryptionKey": "58f004e1ae3a69d3adf20e7c7814a05560f515b0e61633667f2ed74b8eb2507b"
-  }
-}
+{"version":4,"routes":{"/v/RE609MPnhe":{},"/v/8juxHNqeYh":{},"/v/Jc8-0Or5z8":{},"/v/3sfx6btsWo":{}},"dynamicRoutes":{"/v/[publicId]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/v/[publicId]","routeRegex":"^\\/v\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"e637a7ba2dc0970b0e69f085e669a106","previewModeSigningKey":"e401a2fe5541ccd662d13f3a78909f4fb26c184d4e6ecae0a38ce9c8b91bda3e","previewModeEncryptionKey":"bb9de06c0233430385265468998cd031b2cbb4f36d928d4cd6b098f596ddf073"}}
