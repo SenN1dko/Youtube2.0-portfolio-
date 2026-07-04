@@ -1,18 +1,10 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
 import { stripToHtml } from 'utils/strip-html'
 
 import { Heading } from '@/ui/Heading'
-import { VerifiedBadge } from '@/ui/VerifiedBadge'
 import { VideoPlayer } from '@/ui/video-player/VideoPlayer'
 
-import { PAGE } from '@/config/public-page.config'
-
-import { transformCount } from '@/utils/transform-count'
-
 import { SimilarVideos } from './SimilarVideos'
-import { SubButton } from './SubButton'
 import { VideoDescription } from './description/VideoDescription'
 import { VideoAction } from './video-actions/VideoAction'
 import { VideoChannel } from './video-channel/VideoChannel'
@@ -55,9 +47,7 @@ export default async function VideoPage({ params }: TPagePublicIdProp) {
 	return (
 		<section className='grid grid-cols-[3fr_.8fr] gap-15'>
 			<div>
-				<div className='w-full rounded-3xl overflow-hidden relative mb-6 shadow-md '>
-					<VideoPlayer fileName={video.videoFileName} />
-				</div>
+				<VideoPlayer fileName={video.videoFileName} />
 				<div className='flex justify-between pb-6 mb-6 border-b border-border'>
 					<div>
 						<Heading isH1>{video.title}</Heading>
