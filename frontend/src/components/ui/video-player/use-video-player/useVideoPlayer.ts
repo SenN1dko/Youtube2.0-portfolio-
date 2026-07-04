@@ -8,14 +8,16 @@ import { useVideoQuality } from "./useVideoQuality"
 import { useVideoSkipTime } from "./useVideoSkipTime"
 import { useVideoProgressBar } from "./useVideoProgressBar"
 import { useVideoVolume } from "./useVideoVolume"
+import { useVideoHotKeys } from "./useVideoHotKeys"
 
 interface Props{
     fileName:string
+    toggleTheaterMode:() => void
 }
 
 
 
-export function useVideoPlayer({fileName}:Props) {
+export function useVideoPlayer({fileName , toggleTheaterMode}:Props) {
   const videoPlayerRef = useRef<HTMLCustomVideoElement>(null!)
 
 
@@ -29,7 +31,16 @@ const { toggleFullScreen  } = useVideoFullScreen( videoPlayerRef )
 
 const {isMuted, toggleMuted,toggleVolume,volume} = useVideoVolume(videoPlayerRef)
 
+const fn = {
+       toggleMuted,
+      toggleVolume,
+      togglePlayPause,
+      skipTime,
+      toggleFullScreen,
+      changeQuality,
+}
 
+useVideoHotKeys({volume , toggleTheaterMode , ...fn })
 
   return {
     state:{
@@ -41,14 +52,7 @@ const {isMuted, toggleMuted,toggleVolume,volume} = useVideoVolume(videoPlayerRef
       isMuted,
       volume
     },
-    fn:{
-      toggleMuted,
-      toggleVolume,
-      togglePlayPause,
-      skipTime,
-      toggleFullScreen,
-      changeQuality,
-    },
+    fn,
     videoPlayerRef,
   }
 }

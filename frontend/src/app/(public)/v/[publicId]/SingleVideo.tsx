@@ -36,11 +36,13 @@ export function SingleVideo({ video }: Props) {
 				<div
 					className={cn(!isShowedSidebar && theaterMode ? 'pt-270' : '', { 'pt-240': theaterMode })}
 				>
-					<div>
-						<Heading isH1>{video.title}</Heading>
+					<div className='mb-5 border-b border-gray-700 pb-5'>
+						<div className=' flex justify-between items-center '>
+							<Heading isH1>{video.title}</Heading>
+							<VideoAction video={video} />
+						</div>
 						<div className='text-gray-400'>{video.views.toLocaleString()} views</div>
 					</div>
-					<VideoAction video={video} />
 				</div>
 				<VideoChannel video={video} />
 				<VideoDescription description={video.description} />

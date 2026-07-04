@@ -15,7 +15,7 @@ export function VideoPlayer({
 	fileName: string
 	toggleTheaterMode: () => void
 }) {
-	const { fn, state, videoPlayerRef } = useVideoPlayer({ fileName })
+	const { fn, state, videoPlayerRef } = useVideoPlayer({ fileName, toggleTheaterMode })
 	return (
 		<>
 			<div className='relative rounded-lg overflow-hidden'>
