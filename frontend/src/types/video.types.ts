@@ -1,5 +1,6 @@
 import type { EnumVideoPLayerQuality } from '@/ui/video-player/video-player.types'
 import type { IChannel } from './channel.types'
+import type { IComment } from './comment.type'
 
 export interface IVideo {
 	id: string
@@ -18,6 +19,7 @@ export interface IVideo {
 
 export interface IVideoFull extends IVideo { 
 likes:[]	
+comments:IComment[]
 }
 
 export interface IVideoSingleResponse extends IVideoFull {

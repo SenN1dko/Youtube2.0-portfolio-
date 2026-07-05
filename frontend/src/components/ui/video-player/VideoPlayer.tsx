@@ -15,6 +15,8 @@ interface Props {
 	maxResolution: EnumVideoPLayerQuality
 }
 
+//38 16:05
+
 export function VideoPlayer({ fileName, toggleTheaterMode, maxResolution }: Props) {
 	const { fn, state, videoPlayerRef, bgRef } = useVideoPlayer({ fileName, toggleTheaterMode })
 	return (
