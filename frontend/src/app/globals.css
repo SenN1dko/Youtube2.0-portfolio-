@@ -68,4 +68,30 @@ body {
 	background-color: var(--color-primary);
 }
 
+.rc-slider-handle:focus,
+.rc-slider-handle:active {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.tooltip-simple-text.rc-slider-tooltip .rc-slider-tooltip-inner {
+  font-size: 14px;
+  background-color: rgb(255 255 255 / 20%);
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0px 4px;
+  color: #fff !important;
+  height: 16px;
+}
+
+.tooltip-simple-text.rc-slider-tooltip .rc-slider-tooltip-arrow {
+  display: none !important; /* Убираем стрелку тултипа */
+}
+
+.tooltip-simple-text.rc-slider-tooltip {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 

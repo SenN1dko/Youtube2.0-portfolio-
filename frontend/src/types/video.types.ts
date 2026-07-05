@@ -1,3 +1,4 @@
+import type { EnumVideoPLayerQuality } from '@/ui/video-player/video-player.types'
 import type { IChannel } from './channel.types'
 
 export interface IVideo {
@@ -7,6 +8,7 @@ export interface IVideo {
 	description?: string
 	thumbnailUrl: string
 	videoFileName: string
+	maxResolution:EnumVideoPLayerQuality
 	views: number
 	isPublic: boolean
 	channel: IChannel

@@ -25,12 +25,13 @@ export function SingleVideo({ video }: Props) {
 	}
 
 	return (
-		<section className='grid grid-cols-[3fr_.8fr] gap-5 relative'>
+		<section className='grid grid-cols-[3fr_.8fr] gap-5 relative z-10'>
 			<div>
 				<div className={cn(theaterMode ? 'absolute top-0 left-0 w-full' : 'relative mb-5')}>
 					<VideoPlayer
 						fileName={video.videoFileName}
 						toggleTheaterMode={toggleTheaterMode}
+						maxResolution={video.maxResolution}
 					/>
 				</div>
 				<div

@@ -53,7 +53,7 @@ export function VideoAction({ video }: { video: IVideoSingleResponse }) {
 	})
 
 	return (
-		<div className='flex items-center gap-5'>
+		<div className='flex items-center gap-5 z-10'>
 			<button className='flex items-center gap-1 transition-opacity opacity-75 hover:opacity-100'>
 				<ListPlus /> save
 			</button>

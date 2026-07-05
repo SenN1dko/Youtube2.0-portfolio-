@@ -10,6 +10,7 @@ interface Props{
       skipTime:(type?:TSkipTime) => void
       toggleFullScreen:() => void
       changeQuality:(quality:EnumVideoPLayerQuality) => void
+      toggleLightingMode:() => void
       toggleTheaterMode:() => void
       volume:number
 }
@@ -47,6 +48,9 @@ export function useVideoHotKeys({volume, toggleTheaterMode,...fn}:Props) {
   })
     useHotkeys('t' , () => {
          toggleTheaterMode() 
+  })
+    useHotkeys('l' , () => {
+         fn.toggleLightingMode() 
   })
 
  

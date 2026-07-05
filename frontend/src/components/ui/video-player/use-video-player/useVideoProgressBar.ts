@@ -37,6 +37,7 @@ export const useVideoProgressBar = (
 
 	return {
 		currentTime,
+		setCurrentTime,
 		progress,videoTime,setVideoTime
 	}
 }

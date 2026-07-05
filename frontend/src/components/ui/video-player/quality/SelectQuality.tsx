@@ -1,5 +1,6 @@
 'use client'
 
+import cn from 'clsx'
 import { AnimatePresence } from 'framer-motion'
 import { m } from 'framer-motion'
 
@@ -12,16 +13,19 @@ import { VIDEO_QUALITIES } from './qualities.data'
 interface Props {
 	currentQuality: EnumVideoPLayerQuality
 	onChange: (quality: EnumVideoPLayerQuality) => void
+	maxResolution: EnumVideoPLayerQuality
 }
 
-export function SelectQuality({ onChange, currentQuality }: Props) {
+export function SelectQuality({ onChange, currentQuality, maxResolution }: Props) {
 	const { isShow, ref, setIsShow } = useOutside(false)
+
+	const availableResolution = VIDEO_QUALITIES.slice(VIDEO_QUALITIES.indexOf(maxResolution))
 
 	return (
 		<>
 			<button
 				ref={ref}
-				className='transition-colors hover:text-primary'
+				className='transition-colors hover:text-primary  bg-white/5 p-2 rounded-full backdrop-blur-sm'
 				onClick={() => setIsShow(!isShow)}
 			>
 				{currentQuality}
@@ -46,39 +50,25 @@ export function SelectQuality({ onChange, currentQuality }: Props) {
 						}}
 						className='bg-white/10 rounded shadow py-2 px-4 absolute bottom-full right-0'
 					>
-						{VIDEO_QUALITIES.map(quality =>
-							quality === currentQuality ? (
-								<li
-									className='mb-1 text-primary'
-									key={quality}
+						{availableResolution.map(quality => (
+							<li
+								className='mb-1 '
+								key={quality}
+							>
+								<button
+									onClick={() => {
+										onChange(quality)
+										setIsShow(false)
+									}}
+									className={cn('transition-colors hover:text-primary ', {
+										'text-primary': quality === currentQuality
+									})}
+									disabled={quality === currentQuality}
 								>
-									<button
-										onClick={() => {
-											onChange(quality)
-											setIsShow(false)
-										}}
-										className='transition-colors hover:text-primary'
-									>
-										{quality}
-									</button>
-								</li>
-							) : (
-								<li
-									className='mb-1'
-									key={quality}
-								>
-									<button
-										onClick={() => {
-											onChange(quality)
-											setIsShow(false)
-										}}
-										className='transition-colors hover:text-primary'
-									>
-										{quality}
-									</button>
-								</li>
-							)
-						)}
+									{quality}
+								</button>
+							</li>
+						))}
 					</m.ul>
 				)}
 			</AnimatePresence>
