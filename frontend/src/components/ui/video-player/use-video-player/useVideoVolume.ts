@@ -15,11 +15,16 @@ useEffect(() => {
     videoRef.current.volume = value
     setVolume(value)
     setIsMuted(value === 0)
+    console.log(value)
+    if(value > 0){
+  videoRef.current.muted = false
+    setIsMuted(false)
   }
-
+  }
   const toggleMuted = () => {
     if(!videoRef.current) return
     videoRef.current.muted = !videoRef.current.muted
+    console.log(videoRef.current.muted )
     setIsMuted(videoRef.current.muted)
   }
   

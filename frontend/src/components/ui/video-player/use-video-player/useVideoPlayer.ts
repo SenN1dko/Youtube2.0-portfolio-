@@ -32,7 +32,7 @@ const { toggleFullScreen  } = useVideoFullScreen( videoPlayerRef )
 
 const {isMuted, toggleMuted,toggleVolume,volume} = useVideoVolume(videoPlayerRef)
 
-const {onSeek} = useOnSeek(videoPlayerRef ,setCurrentTime , bgRef )
+const {onSeek ,onSeekCommitted} = useOnSeek(videoPlayerRef ,setCurrentTime , bgRef )
 
 const fn = {
        toggleMuted,
@@ -42,6 +42,7 @@ const fn = {
       skipTime,
       toggleFullScreen,
       changeQuality,
+      onSeekCommitted,
       toggleLightingMode:() => setIsLightingMode(!isLightingMode)
 }
 

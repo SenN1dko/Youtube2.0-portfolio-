@@ -1,7 +1,6 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-	/* config options here */
 	reactStrictMode: true,
 	poweredByHeader: false,
 	images: {
@@ -28,7 +27,8 @@ const nextConfig: NextConfig = {
 				destination: `${process.env.SERVER_URL}/uploads/:path*`
 			}
 		]
-	}
+	},
+	serverExternalPackages:['axios' , 'jose']
 }
 
 export default nextConfig

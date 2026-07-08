@@ -40,7 +40,8 @@ console.log(quality , fileName)
         })
       }
     }
-  
+
+   
     videoPlayer.addEventListener('loadedmetadata', handleLoadedMetadata)
   
     return () => {

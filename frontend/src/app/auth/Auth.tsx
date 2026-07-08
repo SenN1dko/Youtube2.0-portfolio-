@@ -9,7 +9,6 @@ import { Field } from '@/ui/field/Field'
 import { Logo } from '@/ui/logo/Logo'
 
 import type { IAuthForm } from './auth-form.type'
-import styles from './captcha.module.scss'
 import { useAuthForm } from './useAuthForm'
 
 export function Auth() {
@@ -81,7 +80,6 @@ export function Auth() {
 							size='normal'
 							sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
 							ref={recaptchaRef}
-							className={styles.recaptcha}
 							theme='light'
 						/>
 

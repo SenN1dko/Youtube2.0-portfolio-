@@ -53,12 +53,7 @@ export function VideoItem({ video, Icon }: Props) {
 				</Link>
 			</div>
 			<div className='flex items-center mb-1 justify-between'>
-				<m.div
-					whileHover={{
-						textShadow: '0 0 15px rgba(255, 0, 0, 0.8)'
-					}}
-					className=' flex items-center gap-0.5'
-				>
+				<m.div className=' flex items-center gap-0.5 transition-all duration-300 hover:text-shadow-glow'>
 					{Icon && (
 						<Icon
 							className='text-red-500'
@@ -67,12 +62,10 @@ export function VideoItem({ video, Icon }: Props) {
 					)}
 					<span className='text-gray-400 text-sm'>{transformViews(video.views)}</span>
 				</m.div>
-				<m.div
-					whileHover={{
-						textShadow: '0 0 15px rgba(255, 0, 0, 0.8)'
-					}}
-				>
-					<span className='text-gray-400 text-sm'>{transformDate(video.createdAt)}</span>
+				<m.div>
+					<span className='text-gray-400 text-sm transition-all duration-300 hover:text-shadow-glow'>
+						{transformDate(video.createdAt)}
+					</span>
 				</m.div>
 			</div>
 			<m.div

@@ -1,74 +1,85 @@
 'use client'
 
-import Slider from 'rc-slider'
-import Tooltip from 'rc-tooltip'
-import type { ReactElement } from 'react'
+import cn from 'clsx'
+import { useState, useEffect, type ChangeEvent, useRef } from 'react'
 
 import { COLORS } from '@/constants/colors.constants'
 
 import { getTime } from '../video.util'
 
-// @ts-expect-error: allow side-effect CSS import without type declarations
-import 'rc-slider/assets/index.css'
-
-interface IHandelProps {
-	value: number
-	index: number
-}
-
-const handleRender = (node: ReactElement, props: IHandelProps) => {
-	const { value, index } = props
-	return (
-		<Tooltip
-			prefixCls='rc-slider-tooltip '
-			overlay={getTime(value)}
-			trigger={['hover', 'click', 'focus']}
-			placement='top'
-			classNames={{ root: 'tooltip-simple-text ' }}
-			key={index}
-		>
-			{node}
-		</Tooltip>
-	)
-}
-
 interface Props {
 	currentTime: number
 	duration: number
 	onSeek: (time: number) => void
+	onSeekCommitted: (time: number) => void
+	progress: number
 }
 
-export function PlayerProgressbar({ currentTime, duration, onSeek }: Props) {
-	return (
-		<>
-			<div className='w-full z-10'>
-				<Slider
-					min={0}
-					max={duration || 0}
-					value={currentTime}
-					onChange={value => {
-						if (typeof value === 'number') {
-							onSeek(value)
-						}
-					}}
-					handleRender={handleRender}
-					styles={{
-						track: { backgroundColor: COLORS.primary, height: 5, transition: 'all .2s linear ' },
-						rail: { backgroundColor: 'rgb(255 255 255 / 30%)', height: 5 },
+export function PlayerProgressbar({ currentTime, duration, onSeek, onSeekCommitted }: Props) {
+	const [isDragging, setIsDragging] = useState(false)
+	const [localTime, setLocalTime] = useState(currentTime)
 
-						handle: {
-							borderColor: 'transparent',
-							height: 16,
-							width: 16,
-							marginLeft: -8,
-							marginTop: -4,
-							backgroundColor: 'transparent',
-							boxShadow: 'none',
-							outline: 'none'
-						}
-					}}
-				/>
+	const inputRef = useRef<HTMLInputElement>(null)
+	useEffect(() => {
+		if (!isDragging) {
+			setLocalTime(currentTime)
+		}
+	}, [currentTime, isDragging])
+
+	const currentDuration = duration || 1
+	const localProgress = (localTime / currentDuration) * 100
+
+	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+		const value = Number(event.target.value)
+		setLocalTime(value)
+		onSeek(value)
+	}
+
+	const handleMouseUp = () => {
+		setIsDragging(false)
+		onSeekCommitted(localTime)
+
+		if (inputRef.current) {
+			inputRef.current.blur()
+		}
+	}
+
+	return (
+		<div
+			className='relative w-full rounded-lg flex items-center h-2 group'
+			style={{ backgroundColor: 'rgba(255,255,255 , 0.2)' }}
+		>
+			<div
+				className='absolute top-1/2 -translate-y-1/2 left-0 h-2 rounded-lg'
+				style={{
+					width: `${localProgress}%`,
+					backgroundColor: COLORS.primary
+				}}
+			/>
+
+			<div
+				className={cn(
+					'absolute -top-7 left-0 text-base text-white pointer-events-none',
+					isDragging ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+				)}
+				style={{ left: `calc(${localProgress}% - 20px)` }}
+			>
+				{getTime(localTime)}
 			</div>
-		</>
+
+			<input
+				ref={inputRef}
+				type='range'
+				min={0}
+				max={currentDuration}
+				value={localTime}
+				onChange={handleChange}
+				onMouseDown={() => setIsDragging(true)}
+				onMouseUp={handleMouseUp}
+				onTouchStart={() => setIsDragging(true)}
+				onTouchEnd={handleMouseUp}
+				className='absolute w-full h-full opacity-0 appearance-none pointer-events-auto cursor-pointer z-30'
+			/>
+		</div>
 	)
 }

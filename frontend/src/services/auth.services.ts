@@ -9,7 +9,7 @@ const clearUser = useAuthStore.getState().clearUser
 
 
 
-interface IAuthResponse {
+export interface IAuthResponse {
     user:IUser,
     accessToken: string, 
 }
@@ -46,15 +46,18 @@ class AuthService {
         return response
 
     }
-//SERVER
-    async getNewTokenWithRefresh(refreshToken: string) {
-        const response = await axiosCLassic.post<IAuthResponse>(`${this._AUTH}/access-token`,{},{
-            headers: {
-                Cookie:`refreshToken=${refreshToken}`
-            }
-        })
-        return response.data
+
+  async initializeAuth() {
+    const initialStore = useAuthStore.getState()
+
+    if (initialStore.user) return
+
+    try {
+        await this.getNewToken()
+    } catch {
+        useAuthStore.getState().clearUser()
     }
+}
 
 
     async logout(){

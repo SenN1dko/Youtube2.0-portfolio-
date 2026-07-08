@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/senn1sd/MyProjets/Youtube2.0-portfolio-/frontend/src/app/layout\":[\"static/media/1755441e3a2fa970-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\n  \"app\": {\n    \"[project]/src/app/(public)/v/[publicId]/page\": [\n      \"static/media/dc6d2a64e9dbf3bc-s.p.4b9eb7a1.woff2\"\n    ]\n  },\n  \"appUsingSizeAdjust\": true,\n  \"pages\": {},\n  \"pagesUsingSizeAdjust\": false\n}"

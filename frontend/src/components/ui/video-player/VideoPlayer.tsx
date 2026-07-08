@@ -15,24 +15,22 @@ interface Props {
 	maxResolution: EnumVideoPLayerQuality
 }
 
-//38 16:05
-
 export function VideoPlayer({ fileName, toggleTheaterMode, maxResolution }: Props) {
 	const { fn, state, videoPlayerRef, bgRef } = useVideoPlayer({ fileName, toggleTheaterMode })
 	return (
 		<>
-			<div className='relative rounded-2xl mb-5'>
+			<div className='relative rounded-2xl mb-5 '>
 				{state.isLightingMode && (
 					<video
 						ref={bgRef}
-						className='absolute top-0 left-0 z-0 w-full h-full object-cover blur-3xl scale-[1.05] brightness-90 contrast-150 saturate-150' // mix-blend-lighten
+						className='absolute top-0 left-0   z-0 w-full h-full object-cover blur-3xl scale-[1.02] brightness-90 contrast-150 saturate-150   mix-blend-lighten' // mix-blend-lighten
 						src={`/uploads/videos/${state.quality}/${fileName}`}
 						muted
 					/>
 				)}
 				<video
 					ref={videoPlayerRef}
-					className='  aspect-video relative rounded-xl w-full z-10 object-fill'
+					className='  aspect-video relative rounded-xl w-full   z-10 object-fill'
 					controls={false}
 					src={`/uploads/videos/${state.quality}/${fileName}`}
 					preload='metadata'
@@ -47,9 +45,11 @@ export function VideoPlayer({ fileName, toggleTheaterMode, maxResolution }: Prop
 							{state.isPlaying ? <Pause /> : <Play />}
 						</button>
 						<PlayerProgressbar
+							progress={state.progress}
 							currentTime={state.currentTime}
 							duration={state.videoTime}
 							onSeek={fn.onSeek}
+							onSeekCommitted={fn.onSeekCommitted}
 						/>
 						<div>
 							<span>{getTime(state.videoTime)}</span>

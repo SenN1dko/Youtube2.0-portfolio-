@@ -12,13 +12,27 @@ export const useVideoProgressBar = (
 	const [videoTime, setVideoTime] = useState(0)
 
 	useEffect(() => {
-		if (!videoRef.current) return
-		if (isNaN(videoRef.current.duration)) return
-		const { currentTime, progress, originalTime } = getVideoInfo(videoRef.current)
-		setCurrentTime(currentTime)
-		setVideoTime(originalTime)
-		setProgress(progress)
-	}, [videoRef, videoRef.current?.duration, setVideoTime])
+		const player = videoRef.current 
+		if (!player) return
+
+
+		const handleMetaData = () => {
+
+			const { currentTime, progress, originalTime } = getVideoInfo(player)
+			setCurrentTime(currentTime)
+			setVideoTime(originalTime)
+			setProgress(progress)
+		}
+
+		player?.addEventListener('loadedmetadata', handleMetaData)
+
+		if(player.readyState >= 1){
+			handleMetaData()
+		}
+		return () => {
+			player?.removeEventListener('loadedmetadata', handleMetaData)
+		}
+	}, [videoRef])
 
 	useEffect(() => {
 		const videoPlayer = videoRef.current
@@ -27,13 +41,14 @@ export const useVideoProgressBar = (
 			const { currentTime, progress } = getVideoInfo(videoPlayer)
 			setCurrentTime(currentTime)
 			setProgress(progress)
+			console.log('progress updated' , currentTime)
 		}
 
 		videoPlayer?.addEventListener('timeupdate', updateProgress)
 		return () => {
 			videoPlayer?.removeEventListener('timeupdate', updateProgress)
 		}
-	}, [videoRef])
+	}, [videoRef ])
 
 	return {
 		currentTime,
