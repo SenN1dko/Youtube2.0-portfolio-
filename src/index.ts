@@ -9,6 +9,7 @@ import staticPlugin from "@elysiajs/static";
 import { fileRoute } from "./modules/file/routes/fileRoute";
 import { ChannelRoute } from "./modules/channel /Channel.route";
 import swagger from "@elysiajs/swagger";
+import { CommentRoutes } from "./modules/comment/Comment.route";
 const app = new Elysia()
    .use(swagger())
 .use(cors({
@@ -24,6 +25,7 @@ const app = new Elysia()
 .use(fileRoute)
 .use(videoUpload)
 .use(authRoutes)
+.use(CommentRoutes)
 .use(userRoute)
 .use(resendVerifyEmail)
 .use(ChannelRoute)

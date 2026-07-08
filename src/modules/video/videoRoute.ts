@@ -77,6 +77,5 @@ return db.video.findMany({
     },
 })
 })
-
 .use(videoCreateRoute)
 .use(getVideoById)

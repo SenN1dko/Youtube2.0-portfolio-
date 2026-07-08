@@ -17,6 +17,7 @@ model Video {
     thumbnailUrl  String
     videoFileName String
     isPublic      Boolean @default(true)
+    maxResolution String  @default("1080p") @map("max_resolution")
 
     channel   Channel? @relation(fields: [channelId], references: [id])
     channelId String?  @map("channel_id")

@@ -2,6 +2,7 @@ import Elysia, { t } from "elysia";
 import { db } from "../../../db/db";
 import { join } from "path";
 import { nanoid } from "nanoid";
+import { getMaxResolution } from "../../../utils/getMaxResolution";
 
 export const videoCreateRoute = new Elysia()
 .use(db)
@@ -15,9 +16,11 @@ const {title , thumbnail , channelId} = body
 
     const fileExtension = thumbnail.name.split('.').pop()
     const fileName = `${crypto.randomUUID()}.${fileExtension}`
+    const videoFileName = "temporary_placeholder2.mp4"
     const uploadDir = join(process.cwd(), 'src' , 'modules', 'file', 'uploads', 'thumbnails')
     const destinationPath = join(uploadDir, fileName)
-
+    const availableResolution = getMaxResolution(videoFileName).maxRes
+    console.log(availableResolution)
     try{
         Bun.write(destinationPath , thumbnail)
         const thumbnailUrl = `/uploads/thumbnails/${fileName}`
@@ -28,7 +31,8 @@ const {title , thumbnail , channelId} = body
                 channelId,
                 publicId,
                 thumbnailUrl,
-                videoFileName:"temporary_placeholder.mp4"
+                maxResolution:availableResolution,
+                videoFileName:videoFileName
             }
         })
         return {
