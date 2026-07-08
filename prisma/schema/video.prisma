@@ -28,8 +28,9 @@ model Video {
     likes    Like[]
     comments Comment[]
 
-    createdAt DateTime @default(now()) @map("created_at")
-    updatedAt DateTime @updatedAt @map("updated_at")
+    createdAt      DateTime       @default(now()) @map("created_at")
+    updatedAt      DateTime       @updatedAt @map("updated_at")
+    watchHistories WatchHistory[]
 
     @@index([views(sort: Desc)])
     @@map("Videos")

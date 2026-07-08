@@ -12,9 +12,10 @@ model User {
     comments          Comment[]
     verificationToken String?   @unique @map("verification_token")
 
-    createdAt     DateTime       @default(now()) @map("created_at")
-    updatedAt     DateTime       @updatedAt @map("updated_at")
-    subscriptions Subscription[]
+    createdAt      DateTime       @default(now()) @map("created_at")
+    updatedAt      DateTime       @updatedAt @map("updated_at")
+    subscriptions  Subscription[]
+    watchHistories WatchHistory[]
 
     @@map("users")
 }

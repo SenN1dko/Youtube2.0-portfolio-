@@ -10,6 +10,7 @@ import { fileRoute } from "./modules/file/routes/fileRoute";
 import { ChannelRoute } from "./modules/channel /Channel.route";
 import swagger from "@elysiajs/swagger";
 import { CommentRoutes } from "./modules/comment/Comment.route";
+import { watchHistoryRoute } from "./modules/watchHistory/watchHistoryRoute";
 const app = new Elysia()
    .use(swagger())
 .use(cors({
@@ -28,6 +29,7 @@ const app = new Elysia()
 .use(CommentRoutes)
 .use(userRoute)
 .use(resendVerifyEmail)
+.use(watchHistoryRoute)
 .use(ChannelRoute)
 .listen(3001, () =>{
     console.log(`The server is running on 3001 port`)
