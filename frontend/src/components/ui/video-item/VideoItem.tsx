@@ -10,6 +10,8 @@ import { transformViews } from '@/utils/transform-views'
 
 import { VerifiedBadge } from '../VerifiedBadge'
 
+import { VIdeoChannelName } from './VIdeoChannelName'
+import { VideoItemTitle } from './VideoItemTitle'
 import type { IVideo } from '@/types/video.types'
 
 interface Props {
@@ -78,12 +80,7 @@ export function VideoItem({ video, Icon }: Props) {
 					damping: 30
 				}}
 			>
-				<Link
-					className='line-clamp-2 leading-snug font-bold text-lg'
-					href={PAGE.VIDEO(video.publicId)}
-				>
-					{video.title}
-				</Link>
+				<VideoItemTitle video={video} />
 			</m.div>
 			<m.div
 				whileHover={{
@@ -95,13 +92,7 @@ export function VideoItem({ video, Icon }: Props) {
 					damping: 30
 				}}
 			>
-				<Link
-					href={PAGE.CHANNEL(video.channel.slug)}
-					className='flex items-center gap-1'
-				>
-					<span className='text-gray-400 text-sm font-semibold'>{video.channel.slug}</span>
-					<span>{video.channel.isVerified && <VerifiedBadge />}</span>
-				</Link>
+				<VIdeoChannelName channel={video.channel} />
 			</m.div>
 		</m.div>
 	)

@@ -4,6 +4,7 @@ class PublicPage {
 	TRENDING = '/trending'
 	VIDEO_GAMES = '/video-games'
 
+	PLAYLISTS = '/playlists'
 
 	MY_CHANNEL = '/my-channel'
 	SUBSCRIPTION = '/subscription'

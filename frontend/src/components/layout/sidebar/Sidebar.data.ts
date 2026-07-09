@@ -7,6 +7,7 @@ import {
 	Gamepad2,
 	History,
 	LayoutGrid,
+	ListVideo,
 	Settings,
 	TvMinimalPlay,
 	Upload
@@ -32,17 +33,22 @@ export const SIDEBAR_DATA: ISidebarItem[] = [
 		icon: Gamepad2,
 		label: 'Video games',
 		link: PAGE.VIDEO_GAMES,
-		isBottomBorder: true
 	},
 	{
 		icon: TvMinimalPlay,
 		label: 'My Channel',
-		link: PAGE.MY_CHANNEL
+		link: PAGE.MY_CHANNEL,
+		isBottomBorder: true
 	},
 	{
 		icon: CirclePlay,
 		label: 'Subscription',
 		link: PAGE.SUBSCRIPTION
+	},
+		{
+		icon:ListVideo,
+		label: 'Playlists',
+		link: PAGE.PLAYLISTS
 	},
 	{
 		icon: History,

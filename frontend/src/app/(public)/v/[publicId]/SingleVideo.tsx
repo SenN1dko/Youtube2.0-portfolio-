@@ -9,6 +9,7 @@ import { VideoPlayer } from '@/ui/video-player/VideoPlayer'
 import { SimilarVideos } from './SimilarVideos'
 import { Comment } from './comments/Comment'
 import { VideoDescription } from './description/VideoDescription'
+import { useUpdateViews } from './useUpdateViews'
 import { VideoAction } from './video-actions/VideoAction'
 import { VideoChannel } from './video-channel/VideoChannel'
 import { useShowedSidebarStore } from '@/store'
@@ -21,6 +22,8 @@ interface Props {
 export function SingleVideo({ video }: Props) {
 	const [theaterMode, setTheaterMode] = useState(false)
 	const isShowedSidebar = useShowedSidebarStore(set => set.isShowed)
+
+	useUpdateViews({ video })
 	const toggleTheaterMode = () => {
 		setTheaterMode(!theaterMode)
 	}

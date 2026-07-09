@@ -29,6 +29,10 @@ class VideoService {
 	getExploreVideos() {
 		return axiosCLassic.get<IVideo[]>(`${this._VIDEOS}`)
 	}
-}
+	updateViews(publicId:string){
+		return axiosCLassic.put(`${this._VIDEOS}/update-views-count/${publicId}` )
+		}
+	}	
+	
 
 export const videoService = new VideoService()

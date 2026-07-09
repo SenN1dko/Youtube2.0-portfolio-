@@ -1,4 +1,9 @@
 {
+  "/(public)/c/[slug]/page": "app/(public)/c/[slug]/page.js",
+  "/(public)/page": "app/(public)/page.js",
   "/(public)/v/[publicId]/page": "app/(public)/v/[publicId]/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/(user)/history/page": "app/(user)/history/page.js",
+  "/(user)/liked-videos/page": "app/(user)/liked-videos/page.js",
+  "/(user)/subscription/page": "app/(user)/subscription/page.js",
+  "/studio/settings/page": "app/studio/settings/page.js"
 }
