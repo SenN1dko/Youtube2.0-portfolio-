@@ -16,6 +16,7 @@ model User {
     updatedAt      DateTime       @updatedAt @map("updated_at")
     subscriptions  Subscription[]
     watchHistories WatchHistory[]
+    playlists      Playlist[]
 
     @@map("users")
 }

@@ -2,6 +2,7 @@ import {Elysia , t} from "elysia";
 import { db } from "../../db/db";
 import { videoCreateRoute } from "./routes/videoCreateRoute";
 import { getVideoById } from "./routes/getVideoById";
+import { addViews } from "./routes/addViews";
 
 export const videoRoutes = new Elysia({prefix:'/video'})
 .use(db)
@@ -79,3 +80,4 @@ return db.video.findMany({
 })
 .use(videoCreateRoute)
 .use(getVideoById)
+.use(addViews)

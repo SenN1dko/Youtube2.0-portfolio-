@@ -15,7 +15,11 @@ export const getWatchHistory = new Elysia()
           where: { userId: user.id },
           orderBy: { createdAt: 'desc' }, 
           include: {
-            video: true 
+            video:{
+              include:{
+                channel:true
+              }
+            }
           }
         });
 

@@ -31,6 +31,7 @@ model Video {
     createdAt      DateTime       @default(now()) @map("created_at")
     updatedAt      DateTime       @updatedAt @map("updated_at")
     watchHistories WatchHistory[]
+    playlist       Playlist[]
 
     @@index([views(sort: Desc)])
     @@map("Videos")
