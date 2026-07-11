@@ -35,15 +35,15 @@ export const SIDEBAR_DATA: ISidebarItem[] = [
 		link: PAGE.VIDEO_GAMES,
 	},
 	{
-		icon: TvMinimalPlay,
-		label: 'My Channel',
-		link: PAGE.MY_CHANNEL,
+		icon: CirclePlay,
+		label: 'Subscription',
+		link: PAGE.SUBSCRIPTION,
 		isBottomBorder: true
 	},
 	{
-		icon: CirclePlay,
-		label: 'Subscription',
-		link: PAGE.SUBSCRIPTION
+		icon: TvMinimalPlay,
+		label: 'My Channel',
+		link: PAGE.MY_CHANNEL,
 	},
 		{
 		icon:ListVideo,

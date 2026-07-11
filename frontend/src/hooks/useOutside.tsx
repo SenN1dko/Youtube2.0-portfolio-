@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from 
 
 type TypeOut = {
 	ref: React.RefObject<HTMLButtonElement | null>
+	divRef: React.RefObject<HTMLDivElement | null>
 	isShow: boolean
 	setIsShow: Dispatch<SetStateAction<boolean>>
 }
@@ -10,7 +11,7 @@ export const useOutside = (initialIsShow: boolean): TypeOut => {
 	const [isShow, setIsShow] = useState<boolean>(initialIsShow)
 
 	const ref = useRef<HTMLButtonElement>(null)
-
+	const divRef = useRef<HTMLDivElement>(null)
 	const handleClickOutside = (event: MouseEvent) => {
 		if (ref.current && !ref.current.contains(event.target as Node)) {
 			setIsShow(false)
@@ -27,6 +28,7 @@ export const useOutside = (initialIsShow: boolean): TypeOut => {
 	return {
 		isShow,
 		ref,
+		divRef,
 		setIsShow
 	}
 }

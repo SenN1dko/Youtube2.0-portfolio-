@@ -10,6 +10,8 @@ import { transformCount } from '@/utils/transform-count'
 
 import { userService } from '@/services/user.services'
 import type { IVideoSingleResponse } from '@/types/video.types'
+import { useUserPlaylist } from '@/app/(user)/playlists/useUserPlaylist'
+import toast from 'react-hot-toast'
 
 export function VideoAction({ video }: { video: IVideoSingleResponse }) {
 	const { profile, refetch } = useProfile()
@@ -50,6 +52,19 @@ export function VideoAction({ video }: { video: IVideoSingleResponse }) {
 		onSuccess: () => {
 			refetch()
 		}
+	})
+
+	const {data,isLoading,refetch:refetchPlaylists} = useUserPlaylist()
+
+		const { mutate, isPending } = useMutation({
+		mutationKey: ['create a playlist'],
+		mutationFn: (data: IPlaylistData) => playlistService.createPlaylist(data),
+		onSuccess() {
+			refetchPlaylists()
+			toast.success(' successfully added')
+			// toast.success(' successfully removed')
+
+		},
 	})
 
 	return (
