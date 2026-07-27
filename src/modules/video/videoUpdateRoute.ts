@@ -3,7 +3,7 @@ import { staticPlugin } from '@elysiajs/static'
 import { db } from '../../db/db'
 export const videoUpload = new Elysia()
 .use(db)
-    .use(staticPlugin({ assets: 'public', prefix: '/public' })) 
+    .use(staticPlugin({ assets: 'public' })) 
     .post('/video/upload-cover', async ({ db, body }) => {
         const file = body.cover 
         const videoId = body.videoId
@@ -16,7 +16,7 @@ export const videoUpload = new Elysia()
         const imageUrl = `http://localhost:3001/public/thumbnails/${fileName}`
 
         const updatedVideo = await db.video.update({
-            where: { id: videoId },
+            where: { publicId: videoId },
             data: {
                 thumbnailUrl: imageUrl 
             }

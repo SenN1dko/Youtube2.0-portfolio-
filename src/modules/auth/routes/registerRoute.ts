@@ -23,7 +23,7 @@ if(!recaptchaData.success){
     set.status = 400
     return {message:"recaptcha verify is denied"}
 }
-
+    2
 const hashPassword = await Bun.password.hash(password , {
     algorithm:'bcrypt',
     cost:10

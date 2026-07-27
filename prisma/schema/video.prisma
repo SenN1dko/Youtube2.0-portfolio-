@@ -12,12 +12,13 @@ model Video {
 
     title         String
     description   String?
-    views         Int     @default(0)
-    publicId      String  @unique @map("public_id")
+    views         Int      @default(0)
+    publicId      String   @unique @map("public_id")
     thumbnailUrl  String
     videoFileName String
-    isPublic      Boolean @default(true)
-    maxResolution String  @default("1080p") @map("max_resolution")
+    tags          String[] @default([])
+    isPublic      Boolean  @default(true)
+    maxResolution String   @default("1080p") @map("max_resolution")
 
     channel   Channel? @relation(fields: [channelId], references: [id])
     channelId String?  @map("channel_id")

@@ -9,10 +9,25 @@ import { db } from "../../../db/db";
         const playlist = await db.playlist.findUnique({
           where: { id: playlistId },
           include: {
-            videos: true,
+            videos: {
+              include:{
+                channel:{
+                  select:{
+                    owner:{
+                      select:{
+                        username:true
+                      }
+                    },
+                    slug:true,
+                    avatar:true
+                  }
+                },
+                
+              }
+            },
             user: {
               select: {
-                username: true
+                username: true,
               }
             }
           }

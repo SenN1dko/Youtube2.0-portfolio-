@@ -12,7 +12,10 @@ import swagger from "@elysiajs/swagger";
 import { CommentRoutes } from "./modules/comment/Comment.route";
 import { watchHistoryRoute } from "./modules/watchHistory/watchHistoryRoute";
 import { playlistRoute } from "./modules/playlists/PlaylistRoute";
-const app = new Elysia()
+import { studioRoute } from "./modules/studio/studioRoute";
+const app = new Elysia({serve:{
+    maxRequestBodySize:1024 * 1024 * 1024 * 10
+}})
    .use(swagger())
 .use(cors({
         origin: ['http://localhost:3000', 'http://localhost:3001'], 
@@ -33,6 +36,7 @@ const app = new Elysia()
 .use(watchHistoryRoute)
 .use(playlistRoute)
 .use(ChannelRoute)
+.use(studioRoute)
 .listen(3001, () =>{
     console.log(`The server is running on 3001 port`)
 })

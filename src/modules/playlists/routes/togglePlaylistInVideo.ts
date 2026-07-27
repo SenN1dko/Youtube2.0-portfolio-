@@ -7,7 +7,6 @@ export const togglePlaylistInVideo = new Elysia()
   .use(authPlugin) 
   .post('/:playlistId/toggle-video', async ({ db, params: { playlistId }, body, set }) => {
     const { videoId } = body; 
-
     try {
       // 1. Ищем плейлист и проверяем, связано ли с ним это видео
       const playlist = await db.playlist.findUnique({
@@ -19,6 +18,9 @@ export const togglePlaylistInVideo = new Elysia()
           }
         }
       });
+      
+      console.log('playlistId from frontend',playlistId)
+      console.log('playlistId from backend',playlist?.id)
 
       if (!playlist) {
         set.status = 404;
@@ -64,6 +66,5 @@ export const togglePlaylistInVideo = new Elysia()
     }),
     body: t.Object({
       videoId: t.String(),
-      userId: t.String() 
     })
   });
