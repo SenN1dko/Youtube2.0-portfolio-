@@ -41,7 +41,6 @@ export const useVideoProgressBar = (
 			const { currentTime, progress } = getVideoInfo(videoPlayer)
 			setCurrentTime(currentTime)
 			setProgress(progress)
-			console.log('progress updated' , currentTime)
 		}
 
 		videoPlayer?.addEventListener('timeupdate', updateProgress)

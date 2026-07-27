@@ -3,15 +3,17 @@
 import { useMutation } from '@tanstack/react-query'
 import { Heart, ListPlus } from 'lucide-react'
 import { startTransition, useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
 import { useProfile } from '@/hooks/useProfile'
 
 import { transformCount } from '@/utils/transform-count'
 
-import { userService } from '@/services/user.services'
-import type { IVideoSingleResponse } from '@/types/video.types'
+import { SaveToPlaylist } from './SaveToPlaylist'
 import { useUserPlaylist } from '@/app/(user)/playlists/useUserPlaylist'
-import toast from 'react-hot-toast'
+import { playlistService } from '@/services/Playlist.services'
+import { userService } from '@/services/studio/user.services'
+import type { IVideoSingleResponse } from '@/types/video.types'
 
 export function VideoAction({ video }: { video: IVideoSingleResponse }) {
 	const { profile, refetch } = useProfile()
@@ -54,24 +56,9 @@ export function VideoAction({ video }: { video: IVideoSingleResponse }) {
 		}
 	})
 
-	const {data,isLoading,refetch:refetchPlaylists} = useUserPlaylist()
-
-		const { mutate, isPending } = useMutation({
-		mutationKey: ['create a playlist'],
-		mutationFn: (data: IPlaylistData) => playlistService.createPlaylist(data),
-		onSuccess() {
-			refetchPlaylists()
-			toast.success(' successfully added')
-			// toast.success(' successfully removed')
-
-		},
-	})
-
 	return (
 		<div className='flex items-center gap-5 z-10'>
-			<button className='flex items-center gap-1 transition-opacity opacity-75 hover:opacity-100'>
-				<ListPlus /> save
-			</button>
+			<SaveToPlaylist video={video} />
 			<button
 				onClick={() => mutate()}
 				className='text-primary flex items-center gap-1 transition-opacity opacity-75 hover:opacity-100'

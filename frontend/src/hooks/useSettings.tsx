@@ -5,7 +5,7 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import toast from 'react-hot-toast'
 
 import { useProfile } from './useProfile'
-import { userService } from '@/services/user.services'
+import { userService } from '@/services/studio/user.services'
 import type { ISettings } from '@/types/settings.type'
 
 export function useSettings() {

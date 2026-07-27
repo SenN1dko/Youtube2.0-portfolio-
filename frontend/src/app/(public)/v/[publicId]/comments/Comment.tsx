@@ -20,7 +20,6 @@ export function Comment({ video }: Props) {
 		queryFn: () => commentService.byVideo(video.publicId),
 		initialData: video.comments
 	})
-	console.log(comments)
 	return (
 		<div className='border-t border-t-border pt-7 mt-7'>
 			<DynamicAddCommentForm

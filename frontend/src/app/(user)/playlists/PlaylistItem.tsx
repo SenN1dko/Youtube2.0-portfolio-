@@ -33,17 +33,30 @@ export function PlaylistItem({ playlist }: Props) {
 					<div className='absolute rounded-lg  shadow-lg w-10/12 h-full left-[8.5%] -top-4 bg-gray-700 z-1' />
 					<div className='absolute rounded-lg shadow-lg w-11/12 h-full left-[4.1%] -top-2 bg-gray-500 z-2' />
 
-					<Image
-						src={playlist.videos[0]?.thumbnailUrl || '/playlist-placeholder.png'}
-						width={500}
-						height={140}
-						alt={playlist.name}
-						className='relative z-3 rounded-lg shadow-lg'
-						quality={100}
-					/>
-					<div className='absolute top-1 left-2 text-xs flex items-center gap-1 bg-black/40 rounded px-1.5 py-1 font-medium'>
-						{playlist.videos.length} <span>videos</span>
-					</div>
+					{playlist.videos[0]?.thumbnailUrl ? (
+						<>
+							<Image
+								src={playlist.videos[0]?.thumbnailUrl || '/playlist-placeholder.png'}
+								width={500}
+								height={140}
+								alt={playlist.name}
+								className='relative z-3 rounded-lg shadow-lg'
+								quality={100}
+							/>
+							<div className='absolute top-1 left-2 text-xs z-4 flex items-center gap-1 bg-black/40 rounded px-1.5 py-1 font-medium'>
+								{playlist.videos.length} <span>videos</span>
+							</div>
+						</>
+					) : (
+						<>
+							<div className='relative z-3 rounded-lg shadow-lg w-15 h-7.5' />
+							<div className='absolute rounded-sm shadow-lg w-9/12 h-full left-[12.5%] -top-[7.5px] bg-gray-700 z-1' />
+							<div className='relative z-3 rounded-lg shadow-lg w-full h-35'></div>
+							<div className='absolute top-1 left-4 text-xs z-4 flex items-center gap-1 bg-black/40 rounded px-1.5 py-1 font-medium'>
+								{playlist.videos.length} <span>videos</span>
+							</div>
+						</>
+					)}
 				</Link>
 
 				<div className='mt-1 '>

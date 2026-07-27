@@ -8,8 +8,6 @@ import { PAGE } from '@/config/public-page.config'
 import { transformDate } from '@/utils/transform-date'
 import { transformViews } from '@/utils/transform-views'
 
-import { VerifiedBadge } from '../VerifiedBadge'
-
 import { VIdeoChannelName } from './VIdeoChannelName'
 import { VideoItemTitle } from './VideoItemTitle'
 import type { IVideo } from '@/types/video.types'

@@ -32,11 +32,11 @@ export function VideoPlayer({ fileName, toggleTheaterMode, maxResolution }: Prop
 					ref={videoPlayerRef}
 					className='  aspect-video relative rounded-xl w-full   z-10 object-fill'
 					controls={false}
-					src={`/uploads/videos/${state.quality}/${fileName}`}
+					src={`/uploads/videos/360p/${fileName}`}
 					preload='metadata'
 				/>
 
-				<div className=' grid grid-cols-[7fr_1fr] gap-7  z-20  absolute bottom-5 right-5 left-5 '>
+				<div className=' grid grid-cols-[7fr_1fr] gap-7  z-10  absolute bottom-5 right-5 left-5 '>
 					<div className='flex items-center gap-5'>
 						<button
 							onClick={fn.togglePlayPause}

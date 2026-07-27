@@ -41,7 +41,7 @@ export function SinglePlaylist() {
 						/>
 					))
 				) : (
-					<p>Playlist not found!</p>
+					<p>No videos in playlist!</p>
 				)}
 			</div>
 		</>

@@ -13,8 +13,14 @@ export const useOutside = (initialIsShow: boolean): TypeOut => {
 	const ref = useRef<HTMLButtonElement>(null)
 	const divRef = useRef<HTMLDivElement>(null)
 	const handleClickOutside = (event: MouseEvent) => {
-		if (ref.current && !ref.current.contains(event.target as Node)) {
-			setIsShow(false)
+		if (ref.current) {
+			if (ref.current && !ref.current.contains(event.target as Node)) {
+				setIsShow(false)
+			}
+		} else {
+			if (divRef.current && !divRef.current.contains(event.target as Node)) {
+				setIsShow(false)
+			}
 		}
 	}
 

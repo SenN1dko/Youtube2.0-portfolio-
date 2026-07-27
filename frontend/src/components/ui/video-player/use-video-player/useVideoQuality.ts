@@ -12,13 +12,13 @@ interface Props {
 }
 
 export const useVideoQuality = (videoRef:RefObject<HTMLCustomVideoElement> , {currentTime,fileName,setIsPlaying , setVideoTime,isPlaying}:Props ) => {
-const [quality , setQuality ] = useState(EnumVideoPLayerQuality["1080p"])
+const [quality , setQuality ] = useState(EnumVideoPLayerQuality["480p"])
 
   const changeQuality = (quality:EnumVideoPLayerQuality) => {
     if(!videoRef.current) return 
 console.log(quality , fileName)
     setQuality(quality)
-    videoRef.current.src =`uploads/videos/${quality}/${fileName}`
+    videoRef.current.src =`/uploads/videos/${quality}/${fileName}`
   }
 
 
