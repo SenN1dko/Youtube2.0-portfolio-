@@ -20,11 +20,11 @@ model Video {
     isPublic      Boolean  @default(true)
     maxResolution String   @default("1080p") @map("max_resolution")
 
-    channel   Channel? @relation(fields: [channelId], references: [id])
+    channel   Channel? @relation(fields: [channelId], references: [id], onDelete: Cascade)
     channelId String?  @map("channel_id")
 
     gameId String?
-    game   Game?   @relation(fields: [gameId], references: [id])
+    game   Game?   @relation(fields: [gameId], references: [id], onDelete: Cascade)
 
     likes    Like[]
     comments Comment[]

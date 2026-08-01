@@ -3,7 +3,7 @@ import { prisma } from "../lib/prisma"
 export async function getExploreVideos({
     page = 1,
     limit = 10,
-    userId,
+    // userId, можно использовать если нужно показывать видео относительно того чего смотрит пользователь 
     excludeIdsString
 }: {
     page?: number
@@ -45,7 +45,7 @@ export async function getExploreVideos({
         include: {
             channel: {
                 select: {
-                    id: true,
+                     id: true,
                     slug: true,
                     avatar: true,
                     owner:{
