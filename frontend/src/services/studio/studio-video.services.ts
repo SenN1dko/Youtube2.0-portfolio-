@@ -1,20 +1,18 @@
 
-import type { IVideo } from '@/types/video.types'
-import { instance } from '@/api/axios'
+import type { IVideo, IVideosPagination } from '@/types/video.types'
+import {  instance } from '@/api/axios'
 import type { IVideoFormData } from '@/types/studio-video.type'
+import type { IPaginationParams } from '@/types/pagination.types'
 
 class StudioVideoService {
     private _STUDIO_VIDEOS = '/studio/videos'
 
 
-    getAll(searchTerm?: string | null, page?:number , limit?:number) {
-        return instance.get<IVideo[]>(this._STUDIO_VIDEOS, {
-            params:{
-                  searchTerm,
-                  page, 
-                  limit
-            }
+     async getAll(params:IPaginationParams) {
+        const res = await instance.get<IVideosPagination>(this._STUDIO_VIDEOS,  {
+                params
         } )
+        return res.data
     }
 
     byId(id:string) {

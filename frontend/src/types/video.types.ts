@@ -27,5 +27,5 @@ export interface IVideoSingleResponse extends IVideoFull {
 similarVideos:IVideo[]
 }
 export interface IVideosPagination extends IPagination { 
-	videos:IVideo[]
+	videos:IVideoFull[]
 }

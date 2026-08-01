@@ -3,7 +3,7 @@ import { Flame } from 'lucide-react'
 import { Heading } from '@/ui/Heading'
 import { VideoItem } from '@/ui/video-item/VideoItem'
 
-import { Explore } from './Explore/Explore'
+import { ExploreSection } from './Explore/ExploreSection'
 import { videoService } from '@/services/video.services'
 
 export const revalidate = 100
@@ -30,7 +30,7 @@ export default async function Home() {
 						</div>
 					</section>
 				)}
-				<Explore />
+				<ExploreSection />
 			</section>
 		</>
 	)

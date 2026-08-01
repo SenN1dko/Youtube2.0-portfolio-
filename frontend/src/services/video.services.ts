@@ -7,12 +7,12 @@ class VideoService {
 	private _VIDEOS = '/video'
 
 
-	getAll(searchTerm?: string | null) {
-		return axiosCLassic.get<IVideo[]>(this._VIDEOS, searchTerm ? {
+	getAll(params:IPaginationParams) {
+		return axiosCLassic.get<IVideosPagination>(this._VIDEOS,  {
 			params:{
-				searchTerm
+				params
 			}
-		} : {})
+		} )
 	}
 
 	getTrendingVideos() {
