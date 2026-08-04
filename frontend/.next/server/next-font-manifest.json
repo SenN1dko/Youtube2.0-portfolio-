@@ -1,6 +1,22 @@
 {
-  "app": {},
-  "appUsingSizeAdjust": false,
+  "app": {
+    "[project]/src/app/(public)/page": [
+      "static/media/dc6d2a64e9dbf3bc-s.p.4b9eb7a1.woff2"
+    ],
+    "[project]/src/app/_not-found/page": [
+      "static/media/dc6d2a64e9dbf3bc-s.p.4b9eb7a1.woff2"
+    ],
+    "[project]/src/app/auth/page": [
+      "static/media/dc6d2a64e9dbf3bc-s.p.4b9eb7a1.woff2"
+    ],
+    "[project]/src/app/studio/edit/v/[id]/page": [
+      "static/media/dc6d2a64e9dbf3bc-s.p.4b9eb7a1.woff2"
+    ],
+    "[project]/src/app/studio/page": [
+      "static/media/dc6d2a64e9dbf3bc-s.p.4b9eb7a1.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
   "pages": {},
   "pagesUsingSizeAdjust": false
 }

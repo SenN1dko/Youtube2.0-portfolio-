@@ -26,6 +26,10 @@ comments:IComment[]
 export interface IVideoSingleResponse extends IVideoFull {
 similarVideos:IVideo[]
 }
+
+export interface IVideoStudioResponse extends IVideoFull {
+tags:string[]
+}
 export interface IVideosPagination extends IPagination { 
 	videos:IVideoFull[]
 }

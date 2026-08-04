@@ -1,7 +1,7 @@
 {
   "/(public)/page": "app/(public)/page.js",
-  "/(public)/v/[publicId]/page": "app/(public)/v/[publicId]/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/auth/page": "app/auth/page.js",
+  "/studio/edit/v/[id]/page": "app/studio/edit/v/[id]/page.js",
   "/studio/page": "app/studio/page.js"
 }

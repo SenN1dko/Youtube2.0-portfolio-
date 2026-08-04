@@ -2,16 +2,16 @@
 
 import { useQuery } from '@tanstack/react-query'
 import * as m from 'framer-motion/m'
-import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
-import { useForm, type SubmitHandler } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 
 import { Heading } from '@/ui/Heading'
 import { useUpload } from '@/ui/upload-field/useUpload'
 
+import { CreateVideoForm } from './CreateVideoForm'
 import { DragAndDropZone } from './DragAndDropZone'
-import { UploadVideoForm } from './UploadVideoForm'
+import { fileService } from '@/services/studio/uploadFile.services'
 import type { IVideoFormData } from '@/types/studio-video.type'
 
 export function UploadVideoMain() {
@@ -41,6 +41,35 @@ export function UploadVideoMain() {
 			toast.error('Failed to upload the video')
 		}
 	})
+
+	const [processingProgress, setProcessingProgress] = useState(0)
+
+	const { data: processingData, isSuccess } = useQuery({
+		queryKey: ['trackProcessStatus', fileName],
+		queryFn: () => fileService.getProcessingStatus(fileName),
+		enabled: !!fileName,
+		refetchInterval(query) {
+			console.log('1sec')
+			const progress = query.state.data?.data
+			return progress !== undefined && progress < 100 ? 1000 : false
+		}
+	})
+
+	useEffect(() => {
+		const progressResponse = processingData?.data
+		if (progressResponse === undefined) return
+
+		setProcessingProgress(progressResponse)
+
+		if (progressResponse === 100) {
+			setIsReadyToPublish(true)
+			toast.success('Video processed successfully!')
+		}
+		if (progressResponse === -1) {
+			toast.error('Video processing failed')
+			return
+		}
+	}, [isSuccess, processingData?.data, setIsReadyToPublish])
 
 	return (
 		<div className='absolute inset-0 flex items-center justify-center bg-black/50 z-50'>
@@ -72,11 +101,23 @@ export function UploadVideoMain() {
 							animate={{ opacity: 1, y: 0 }}
 							className='space-y-4'
 						>
-							<UploadVideoForm
-								fileName={fileName}
-								setIsReadyToPublish={setIsReadyToPublish}
-								isReadyToPublish={isReadyToPublish}
+							<div className='p-3  rounded-lg border border-border/50'>
+								<div className='flex justify-between text-xs text-gray-400 mb-1'>
+									<span className='font-semibold text-white text-[15px]'>
+										Processing video <span className='font-bold '>{processingProgress}%</span>
+									</span>
+								</div>
+								<div className='w-full bg-gray-700/40 h-3 rounded-full overflow-hidden'>
+									<m.div
+										animate={{ width: `${processingProgress}%` }}
+										className='h-full bg-primary transition-all duration-300'
+									/>
+								</div>
+							</div>
+
+							<CreateVideoForm
 								f={f}
+								isReadyToPublish={isReadyToPublish}
 							/>
 						</m.div>
 					)}
