@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "0251e8ec29e7ee1a4a08a0a79c2beadf",
-    "previewModeSigningKey": "c07454a9cf58573e5d5d928b9dd31728e0e32411e148ff5f8611d135c0bfcacc",
-    "previewModeEncryptionKey": "78bacd637a8a3727e5667c8b0f49bb9785f8e834e1570dd456677f9f99fdc18f"
-  }
-}
+{"version":4,"routes":{"/c/kurmangalievamir873":{},"/c/asdvwqfc":{},"/c/arturopro346":{},"/c/12edasd":{},"/c/sdvsduhvh":{},"/c/skldcjsjd":{},"/c/ldsdjdslk":{},"/v/Z1y-8GoG3A":{},"/v/WPdJ7qVO8i":{},"/v/U7SPi5UL9z":{},"/v/Ri2jCdJrVP":{},"/v/N4eWCwVIeB":{},"/v/DOj5uLsy4o":{},"/v/NlhnIOoSAV":{},"/v/pCgOH1ChcO":{},"/v/ryyCNPDduH":{},"/v/N-QGttLdRJ":{},"/v/AmI3lGEpwu":{},"/v/Y00Y79YCVv":{},"/v/s3xlVAcxcl":{},"/v/yQ-z2IYjQ_":{},"/v/gJqGL9a0w5":{},"/v/X7c2_joYmt":{},"/v/LF2Y0xhpa9":{},"/v/UPo_x4T6VG":{},"/v/zjzl7ep1dV":{},"/v/w2lqp-5M-W":{},"/v/qSdj3dkck0":{},"/v/g9UKfW5AfX":{},"/v/wajJiR_F4j":{},"/v/FOX7w5dl9x":{},"/v/q16pqLf8kV":{},"/v/YzpDWlWKkX":{},"/v/qQfm8yvuWF":{},"/v/wYILM5WA8b":{},"/v/LV18ZqEXwp":{},"/v/EDxq2b9Sfd":{},"/v/LuSmU3Sw15":{},"/v/9H5FBSQsXE":{},"/v/B6m4Be8GjQ":{},"/v/5LX6CFnkKH":{},"/v/m0r0lQY0cb":{},"/v/V2hIaf1zby":{},"/v/S85UnrtAUt":{},"/v/Y2Nw3Yc9pz":{}},"dynamicRoutes":{"/c/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/c/[slug]","routeRegex":"^\\/c\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/v/[publicId]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/v/[publicId]","routeRegex":"^\\/v\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"fc95c80e9d008ffef6b171a3fe071584","previewModeSigningKey":"1baf77d27e4cec800cea4377c930012a425d662a37907701df61de7fc5dd0b4d","previewModeEncryptionKey":"baf5f06858b67ecd068742e04fbdcb2db5942085f56bcbab48eb54580f26ce43"}}

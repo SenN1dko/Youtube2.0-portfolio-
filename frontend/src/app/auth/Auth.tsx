@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import dynamic from 'next/dynamic'
+import { forwardRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useForm } from 'react-hook-form'
 
@@ -10,6 +11,17 @@ import { Logo } from '@/ui/logo/Logo'
 
 import type { IAuthForm } from './auth-form.type'
 import { useAuthForm } from './useAuthForm'
+
+const DynamicRecaptcha = dynamic(() => import('./Recaptcha').then(mod => mod.Recaptcha))
+
+const ForwardedRefRecaptcha = forwardRef<ReCAPTCHA>((props, ref) => (
+	<DynamicRecaptcha
+		{...props}
+		forwardedRef={ref}
+	/>
+))
+
+ForwardedRefRecaptcha.displayName = 'ForwardedRefRecaptcha'
 
 export function Auth() {
 	const [isLogin, setIsLogin] = useState(true)
@@ -76,12 +88,7 @@ export function Auth() {
 							/>
 						)}
 
-						<ReCAPTCHA
-							size='normal'
-							sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
-							ref={recaptchaRef}
-							theme='light'
-						/>
+						<ForwardedRefRecaptcha ref={recaptchaRef} />
 
 						<div className='text-center mt-6'>
 							<Button

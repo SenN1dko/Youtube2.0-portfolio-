@@ -18,11 +18,11 @@ export function HeaderAvatar() {
 			>
 				<Image
 					alt='Profile'
-					src={profile?.channel?.avatar || '/Avatar.png'}
+					src={profile?.channel?.avatar || '/images/Avatar.png'}
 					width={40}
 					height={40}
 					unoptimized
-					className='rounded-lg  '
+					className='rounded-lg h-auto '
 				/>
 			</Link>
 		</>

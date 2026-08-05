@@ -8,6 +8,8 @@ export function SidebarHeader({ toggleSidebar }: { toggleSidebar: () => void }) 
 			<button
 				onClick={toggleSidebar}
 				className='opacity-60 hover:opacity-100 transition-opacity duration-333 ease-in-out'
+				aria-label='Menu'
+				title='Menu'
 			>
 				<Menu />
 			</button>

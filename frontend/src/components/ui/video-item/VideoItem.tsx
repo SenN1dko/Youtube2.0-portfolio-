@@ -44,11 +44,11 @@ export function VideoItem({ video, Icon }: Props) {
 
 				<Link href={PAGE.CHANNEL(video.channel.slug)}>
 					<Image
-						src={video.channel.avatar || '/Avatar.png'}
+						src={video.channel.avatar || '/images/Avatar.png'}
 						width={30}
 						height={30}
 						alt={video.channel.owner.username || ''}
-						className='rounded-full absolute bottom-1.5 left-1.5 '
+						className='rounded-full absolute bottom-1.5 left-1.5 h-auto'
 					/>
 				</Link>
 			</div>

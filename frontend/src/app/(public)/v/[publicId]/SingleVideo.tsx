@@ -1,19 +1,21 @@
 'use client'
 
 import cn from 'clsx'
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
 import { Heading } from '@/ui/Heading'
 import { VideoPlayer } from '@/ui/video-player/VideoPlayer'
 
 import { SimilarVideos } from './SimilarVideos'
-import { Comment } from './comments/Comment'
 import { VideoDescription } from './description/VideoDescription'
 import { useUpdateViews } from './useUpdateViews'
 import { VideoAction } from './video-actions/VideoAction'
 import { VideoChannel } from './video-channel/VideoChannel'
 import { useShowedSidebarStore } from '@/store'
 import type { IVideoSingleResponse } from '@/types/video.types'
+
+const DynamicComment = dynamic(() => import('./comments/Comment').then(mod => mod.Comment))
 
 interface Props {
 	video: IVideoSingleResponse
@@ -53,7 +55,7 @@ export function SingleVideo({ video }: Props) {
 				</div>
 				<VideoChannel video={video} />
 				<VideoDescription description={video.description} />
-				<Comment video={video} />
+				<DynamicComment video={video} />
 			</div>
 			{!!video.similarVideos.length && (
 				<div

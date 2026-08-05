@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import toast from 'react-hot-toast'
 
 import { SkeletonLoading } from '@/ui/SkeletonLoading'
 
@@ -37,7 +36,9 @@ export function DragAndDropZone({ isUploading, uploadFileForUploader }: Props) {
 						classes={styles.label}
 						required
 						maxSize={1024}
-						onSizeError={() => {
+						onSizeError={async () => {
+							const { toast } = await import('react-hot-toast')
+
 							toast.error('File is too big! (max 1gb)')
 						}}
 					/>

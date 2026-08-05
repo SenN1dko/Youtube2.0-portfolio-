@@ -4,12 +4,12 @@ class PublicPage {
 	TRENDING = '/trending'
 	VIDEO_GAMES = '/video-games'
 
-	PLAYLISTS = '/playlists'
+	PLAYLISTS = '/my/playlists'
 
-	MY_CHANNEL = '/my-channel'
-	SUBSCRIPTION = '/subscription'
-	HISTORY = '/history'
-	LIKED_VIDEOS = '/liked-videos'
+	MY_CHANNEL = '/my/my-channel'
+	SUBSCRIPTION = '/my/subscription'
+	HISTORY = '/my/history'
+	LIKED_VIDEOS = '/my/liked-videos'
 
 	FEEDBACK = '/feedback'
 

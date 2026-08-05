@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query'
 import * as m from 'framer-motion/m'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import toast from 'react-hot-toast'
 
 import { Heading } from '@/ui/Heading'
 import { useUpload } from '@/ui/upload-field/useUpload'
@@ -24,7 +23,7 @@ export function UploadVideoMain() {
 	const [isReadyToPublish, setIsReadyToPublish] = useState(false)
 
 	const { isLoading: isUploading, uploadFileForUploader } = useUpload({
-		onSuccess(data) {
+		async onSuccess(data) {
 			const file = data[0]
 			if (!file) return
 			f.reset({
@@ -35,9 +34,13 @@ export function UploadVideoMain() {
 				tags: f.getValues('tags') || [],
 				thumbnailUrl: f.getValues('thumbnailUrl') || ''
 			})
+			const { toast } = await import('react-hot-toast')
+
 			toast.success('File uploaded to server!')
 		},
-		onError() {
+		async onError() {
+			const { toast } = await import('react-hot-toast')
+
 			toast.error('Failed to upload the video')
 		}
 	})

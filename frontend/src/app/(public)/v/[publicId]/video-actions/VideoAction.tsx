@@ -1,17 +1,14 @@
 'use client'
 
 import { useMutation } from '@tanstack/react-query'
-import { Heart, ListPlus } from 'lucide-react'
+import { Heart } from 'lucide-react'
 import { startTransition, useEffect, useState } from 'react'
-import toast from 'react-hot-toast'
 
 import { useProfile } from '@/hooks/useProfile'
 
 import { transformCount } from '@/utils/transform-count'
 
 import { SaveToPlaylist } from './SaveToPlaylist'
-import { useUserPlaylist } from '@/app/(user)/playlists/useUserPlaylist'
-import { playlistService } from '@/services/Playlist.services'
 import { userService } from '@/services/studio/user.services'
 import type { IVideoSingleResponse } from '@/types/video.types'
 

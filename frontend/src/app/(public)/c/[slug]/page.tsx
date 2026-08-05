@@ -63,7 +63,7 @@ export default async function ChannelPage({ params }: TPageSlugProp) {
 				<div className='flex items-start gap-5 mt-7 mb-7'>
 					<Image
 						alt={channel.slug}
-						src={channel.avatar || '/Avatar.png'}
+						src={channel.avatar || '/images/Avatar.png'}
 						width={160}
 						height={160}
 						className='rounded-xl'

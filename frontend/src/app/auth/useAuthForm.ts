@@ -7,7 +7,6 @@ import type { IAuthData, IAuthForm } from "./auth-form.type"
 import type {  SubmitHandler, UseFormReset } from "react-hook-form"
 import { PAGE } from "@/config/public-page.config"
 import axios from "axios"
-import toast from "react-hot-toast"
 
 export function useAuthForm(type: 'login' | 'register', reset:UseFormReset<IAuthForm>) {
   const router = useRouter()
@@ -24,8 +23,9 @@ export function useAuthForm(type: 'login' | 'register', reset:UseFormReset<IAuth
 
 
 
-	const onSubmit: SubmitHandler<IAuthData> = data => {
+	const onSubmit: SubmitHandler<IAuthData> = async data => {
         const token = recaptchaRef.current?.getValue()
+        const { toast } = await import('react-hot-toast')
         if (!token) {
             toast.error('Please complete the reCAPTCHA')
             return

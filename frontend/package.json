@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "api": "json-server --watch src/Data/db.json --port 3001",
     "dev": "next dev --turbopack",
+    "dev-classic": "next dev ",
+
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
