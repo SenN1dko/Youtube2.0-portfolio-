@@ -1,0 +1,26 @@
+import type { MetadataRoute } from 'next'
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'RED Video',
+    short_name: 'RV',
+    description: "Best youtube's alternative platform.",
+    start_url: '/',
+    display: 'standalone',
+    orientation: 'portrait',
+    background_color: '#191B28',
+    theme_color: '#ef4444',
+    icons: [
+      {
+        src: '/images/256.png',
+        sizes: '256x256',
+        type: 'image/png',
+      },
+      {
+        src: '/images/512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+  }
+}

@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /auth
+Disallow: /recover
+Disallow: /docs/
+Disallow: *utm_
+Disallow: *?query=
+Disallow: /media/*?PAGEN_1=
+Disallow: *?keyword=
+Disallow: *?sub
+
+Sitemap: https://redvideo.com/sitemap.xml

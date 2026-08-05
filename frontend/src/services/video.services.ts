@@ -4,7 +4,7 @@ import { axiosCLassic } from '@/api/axios'
 import type { IPaginationParams } from '@/types/pagination.types'
 
 class VideoService {
-	private _VIDEOS = '/video'
+	private _VIDEOS = '/videos'
 
 
 async getAll(searchTerm?: string) {
