@@ -3,47 +3,46 @@
   "middleware": {
     "/": {
       "files": [
-        "server/edge/chunks/_e327f061._.js",
-        "server/edge/chunks/[root-of-the-server]__bd47233b._.js",
-        "server/edge/chunks/turbopack-edge-wrapper_54f6b4dd.js"
+        "server/edge-runtime-webpack.js",
+        "server/src/middleware.js"
       ],
-      "name": "middleware",
+      "name": "src/middleware",
       "page": "/",
       "matchers": [
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/studio(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/studio(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
           "originalSource": "/studio/:path*"
         },
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/auth(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/auth(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
           "originalSource": "/auth/:path*"
         },
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/my-channel(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/my-channel(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
           "originalSource": "/my-channel/:path*"
         },
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/subscription(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/subscription(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
           "originalSource": "/subscription/:path*"
         },
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/my(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/my(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
           "originalSource": "/my/:path*"
         }
       ],
       "wasm": [],
       "assets": [],
       "env": {
-        "__NEXT_BUILD_ID": "development",
-        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "0TWRlEVx7ZcTkVXUMhGv5ankuZkEBVfiAkWpxPu++ho=",
-        "__NEXT_PREVIEW_MODE_ID": "fc95c80e9d008ffef6b171a3fe071584",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "baf5f06858b67ecd068742e04fbdcb2db5942085f56bcbab48eb54580f26ce43",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "1baf77d27e4cec800cea4377c930012a425d662a37907701df61de7fc5dd0b4d"
+        "__NEXT_BUILD_ID": "9oRd3jo0R_-rr5CmhcFYT",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "o0+9h1yA0xnU8C/pTpelm9h2+H0TtCNORe+OHetKHNU=",
+        "__NEXT_PREVIEW_MODE_ID": "815043f5fd799ddc787ebde6f53bdd3e",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "fc72cec3b13b66d39eed8980c4d1d79260b0fa8f25a7c1dced3691d23ad11161",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "79b3d80d86af2b141f2ad7259eaa540d520b7c41a19cc8e01556ec45a2597dc7"
       }
     }
   },
+  "functions": {},
   "sortedMiddleware": [
     "/"
-  ],
-  "functions": {}
+  ]
 }

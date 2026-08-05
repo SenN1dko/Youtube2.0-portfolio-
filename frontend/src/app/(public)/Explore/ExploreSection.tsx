@@ -9,9 +9,11 @@ import { SkeletonLoading } from '@/ui/SkeletonLoading'
 const DynamicExplore = dynamic(() => import('./Explore').then(mod => mod.Explore), {
 	ssr: false,
 	loading: () => {
-		;<div className='grid grid-cols-5 '>
-			<SkeletonLoading />
-		</div>
+		return (
+			<div className='grid grid-cols-5 '>
+				<SkeletonLoading />
+			</div>
+		)
 	}
 })
 

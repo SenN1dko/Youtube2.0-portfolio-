@@ -1,1 +1,182 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[{"source":"/uploads/:path*","destination":"http://localhost:3001/uploads/:path*","regex":"^\\/uploads(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))?(?:\\/)?$","check":true}],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"}],"headers":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [
+      {
+        "source": "/uploads/:path*",
+        "destination": "http://localhost:3001/uploads/:path*",
+        "regex": "^/uploads(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+      }
+    ],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/c/[slug]",
+      "regex": "^/c/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/c/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/my/playlists/[id]",
+      "regex": "^/my/playlists/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/my/playlists/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/studio/edit/v/[id]",
+      "regex": "^/studio/edit/v/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/studio/edit/v/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/v/[publicId]",
+      "regex": "^/v/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPpublicId": "nxtPpublicId"
+      },
+      "namedRegex": "^/v/(?<nxtPpublicId>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/auth",
+      "regex": "^/auth(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/manifest.webmanifest",
+      "regex": "^/manifest\\.webmanifest(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/manifest\\.webmanifest(?:/)?$"
+    },
+    {
+      "page": "/my/history",
+      "regex": "^/my/history(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/my/history(?:/)?$"
+    },
+    {
+      "page": "/my/liked-videos",
+      "regex": "^/my/liked\\-videos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/my/liked\\-videos(?:/)?$"
+    },
+    {
+      "page": "/my/playlists",
+      "regex": "^/my/playlists(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/my/playlists(?:/)?$"
+    },
+    {
+      "page": "/my/subscription",
+      "regex": "^/my/subscription(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/my/subscription(?:/)?$"
+    },
+    {
+      "page": "/s",
+      "regex": "^/s(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/s(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/studio",
+      "regex": "^/studio(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/studio(?:/)?$"
+    },
+    {
+      "page": "/studio/settings",
+      "regex": "^/studio/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/studio/settings(?:/)?$"
+    },
+    {
+      "page": "/studio/upload",
+      "regex": "^/studio/upload(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/studio/upload(?:/)?$"
+    },
+    {
+      "page": "/trending",
+      "regex": "^/trending(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/trending(?:/)?$"
+    },
+    {
+      "page": "/verify-email",
+      "regex": "^/verify\\-email(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/verify\\-email(?:/)?$"
+    },
+    {
+      "page": "/video-games",
+      "regex": "^/video\\-games(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/video\\-games(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

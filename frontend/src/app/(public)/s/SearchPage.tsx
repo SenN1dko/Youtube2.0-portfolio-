@@ -16,7 +16,7 @@ export function SearchPage() {
 
 	const { data, isLoading } = useQuery({
 		queryKey: ['search', searchTerm],
-		queryFn: () => videoService.getAll(searchTerm)
+		queryFn: () => videoService.getAll(searchTerm as string)
 	})
 
 	return (

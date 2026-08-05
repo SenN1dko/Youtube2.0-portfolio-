@@ -1,12 +1,12 @@
 import { create } from 'zustand'
-import type { IFullUser } from '@/types/user.type'
+import type {  IUser } from '@/types/user.type'
 import Cookies from 'js-cookie'
 import { EnumTokens } from '@/constants/token.constants'
 interface IAuthStore {
-	user: IFullUser | null
+	user: IUser | null
 	accessToken: string | null
 	isLoggedIn:boolean
-	setUser: (user: IFullUser | null , accessToken?:string) => void
+	setUser: (user: IUser | null , accessToken?:string) => void
 	clearUser:() => void
 }
 interface IShowedSideBar { 

@@ -66,10 +66,20 @@ export function UploadVideoMain() {
 
 		if (progressResponse === 100) {
 			setIsReadyToPublish(true)
-			toast.success('Video processed successfully!')
+
+			const toastSuccess = async () => {
+				const { toast } = await import('react-hot-toast')
+				toast.success('Video processed successfully!')
+			}
+			toastSuccess()
 		}
 		if (progressResponse === -1) {
-			toast.error('Video processing failed')
+			const toastFail = async () => {
+				const { toast } = await import('react-hot-toast')
+				toast.error('Video processing failed')
+			}
+			toastFail()
+
 			return
 		}
 	}, [isSuccess, processingData?.data, setIsReadyToPublish])
