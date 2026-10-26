@@ -36,7 +36,12 @@ const app = new Elysia({serve:{
 .use(watchHistoryRoute)
 .use(playlistRoute)
 .use(ChannelRoute)
-.use(studioRoute)
-.listen(3001, () =>{
-    console.log(`The server is running on 3001 port`)
-})
+.use(studioRoute);
+
+if (!process.env.VERCEL) {
+    app.listen(3001, () => {
+        console.log(`The server is running on 3001 port`)
+    });
+}
+
+export default app;
