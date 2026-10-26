@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { Edit, ExternalLink, Trash2 } from 'lucide-react'
+import { Copy, Edit, ExternalLink, Trash2 } from 'lucide-react'
 import Link from 'next/link'
 import type { Toast } from 'react-hot-toast'
 
@@ -56,9 +56,21 @@ export function StudioVideoActions({ video }: Props) {
 	return (
 		<>
 			<div className='flex items-start justify-center gap-5'>
+				<button
+					title='Copy public ID'
+					onClick={async () => {
+						await navigator.clipboard.writeText(video.publicId)
+						const { toast } = await import('react-hot-toast')
+						toast.success('Public ID copied')
+					}}
+					className='text-gray-400 opacity-70 transition-opacity cursor-pointer hover:opacity-100'
+				>
+					<Copy size={22} />
+				</button>
+
 				<Link
 					className='text-blue-600 cursor-pointer opacity-70  transition-opacity hover:opacity-100'
-					href={PAGE.VIDEO(video.publicId)}
+					href={PAGE.VIDEO(video.slug)}
 					title='view in new page'
 					target='_blank'
 				>

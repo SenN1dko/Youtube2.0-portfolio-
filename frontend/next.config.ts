@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
             {
                 protocol: 'http',
                 hostname: 'localhost',
-                port: '3001', // Порт твоего бэкенда
+                port: '8000', // Порт твоего бэкенда
                 pathname: '/**', // 🌟 РАЗРЕШАЕТ ВСЁ: /avatars, /thumbnails, /banners и т.д.
             },
 			{

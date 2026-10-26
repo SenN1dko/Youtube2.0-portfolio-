@@ -9,5 +9,5 @@ export interface IPlaylist{
 }
 export interface IPlaylistData{
         title:string,
-        videoPublicId:string
+        videoPublicId?:string
 }

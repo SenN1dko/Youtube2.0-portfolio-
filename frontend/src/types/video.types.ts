@@ -6,6 +6,7 @@ import type { IPagination } from './pagination.types'
 export interface IVideo {
 	id: string
 	title: string
+	slug: string
 	publicId:string
 	description?: string
 	thumbnailUrl: string

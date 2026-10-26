@@ -31,7 +31,7 @@ export function HorizontalVIdeoItem({ video }: Props) {
 			className='mb-5 h-full '
 		>
 			<div className=' mb-1 flex   gap-4 h-full'>
-				<Link href={PAGE.VIDEO(video.publicId)}>
+				<Link href={PAGE.VIDEO(video.slug)}>
 					<Image
 						src={video.thumbnailUrl}
 						width={307}

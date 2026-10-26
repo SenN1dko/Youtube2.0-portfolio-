@@ -32,7 +32,7 @@ export function VideoItem({ video, Icon }: Props) {
 			}}
 		>
 			<div className='relative mb-1'>
-				<Link href={PAGE.VIDEO(video.publicId)}>
+				<Link href={PAGE.VIDEO(video.slug)}>
 					<Image
 						src={video.thumbnailUrl}
 						width={500}

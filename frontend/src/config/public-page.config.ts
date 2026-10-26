@@ -20,7 +20,7 @@ class PublicPage {
 		return `/c/${path}`
 	}
 	PLAYLIST(path?: string) {
-		return `/playlists/${path ? `${path}` : ''}`
+		return `/my/playlists${path ? `/${path}` : ''}`
 	}
 	SEARCH(path:string){
 		return `/s?q=${path}`	

@@ -20,6 +20,10 @@ async getAll(searchTerm?: string) {
 		return axiosCLassic.get<IVideo[]>(`${this._VIDEOS}/trendingVideos`)
 	}
 
+	 async bySlug(slug: string) {
+			return axiosCLassic.post<IVideoSingleResponse>(`${this._VIDEOS}/by-slug/${slug}`)
+		}
+
 	 async byPublicId(publicId:string) {
 			return axiosCLassic.post<IVideoSingleResponse>(`${this._VIDEOS}/by-publicId/${publicId}`)
 		}

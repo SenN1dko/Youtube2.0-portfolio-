@@ -100,22 +100,16 @@ export function CreatePLaylist({ refetch, onClose, ref }: Props) {
 									placeholder='Enter a title:'
 								/>
 								<Field
-									label='Video public id (from url) '
+									label='Video public ID or slug (optional)'
 									type='text'
-									registration={register('videoPublicId', {
-										required: 'video id is required',
-										minLength: {
-											value: 10,
-											message: 'Video public id must be 10 characters exactly'
-										},
-										maxLength: {
-											value: 10,
-											message: 'Video public id must be 10 characters exactly'
-										}
-									})}
+									registration={register('videoPublicId')}
 									error={errors.videoPublicId?.message}
-									placeholder='Enter a video public id:'
+									placeholder='Paste public ID or slug from URL'
 								/>
+								<p className='mb-3 -mt-2 text-xs text-gray-400'>
+									Can be left empty — create the playlist and add videos with the
+									&quot;Save&quot; button on a video page.
+								</p>
 							</>
 						)}
 

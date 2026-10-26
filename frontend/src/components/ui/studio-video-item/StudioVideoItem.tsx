@@ -25,7 +25,7 @@ export function StudioVideoItem({ video }: Props) {
 				<div className='flex gap-3 md:contents'>
 					<Link
 						target='_blank'
-						href={PAGE.VIDEO(video.publicId)}
+						href={PAGE.VIDEO(video.slug)}
 						className='relative aspect-video w-28 shrink-0 overflow-hidden rounded-lg bg-gray-800 sm:w-36 md:w-full'
 					>
 						<Image

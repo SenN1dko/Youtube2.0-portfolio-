@@ -6,7 +6,7 @@ import { PAGE } from '@/config/public-page.config'
 import type { IVideo } from '@/types/video.types'
 
 interface Props {
-	video: Pick<IVideo, 'publicId' | 'title'>
+	video: Pick<IVideo, 'slug' | 'title'>
 	className?: string
 }
 
@@ -14,7 +14,7 @@ export function VideoItemTitle({ className, video }: Props) {
 	return (
 		<Link
 			className={twMerge('line-clamp-2 leading-snug font-bold text-lg', className)}
-			href={PAGE.VIDEO(video.publicId)}
+			href={PAGE.VIDEO(video.slug)}
 		>
 			{video.title}
 		</Link>
