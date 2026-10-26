@@ -11,7 +11,7 @@
 
 - [Bun](https://bun.sh/)
 - Docker + Docker Compose
-- `ffmpeg` и `ffprobe` (нужны для обработки загруженных видео)
+- `ffmpeg` и `ffprobe` (нужны для обработки загруженных видео). Установка: `sudo apt install ffmpeg` (Ubuntu/Debian) или `brew install ffmpeg` (macOS).
 
 ## Запуск
 
@@ -34,12 +34,14 @@ docker compose up -d
 
 ```bash
 cd Backend
-bun install
-bunx prisma generate
+cp .env.example .env     # Windows: copy .env.example .env
+bun install              # при установке автоматически выполнится prisma generate
 bunx prisma migrate deploy
-bun run seed          # опционально: демо-данные (очищает БД!)
+bun run seed             # опционально: демо-данные (очищает БД!)
 bun run dev
 ```
+
+Что делает `cp .env.example .env`: создаёт локальный файл с настройками подключения к Postgres/Redis и dev-секретами. Значения по умолчанию уже совпадают с `docker-compose.yml`, менять их для локального запуска не нужно.
 
 Сервер поднимется на `http://localhost:3001`.
 
@@ -56,6 +58,7 @@ bun run dev
 
 ```bash
 cd frontend
+cp .env.example .env     # Windows: copy .env.example .env
 bun install
 bun run dev
 ```
@@ -73,10 +76,11 @@ docker compose down        # остановить Postgres и Redis
 ## Полезное
 
 - Swagger API: `http://localhost:3001/swagger`
-- Настройки подключения лежат в `Backend/.env` и `frontend/.env` (в git не коммитятся).
+- Шаблоны настроек лежат в `Backend/.env.example` и `frontend/.env.example`. Скопируйте их в `.env` перед запуском — сами `.env` в git не коммитятся.
 - ⚠️ `JWT_ACCESS_SECRET` и `JWT_REFRESH_SECRET` в `frontend/.env` и `Backend/.env` должны совпадать. Если они разные, защищённые страницы (`/studio`, `/my/*`) будут редиректить на `/auth`, даже когда вы залогинены.
 - URL видео строится по `slug` (`/v/obzor-patcha-...`), а `publicId` остаётся внутренним идентификатором для плейлистов, комментариев и просмотров. Старые ссылки `/v/<publicId>` автоматически редиректят на slug.
 - Загруженные файлы: `Backend/src/modules/file/uploads/` (создаётся автоматически).
 - Если менялись Prisma-схемы: `cd Backend && bunx prisma migrate dev`.
-- В `.env` сейчас стоят **тестовые ключи Google reCAPTCHA v2** — капча всегда проходит, это только для локальной разработки. Для продакшена замените их на реальные.
+- В `.env.example` стоят **тестовые ключи Google reCAPTCHA v2** — капча всегда проходит, это только для локальной разработки. Для продакшена замените их на реальные.
+- Для регистрации с подтверждением email нужен SMTP (`MAIL_USER` / `MAIL_PASS`). Без него можно войти в демо-аккаунты после `bun run seed`.
 - Пересоздать демо-данные: `cd Backend && bun run seed` (удаляет текущие данные из БД).

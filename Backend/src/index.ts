@@ -13,12 +13,17 @@ import { CommentRoutes } from "./modules/comment/Comment.route";
 import { watchHistoryRoute } from "./modules/watchHistory/watchHistoryRoute";
 import { playlistRoute } from "./modules/playlists/PlaylistRoute";
 import { studioRoute } from "./modules/studio/studioRoute";
+const allowedOrigins = [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : []),
+];
 const app = new Elysia({serve:{
     maxRequestBodySize:1024 * 1024 * 1024 * 10
 }})
    .use(swagger())
 .use(cors({
-        origin: ['http://localhost:3000', 'http://localhost:3001'], 
+        origin: allowedOrigins,
         credentials: true, 
         allowedHeaders: ['Content-Type', 'Authorization', 'recaptcha']
     }))

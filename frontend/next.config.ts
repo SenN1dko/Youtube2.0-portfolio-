@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
             {
                 protocol: 'http',
                 hostname: 'localhost',
-                port: '8000', // Порт твоего бэкенда
+                port: '3001', // Порт твоего бэкенда
                 pathname: '/**', // 🌟 РАЗРЕШАЕТ ВСЁ: /avatars, /thumbnails, /banners и т.д.
             },
 			{
@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
 			
 			{
 				source: '/uploads/:path*',
-				destination: `${process.env.SERVER_URL}/uploads/:path*`
+				destination: `${process.env.SERVER_URL || 'http://localhost:3001'}/uploads/:path*`
 			}
 		]
 	},
