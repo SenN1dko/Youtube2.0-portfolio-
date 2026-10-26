@@ -1,0 +1,40 @@
+model Game {
+    id     String  @id @default(cuid())
+    name   String  @unique
+    slug   String  @unique
+    videos Video[]
+
+    @@map("Games")
+}
+
+model Video {
+    id String @id @default(cuid())
+
+    title         String
+    slug          String   @unique
+    description   String?
+    views         Int      @default(0)
+    publicId      String   @unique @map("public_id")
+    thumbnailUrl  String
+    videoFileName String
+    tags          String[] @default([])
+    isPublic      Boolean  @default(true)
+    maxResolution String   @default("1080p") @map("max_resolution")
+
+    channel   Channel? @relation(fields: [channelId], references: [id], onDelete: Cascade)
+    channelId String?  @map("channel_id")
+
+    gameId String?
+    game   Game?   @relation(fields: [gameId], references: [id], onDelete: Cascade)
+
+    likes    Like[]
+    comments Comment[]
+
+    createdAt      DateTime       @default(now()) @map("created_at")
+    updatedAt      DateTime       @updatedAt @map("updated_at")
+    watchHistories WatchHistory[]
+    playlist       Playlist[]
+
+    @@index([views(sort: Desc)])
+    @@map("Videos")
+}

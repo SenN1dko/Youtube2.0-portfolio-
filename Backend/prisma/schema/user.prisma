@@ -1,0 +1,56 @@
+model User {
+    id String @id @default(cuid())
+
+    email    String @unique
+    password String
+
+    avatar   String?
+    username String? @unique
+
+    channel           Channel?
+    likes             Like[]
+    comments          Comment[]
+    verificationToken String?   @unique @map("verification_token")
+
+    createdAt      DateTime       @default(now()) @map("created_at")
+    updatedAt      DateTime       @updatedAt @map("updated_at")
+    subscriptions  Subscription[]
+    watchHistories WatchHistory[]
+    playlists      Playlist[]
+
+    @@map("users")
+}
+
+model Channel {
+    id String @id @default(cuid())
+
+    description String?
+    avatar      String?
+    banner      String?
+    slug        String?
+    isVerified  Boolean? @default(false)
+
+    videos Video[]
+
+    ownerId String @unique @map("owner_id")
+    owner   User   @relation(fields: [ownerId], references: [id])
+
+    createdAt     DateTime       @default(now()) @map("created_at")
+    updatedAt     DateTime       @updatedAt @map("updated_at")
+    subscriptions Subscription[]
+
+    @@map("Channels")
+}
+
+model Subscription {
+    id        String @id @default(cuid())
+    userId    String
+    channelId String
+
+    user    User    @relation(fields: [userId], references: [id])
+    channel Channel @relation(fields: [channelId], references: [id])
+
+    createdAt DateTime @default(now())
+
+    @@unique([userId, channelId])
+}
